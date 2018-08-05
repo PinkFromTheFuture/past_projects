@@ -1,0 +1,33 @@
+int soma1(int param)
+{
+	int a3;
+	a3 = 1 + 2 * 3 + 4;
+	return a3;
+}
+
+int soma2(int param3)
+{
+	param3 = 1 + 2 * param3 + 4 * 2 + 4 / 4;
+	return param3;
+}
+
+int soma(int param1, int param2)
+{
+	int result;
+	result = param1 + param2;
+	return result;
+}
+
+int life(int a, int b){
+	return 42;
+}
+
+int main()
+{
+	int var = 2;
+	int var2;
+	var = 3+2;
+	var = life(1, 2);
+	var2 = soma2(var);
+	return var2;
+}

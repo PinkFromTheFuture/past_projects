@@ -1,0 +1,125 @@
+|Lab12b
+LEDG[0] <= 74161:inst9.QA
+LEDG[1] <= 74161:inst9.QB
+LEDG[2] <= 74161:inst9.QC
+LEDG[3] <= 74161:inst9.QD
+KEY[0] => 74161:inst9.CLRN
+CLOCK_50 => fdiv:inst2.clkin
+SW[0] => 74195:inst.D0
+SW[1] => 74195:inst.D1
+SW[2] => 74195:inst.D2
+SW[3] => 74195:inst.D3
+
+
+|Lab12b|74161:inst9
+clk => f74161:sub.clk
+ldn => f74161:sub.ldn
+clrn => f74161:sub.clrn
+enp => f74161:sub.enp
+ent => f74161:sub.ent
+d => f74161:sub.d
+c => f74161:sub.c
+b => f74161:sub.b
+a => f74161:sub.a
+qd <= f74161:sub.qd
+qc <= f74161:sub.qc
+qb <= f74161:sub.qb
+qa <= f74161:sub.qa
+rco <= f74161:sub.rco
+
+
+|Lab12b|74161:inst9|f74161:sub
+RCO <= 105.DB_MAX_OUTPUT_PORT_TYPE
+CLRN => 110.ACLR
+CLRN => 99.ACLR
+CLRN => 87.ACLR
+CLRN => 9.ACLR
+CLK => 110.CLK
+CLK => 99.CLK
+CLK => 87.CLK
+CLK => 9.CLK
+D => 113.IN0
+LDN => 117.IN0
+LDN => 77.IN1
+LDN => 86.IN1
+LDN => 98.IN1
+LDN => 108.IN1
+ENP => 106.IN0
+ENP => 96.IN0
+ENP => 89.IN0
+ENP => 79.IN0
+C => 101.IN0
+B => 91.IN0
+A => 76.IN0
+ENT => 82.DATAIN
+QD <= 110.DB_MAX_OUTPUT_PORT_TYPE
+QC <= 99.DB_MAX_OUTPUT_PORT_TYPE
+QB <= 87.DB_MAX_OUTPUT_PORT_TYPE
+QA <= 9.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab12b|fdiv:inst2
+clkin => clkout~reg0.CLK
+clkin => cont[0].CLK
+clkin => cont[1].CLK
+clkin => cont[2].CLK
+clkin => cont[3].CLK
+clkin => cont[4].CLK
+clkin => cont[5].CLK
+clkin => cont[6].CLK
+clkin => cont[7].CLK
+clkin => cont[8].CLK
+clkin => cont[9].CLK
+clkin => cont[10].CLK
+clkin => cont[11].CLK
+clkin => cont[12].CLK
+clkin => cont[13].CLK
+clkin => cont[14].CLK
+clkin => cont[15].CLK
+clkin => cont[16].CLK
+clkin => cont[17].CLK
+clkin => cont[18].CLK
+clkin => cont[19].CLK
+clkin => cont[20].CLK
+clkin => cont[21].CLK
+clkin => cont[22].CLK
+clkin => cont[23].CLK
+clkin => cont[24].CLK
+clkin => cont[25].CLK
+clkin => cont[26].CLK
+clkin => cont[27].CLK
+clkin => cont[28].CLK
+clkin => cont[29].CLK
+clkin => cont[30].CLK
+clkin => cont[31].CLK
+clkout <= clkout~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab12b|74195:inst
+Q0 <= 15.DB_MAX_OUTPUT_PORT_TYPE
+CLRN => 15.ACLR
+CLRN => 16.ACLR
+CLRN => 17.ACLR
+CLRN => 18.ACLR
+CLK => 15.CLK
+CLK => 16.CLK
+CLK => 17.CLK
+CLK => 18.CLK
+ST/LDN => 79.IN0
+ST/LDN => 48.IN0
+ST/LDN => 78.IN0
+ST/LDN => 34.IN1
+ST/LDN => 36.IN1
+ST/LDN => 38.IN1
+KN => 79.IN2
+D0 => 33.IN1
+J => 78.IN2
+Q1 <= 16.DB_MAX_OUTPUT_PORT_TYPE
+D1 => 35.IN1
+Q2 <= 17.DB_MAX_OUTPUT_PORT_TYPE
+D2 => 37.IN1
+Q3 <= 18.DB_MAX_OUTPUT_PORT_TYPE
+D3 => 39.IN1
+Q3N <= 83.DB_MAX_OUTPUT_PORT_TYPE
+
+

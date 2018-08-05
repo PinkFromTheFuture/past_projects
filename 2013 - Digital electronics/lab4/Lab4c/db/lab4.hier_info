@@ -1,0 +1,8 @@
+|lab4
+pin_name7 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+pin_name6 => inst1.IN0
+pin_name5 => inst1.IN1
+pin_name5 => inst.IN0
+pin_name => inst.IN1
+
+

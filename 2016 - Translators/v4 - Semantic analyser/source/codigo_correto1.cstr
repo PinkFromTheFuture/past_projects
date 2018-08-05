@@ -1,0 +1,14 @@
+/*este arquivo de teste contem codigo que seria
+escrito em uma linguagem C baseada na gramatica
+reduzida que usei de base para meu projeto.*/
+int main () {
+
+/**/int variavel1;
+/* comment */ int i = 0;
+	variavel1 = i * 2;
+	while(i<10){
+		i = i + 1;
+	}
+
+	return variavel1 + i;
+}

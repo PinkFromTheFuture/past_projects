@@ -1,0 +1,12 @@
+Provvelmente não poderemos guardar as imagens na tabela de atleta devido aos dados necessarios para fazer o
+download da imagem ao integrar com uma crud (a de exibi-la). Ainda estou estudando o assunto, mas ja adianto uma possivel nova tabela
+
+create table testblob (
+    image_id        tinyint(3)  not null default '0',
+    image_type      varchar(25) not null default '',
+    image           blob        not null,
+    image_size      varchar(25) not null default '',
+    image_ctgy      varchar(25) not null default '',
+    image_name      varchar(50) not null default '',
+	atleta_id		int 		not null references 'atleta'.'id_atleta' ,
+);

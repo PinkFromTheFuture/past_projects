@@ -1,0 +1,35 @@
+\begin{thebibliography}{1}
+
+\bibitem{minic}
+{MiniC Grammar}.
+\newblock
+  \url{http://www2.ufersa.edu.br/portal/view/uploads/setores/184/AppendixA.pdf}.
+\newblock [Acessado em 20 de agosto de 2016].
+
+\bibitem{cplusplus}
+{C string lib reference}.
+\newblock \url{http://www.cplusplus.com/reference/cstring/}.
+\newblock [Acessado em 20 de agosto de 2016].
+
+\bibitem{compiladores2008}
+A.V. AHO, R.~Sethi, and S.~Lam.
+\newblock {\em Compiladores: princ{\'\i}pios, t{\'e}cnicas e ferramentas}.
+\newblock LONGMAN DO BRASIL, 2008.
+
+\bibitem{gnuc}
+{The GNU C Reference Manual}.
+\newblock \url{https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html}.
+\newblock [Acessado em 20 de agosto de 2016].
+
+\bibitem{yacc1995}
+Jutta Degener.
+\newblock {ANSI C Yacc grammar}.
+\newblock \url{http://www.lysator.liu.se/(nobg)/c/ANSI-C-grammar-y.html}.
+\newblock [Acessado em 20 de agosto de 2016].
+
+\bibitem{clrs09}
+Thomas~H. Cormen, Charles~E. Leiserson, Ronald~L. Rivest, and Clifford Stein.
+\newblock {\em {I}ntroduction to {A}lgorithms}.
+\newblock The MIT Press, 3 edition, 2009.
+
+\end{thebibliography}

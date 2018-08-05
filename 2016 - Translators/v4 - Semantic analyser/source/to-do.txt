@@ -1,0 +1,30 @@
+to-do
+
+DONE função main está presente
+DONE declaração de função com nome repetido - a linguagem não suporta overloading de funções
+DONE variáveis usadas, mas não declaradas
+DONE chamada a uma função não declarada
+DONE chamada a um método inválido
+DONE declaração de variável com nome repetido em um escopo
+DONE chamada a uma função com número inválido de argumentos
+DONE passagem de argumentos a uma função com tipos que divergem dos parametros formais da mesma
+DONE chamada a um método com número inválido de argumentos
+DONE passagem de argumentos a um método com tipos que divergem dos parametros formais do mesmo
+DONE tipo de retorno de uma função
+DONE verificação de tipos
+DONE inconsistência de tipos em uma atribuição de variável
+DONE condição em expressões if e while com tipo diferente de bool?
+DONE ver se cada if/else tem um retorno, ou se a função tem um retorno padrão. em outras palavras, se tem um retorno sempre alcançavel.
+
+
+
+
+
+
+ao fazer
+{
+	int a = 2;
+	a = 3;
+}
+o valor na tabela de símbolos de a não é alterado.
+

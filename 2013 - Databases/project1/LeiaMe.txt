@@ -1,0 +1,14 @@
+Eduardo Furtado Sá Corrêa - 09/0111575
+Fone - 8307-4445
+eduardoxfurtado@gmail.com
+
+
+Thomaz Maciel de Macedo - 11/0142179
+Fone - 81552966
+tho.macedo@gmail.com
+
+
+Os Modelos foram gerados utilizando a ferramenta PowerDesigner 16
+O bando de dados utilizado foi o MySQL 5.6
+As respostas estão nos arquivos de texto com os respectivos nomes da Questões
+Os screenshots da execuação das queries estão disponíveis na pasta ScreenShots 

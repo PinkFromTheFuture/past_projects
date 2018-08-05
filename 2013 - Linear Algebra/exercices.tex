@@ -1,0 +1,611 @@
+\documentclass[a4paper,12pt]{report}
+
+
+\usepackage[top=3cm,left=3cm,right=2cm,bottom=2cm]{geometry}
+\usepackage[latin1]{inputenc}
+ \usepackage{amssymb}
+
+
+
+\begin{document}
+\begin{center}
+
+\textbf{\huge Exercicios Algebra Linear } 
+\linebreak 
+\textbf{\large Prof Helder Matos } 
+\linebreak 
+\linebreak 
+\linebreak 
+\linebreak 
+\textbf{\large Eduardo Furtado Sa Correa } 
+\linebreak 
+\textbf{Matricula: 09/0111575 }
+\linebreak 
+\end{center}
+
+ 
+
+
+\chapter{Nocoes basicas }
+\section{Grupos}
+\textbf{1)}
+ $~~~$Seja \textbf{G} grupo 
+	    e \'unico \\
+
+{$a^{-1}$  \'unico }\\
+
+{Suponha, $e_{1},e_{2}$  identidade }\\
+     
+{$e_{1}$  =   $e_{1}~~~~ e_{2}$  = $e_{2}$} \\
+
+{Suponha $a_{1}, a_{2}$   inversos  de $a$ }\\
+
+$a_{1} a = a a_{1} = e$,$~~~$ $a_{2} a = a a_{2} = e$ \\
+
+$a_{1}$ = $e$ $a_{1}$ = ($a_{2}$ $a$) $a_{1}$ = $a_{2}$ ($a$ $a_{1}$) = $a_{2}$ $e$ = $a_{2}$ \\
+\section{Corpos}
+\textbf{1)}
+
+($\mathbb{Q}$ $[\sqrt{5}]$,+, .)\\
+
+($\mathbb{Q}$ $[\sqrt{5}]$,+)  grupo  abeliano\\
+
+i) ((a+b$\sqrt{5}$) + (c+d$\sqrt{5}$)) +  (e+f$\sqrt{5}$) = (a+b$\sqrt{5}$)+((c+d$\sqrt{5}$) + (e+f$\sqrt{5}$)) \\
+
+ii) (a+b$\sqrt{5}$) + 0 = (a+b$\sqrt{5}$)\\
+
+iii) (a+b$\sqrt{5}$) ( - (a+$\sqrt{5}$))=0 \\
+
+iv) (a+b$\sqrt{5}$) + (c+d$\sqrt{5}$) = (c+d$\sqrt{5}$) + (a+b$\sqrt{5}$)\\
+
+
+
+($\mathbb{Q}$ $[\sqrt{5}]$*, .) \\
+
+i)((a+b$\sqrt{5}$) . (c+d$\sqrt{5}$)) . (e+f$\sqrt{5}$) = (a+b$\sqrt{5}$) . ((c+d$\sqrt{5}$) . (e+f$\sqrt{5}$))\\
+
+ii) (a+b$\sqrt{5}$) . 1 = (a+b$\sqrt{5}$)\\
+
+iii) (a+b$\sqrt{5}$) . ($\frac{1} {a+b\sqrt{5} }$) = 1
+
+
+\chapter{Espacos Vetoriais }
+\section{Espacos e Subespacos Vetoriais}
+\textbf{1)} Def : 
+I) $(V,+)$ grupo\   abeliano
+
+II) ($\lambda_{1}$ $\lambda_{2}$) v = $\lambda_{1}$ ($\lambda_{2}$ v) \\
+
+III) ($\lambda_{1}$ + $\lambda_{2}$)v = $\lambda_{1}$ v + $\lambda_{2}$v \\
+
+IV) $\lambda$(v+w) = $\lambda$v+$\lambda$w \\
+
+V) 1. v = v \\
+
+v) 1($x_{1}$ ,$y_{1}$) = (1$x_{1}$,0) $\ne$ ($x_{1}$,$y_{1}$) \\
+
+iv) $\lambda((x_{1},y_{1}) + (x_{2},y{_2})) = (\lambda(x_{1}+x_{2}),0) =  (\lambda x_{1} + \lambda x_{2},0)$ \\
+
+ii) $(\lambda_{1} \lambda_{2})(x_{1},y_{1}) = ((\lambda_{1}\lambda_{2})x_{1},0)$ $\lambda_{1}(\lambda_{2} x_{1},0)$ \\
+
+i) $((x_{1},y_{1}) + (x_{2},y_{2})) + (x_{3},y_{3}) = (x_{1}+x_{2},0) + (x_{3},y_{3}) = ((x_{1}+x_{2}) + x_{3},0)$\\ 
+$(x_{1},y_{1})+ ((x_{2},y_{2}) + (x_{3},y_{3})) = (x_{1},y_{1}) + (x_{2}+x_{3},0) = ((x_{2}+x_{3}) + x_{1},0)$ \\
+
+comutativo: $(x_{1},x_{2}) + (y_{1},y_{2}) = (x_{1}+x_{2},0) (x_{2},y_{2})(x_{1},y_{1}) = (x_{2} +x_{1},0)$\\
+
+\section{Dimensao e Bases}
+\textbf{2)}
+
+$\beta = \left \{ (\bar{1},\bar{2},\bar{0},\bar{1}) , (\bar{1},\bar{1},\bar{1},\bar{1}) \right \}$\\
+
+$a(1,2,0,1) + b(1,1,1,1) = (0,0,0,0) \rightarrow \left \{ a+b = 0, 2a+b = 0, b = 0, a+b = 0 \right \}$ $\rightarrow $b = 0\ e\ a = 0 
+$\rightarrow \beta$\  \'e\  L.I \\
+
+$(1,0,0,0) = a(1,2,0,1) + b(1,1,1,1) \rightarrow\left \{a+b = 1, 2a+b =  0, b=0, a+b = 0 \right \} \rightarrow a=0, a=1\ $ Absurdo
+$\rightarrow \beta_1 = \left \{ (1,2,0,1),(1,1,1,1),(1,0,0,0) \right \} L.I$\\
+
+$(0,1,0,0) = a(1,2,0,1) + b(1,1,1,1) + c(1,0,0,0) \rightarrow \left \{ a+b+c = 0, 2a+b = 1, b = 0, a+b = 0 \right \}$ \\
+
+
+\textbf{6)}
+$w_1, w_2 \leq$ V dim V finita
+$dim w_1 + dim w_2 = dim (w_1, w_2) + dim (w_1 \cap w_2)$ \\
+$~~~~~$Def:$ w_1 \cap w_2 \leq w_1 $ e $ w_1 \cap w_2 \leq w_2$ \\ 
+$~~~~~$Seja B =$\lbrace v_1, ... , v_n \rbrace$ base de $(w_1 \cap w_2)$  $dim w_1 \cap w_2 = n$
+$\Longrightarrow \exists w_i$ tq.$ B \cup \lbrace w_1, ... , w_2\rbrace e base de w_1$
+$(dim  w_1 = n+ l) e /exists u_i$ tq $ B \cup \lbrace u_1, ... , u_k\rbrace e base de w_2$
+$com dim w_2 = n + u$ \\
+
+i)$\Longrightarrow  w = \sum_{1}^{n} a_i v_i + \sum_{1}^{l} b_i u_i$ \\
+$ n = \sum_{1}^{n} a_i v_i + \sum_{1}^{k} b_i u_i$ \\
+
+\textbf{16)}
+
+$au+bv+cw = 0$\\
+
+$a(\alpha+\beta) + b(\beta+\gamma) + c(\gamma+\alpha) = 0$\\
+
+$(a+c)\alpha + (a+b)\beta + (b+c)\gamma = 0 $\\
+
+$a(\bar{1}, \bar{1},0)   +    b( 0, \bar{1} , \bar{1})  + c (0,0,\bar{1})  = 0$
+
+$a = 0 , b = 0  , c = 0$ \\
+
+$a+b = 0 $\\
+
+$b+c = 0 $ \ \ \ \'e L.I \\
+
+$\beta' = \left \{ (1,0,1) ; (0,1,0); (1,1,1) \right \}$ \'e L.D
+
+
+\chapter{Transformacoes Lieneares }
+\section{Transformacoes Lineares}
+\textbf{8)}
+
+Dem :$ a_1T(v_1) + ...+a_nT(v_n) = 0 \rightarrow T(a_1v_1+...+a_nv_n) = 0 = T(0)$ $\rightarrow a_1v_1+...+a_nv_n = 0 \rightarrow a_i = 0\ \forall i $
+
+Logo$ \left \{ T(v_1),...,T(v_n)\right \} $\'e L.I
+
+
+\section{Associacoes de Matrizes as Transformacoes Lineares }
+
+\textbf{2)}
+
+i)$T(x_1 + x_2,y_1+y_2,z_1+z_2) = ( (x_1+x_2) + (y_1+y_2), 2(z_1+z_2) - (x_1+x_2)) = ((x_1+y_1)+ (x_2+y_2),(2z_1 - x_1) + (2z_2 - x_2)) = T(v_1) + T(v_2)$\\
+
+$T(\lambda v) = \lambda T(v)$ \\
+
+T($\lambda$ x,$\lambda$ y,$\lambda$z) = ($ \lambda$ x + $\lambda$ y, 2$\lambda$ z - $\lambda$ x) = $\lambda$(x+y,2z-x) = $\lambda$ T(v) 'e\ linear
+
+ii)$ y_1= \left \{ (1,0); (0,1) \right \}$ \\
+
+$y_2 = \left \{ (1,0); (0,1) \right \}$ \\
+
+$y_3 = \left \{ (1,0,0);(0,1,0);(0,0,1) \right \}$
+
+$T_\gamma^\alpha : T(1,0,-1) = (1,-3) = a(1,0) + b(0,1)    \ \ \ (1,-3)$ \\
+
+$T_\gamma^\alpha : T(1,1,1) = (2,1) = a(1,0) + b(0,1)  \ \ \ (2,1)$\\
+
+$T_\gamma^\alpha : T(1,0,0) = (1,-1) = a(1,0) +b(0,1)  \ \ \ (1,-1)$\\
+
+$T_\gamma^\alpha = \left \{ (1,-3); (2,1);(1,-1) \right \}$
+
+
+$T_\gamma^\gamma = T(1,0,0) = (1,-1) = 1e_1 - 1e_2 $\\
+$T(0,1,0) =(1,0) = 1e_1 + 0e_2 $\\
+$T(0,0,1) = (0,2) = 0e_1 + 2e_2 $ \\
+
+
+$T_\gamma^\gamma : \left \{ ( 1,-1); (1,0); (0,2) \right \}$
+
+
+\chapter{Diagonalicacao de operadores }
+\section{Autovalores e Autovetores}
+\textbf{1)}
+
+$T_c^c= \left [\begin{array}{rrr}
+2&0&0\\
+-1&1&4\\
+0&0&0
+\end{array}\right]$ \\
+
+$\left [\begin{array}{rrr}
+2&0&0\\
+-1&1&4\\
+0&0&0
+\end{array}\right] 
+\left[\begin{array}{rrr}
+x\\
+y\\
+z\\
+\end{array}\right] = \lambda I \left[\begin{array}{rrr}
+x\\
+y\\
+z\\
+\end{array}\right]
+\rightarrow
+\left [\begin{array}{rrr}
+2&0&0\\
+-1&1&4\\
+0&0&2
+\end{array}\right] 
+\left[\begin{array}{rrr}
+x\\
+y\\
+z\\
+\end{array}\right] - \lambda I \left[\begin{array}{rrr}
+x\\
+y\\
+z\\
+\end{array}\right] = \left[\begin{array}{rrr}
+0\\
+0\\
+0\\
+\end{array}\right]
+\rightarrow
+\left [\begin{array}{rrr}
+2-\lambda &0&0\\
+-1&1-\lambda&4\\
+0&0&2-\lambda
+\end{array}\right] 
+\left[\begin{array}{rrr}
+x\\
+y\\
+z\\
+\end{array}\right] = \left[\begin{array}{rrr}
+0\\
+0\\
+0\\
+\end{array}\right]$ \\
+
+$det=(2-\lambda)(1-\lambda)(2-\lambda)=0 $\\
+
+$\lambda = (2,1)$\\
+
+
+$\lambda = 2 \ \ \ \left [\begin{array}{rrr}
+ 0&0&0\\
+-1&-1&4\\
+0&0&0
+\end{array}\right]  
+\left[\begin{array}{rrr}
+x\\
+y\\
+z\\
+\end{array}\right] =  \left[\begin{array}{rrr}
+0\\
+0\\
+0\\
+\end{array}\right]
+-x-y-4z = 0$\\
+
+$v=(1,-1,0)$\\
+
+$\lambda = 1 $\\
+
+$\left [\begin{array}{rrr}
+ 1&0&0\\
+-1&0&4\\
+0&0&1
+\end{array}\right]  \left[\begin{array}{rrr}
+x\\
+y\\
+z\\
+\end{array}\right] = \left[\begin{array}{rrr}
+0\\
+0\\
+0\\
+\end{array}\right] \ -x+4z = 0 $\\
+
+$v= (0,0,0) $\\
+
+$\beta = \lbrace (1,3,1),(0,0,0),(1,3,1) \rbrace $\\
+
+$ T_\beta^\beta = \left [\begin{array}{rrr}
+ 2&0&0\\
+0&1&\\
+0&0&2
+\end{array}\right]$ T \'e diagonalizavel \\
+\linebreak  \\
+
+\textbf{12)}
+$V\in Im(E) \cap Im(I- E) \rightarrow v = E(w), v = (I-E)(u) \rightarrow E(v) = E(E(w)) = E^2(w) = v \rightarrow V = (I-E)(u) = u - E(u) \rightarrow V = E(v) = E(u - E(u)) = E(u) - E(E(u) = E(u) - E(u) = 0$\\
+
+$V = E(v) + V - E(v) = E(v) + (I-E)(v) \rightarrow V \in Im(E) + Im (I-E_ \forall v \rightarrow V = Im(E) \diamond Im(I-E)$\\
+
+III)$ Seja v\in Im(E) \rightarrow v = E(w) \rightarrow E(v) = E(E(w)) = E^2(w) = E(w) = v \rightarrow v - E(v)m= 0 \rightarrow (I-E)(v) = 0 \rightarrow v \in Nuc(I-E) \rightarrow Im(E) \sqsubseteq Nuc(I-E)$ \\
+
+Seja $v\in Nuc(I-E) \rightarrow (I-E)(v) = 0 \rightarrow V - E(v) = 0 \rightarrow V = E(v) \rightarrow v \in Im(E) \rightarrow Nuc (I-E)\sqsubseteq Im(E)$ \\
+
+Logo Im(E) = Nuc (I-E)\\
+
+IV) V $\in Im(I-E) \rightarrow v = (I-E) (w) \rightarrow v = w - E(w) \rightarrow E(v) = E(w - E(w)) = E(w)- E(E(w)) = E(w) - E(w) = 0 \rightarrow V \in Nuc(E) \rightarrow Im(I-E) \sqsubseteq Nuc(E)$ \\
+
+v$ \in Nuc(E) \rightarrow E(v) = 0 \rightarrow v = E(v) + v - E(v)= v -E(v) = (I-E)(v) \rightarrow V \in Im(I-E) \rightarrow Nuc(E) \sqsubseteq Im (I-E) \rightarrow Nuc(E) = Im(I-E)$
+
+\section*{}
+
+\section{Polinomios}
+\textbf{5)}
+
+R(x) = A \\
+
+I = ${(x^2 + x - 2)\over a} R(x) + {(x^2 - 4x + 3)\over b}R(x) \le R(x) $\\
+
+I =$  d(x) d = mdc(a,b)  ia \in I  ai \in I $ \\
+
+a =$ bq_1+r_1 $\\
+
+b= $r_1q_2+r_2$\\
+
+$r_1=r_2q_3+r_3 $\\
+
+$r_n = r_n+1q_n+2 + r_n+2 $\\
+
+$mdc( x^2+ x - 2, x^2-4x+3) = 5x - 5$\\
+
+monico $\rightarrow x - 1 = mdc $\\
+
+$x - 1 = ( x^2 + x - 2) r(x) + (x^2 - 4x + 3) 5(x)$ \\
+
+$x^2 + x - 2 = (x^2 - 4x + 3) + (5x - 5) \rightarrow 5x - 5 = (x^2+x - 2) - (x^2 -4x + 3) $\\
+
+$(x-1) = (x^2+x - 2) \frac{1}{3} + (x^2 - 4x + 3)( - \frac{-1}{5} \in L + J = I \le R(x) \rightarrow (x-1) \subseteq I$ \\
+
+$r(x) = 1\over 5$\\
+
+$ s(x) = - 1 \over 5$ \\
+
+
+
+\textbf{9)}
+
+Dem: $f(x) = a_0 +a_1x+...+a_nx^n $\\
+
+g(x) =$ b_0+b_1x+...+a_kx^k$\\
+
+$\partial f < \partial g \rightarrow q=0 \ \ \ r=f$ \\
+
+$\partial f = \partial g \rightarrow k = n $\\
+
+$a_nx^n+ a_n-1x^n-1+...+a_0$\\
+
+$-a_nx^n - {a_nb_n-1x^n-1\over b_n}+... +{a_n\over b_n}$\\
+
+$q = {a_n\over b_n}(b_n\ne 0 )\ e\ r(x)$ \\
+
+
+\textbf{10)}
+Suponha f(x) = $q_1(x)g(x) + r_1(x), 0 \le \partial r < \partial g$ \\
+
+f(x) =$ q_2(x)g(x) + r_2(x), 0 \le \partial r_2 < \partial g$ \\
+
+$0 = q_2(x)g(x) +r_2(x) - (q_1(x)g(x)+r_1(x)) = (q_2(x)^2 - q_1(x))g(x) + r_2(x) - r_1(x) = 0 \rightarrow (q_2(x) - q_1(x))g(x) = r_1(x) - r_2(x) \rightarrow \partial ((q_2(x) - q_19x)g(x) = \partial (r_1(x) - r_2(x)) \le max \left \{ \partial r_1, \partial r_2 \right \} \le n-1 \rightarrow \partial (q_2-q_1) + \partial g(x) \le n-1 \rightarrow \partial (q_2 - q_1) + n \le n - 1 \rightarrow Se\ \partial(q_2 - q_1) \in \mathbb{N}\ entao\ \partial(q_2 - q_1) + n \le n- 1\ Absurdo$ \\
+
+Logo $\partial (q_2 - q_1)$ = - $\infty$ $\rightarrow$ 
+$q_2 - q_1 $= 0 $\rightarrow q_2$ = $q_1 \rightarrow r_1 - r_2 = 0 \rightarrow r_1=r_2$
+
+
+
+
+\section{Subespacos Invariantes}
+\textbf{4)}
+$m(x) = x^2 \ \ \ c(x) = x^3 \rightarrow \lambda = 0$\\
+
+
+$A^2 =  \left [\begin{array}{rrr}
+0&0&0\\
+1&0&0\\
+0&0&0
+\end{array}\right] \left [\begin{array}{rrr}
+0&0&0\\
+1&0&0\\
+0&0&0
+\end{array}\right] = 0$ \\
+
+
+\textbf{8)}
+
+I) $\left [\begin{array}{rrr}
+1- \lambda &2\\
+0&2- \lambda
+\end{array}\right] 
+det = (1 - \lambda)( 2 - \lambda) = 0 $\\
+
+$\lambda = 1 ,2$\\
+
+$\lambda = 1 \ \left [\begin{array}{rrr}
+0&2\\
+0&1
+\end{array}\right]  \left [\begin{array}{rrr}
+x\\
+y
+\end{array}\right]  = \left [\begin{array}{rrr}
+0\\
+0
+\end{array}\right] \ \ \   y = 0$ \\
+
+$v_1(1,0)$ \\
+
+$\lambda = 2 \left [\begin{array}{rrr}
+-1&2\\
+0&0
+\end{array}\right] $
+
+$ \left [\begin{array}{rrr}
+x\\
+y
+\end{array}\right]$  = 
+
+$\left [\begin{array}{rrr}
+0\\
+0
+\end{array}\right] $
+$\lbrace -x + 2y = 0, x = 2y \rbrace$ \\
+
+$v_2(2,1) $\\
+
+B = $[\begin{array}{rrr}
+3&-8\\
+0&-1
+\end{array}]$
+$  [\begin{array}{rrr} 1\\ 0 \end{array}] $   =
+$ [\begin{array}{rrr} 3\\ 0 \end{array}]$  = 3 
+$[\begin{array}{rrr} 1\\ 0 \end{array}]$  \\
+
+$\left [\begin{array}{rrr}
+3&-8\\
+0&-1
+\end{array}\right]$  $\left [\begin{array}{rrr}
+2\\
+1
+\end{array}\right]$  = $\left [\begin{array}{rrr}
+-2\\
+-1
+\end{array}\right]$   = $- \left [\begin{array}{rrr}
+2\\
+1
+\end{array}\right]$  \\
+
+$\rightarrow \beta_b^a = \left [\begin{array}{rrr}
+3&0\\
+0&-1
+\end{array}\right]  $ \\
+
+\textbf{21)}
+T = $\lambda$ I \\
+
+$P^-1 T P = P^-1 \lambda I P = P^-1 \lambda P = P^-1 P \lambda = I \lambda = \lambda I$ = T \\
+
+I) m(x) = $x-5 \rightarrow$ T = 5I\\
+
+II) m(x) = $(x-5)^2 \rightarrow T ~ \left [\begin{array}{rrr}
+(5&0)&0\\
+(1&5)&0\\
+0&1&5
+\end{array}\right]$ \\
+
+III) m(x) = ($x-5)^3 \rightarrow T ~ \left [\begin{array}{rrr}
+5&0&0\\
+1&5&0\\
+0&1&5
+\end{array}\right]$  \\
+
+
+
+
+
+\textbf{22)}
+
+c(x) = $(x - 1)^2(x-2)$\\
+
+$\lambda = 2 \rightarrow  \left [\begin{array}{rrr}
+-1&0&0\\
+2&-1&0\\
+2&3&5
+\end{array}\right]$  
+$\left [\begin{array}{rrr} x\\ y\\ z \end{array}\right]4 $= 
+$\left [\begin{array}{rrr} 0\\ 0\\ 0 \end{array}\right] $
+$\rightarrow { x= 0, y = 0}$ \\
+
+$v_3= \left [\begin{array}{rrr} 0\\0\\ 1 \end{array}\right]4$ , 
+$v_2 \left [\begin{array}{rrr} 0,5\\ -1\\ -1 \end{array}\right]$ , 
+$ v_1 \left [\begin{array}{rrr} 0\\ 1\\  -3 \end{array}\right] $, \\
+$ \beta \left \{ V_1, V_2,V_3 \right \}$ \\
+
+$\lambda = 1 \rightarrow \left [\begin{array}{rrr}
+0&0&0\\
+2&0&0\\
+2&3&1
+\end{array}\right]  $
+$\left [\begin{array}{rrr} x\\ y\\ z \end{array}\right]$ = 
+$\left [\begin{array}{rrr} 0\\ 0\\ 0 \end{array}\right]$
+$  \rightarrow $
+$\lbrace z= - 3y, v =  [ \begin{array}{rrr} 0\\ y\\ -3y \end{array}\rbrace$ \\
+
+$(T- I) = \left [\begin{array}{rrr}
+0&0&0\\
+2&0&0\\
+2&3&1
+\end{array}\right] $
+$\left [\begin{array}{rrr} x\\ y\\ z \end{array}\right] $=
+$ \lambda \left [\begin{array}{rrr} 0\\ 1\\-3 \end{array}\right]$
+$ \rightarrow $
+$\lbrace y = z = -1, 2x = 1, x = 0,5, 2x+3y+z = -3 \rbrace$\\
+
+(T- I)v =$\lambda V_1$ \\
+
+T(v) =$ v + \lambda v_1$ \\
+
+$\left [\begin{array}{rrr} 1&0&0\\ 2&1&0\\ 2&3&2 \end{array}\right]$
+$\left [\begin{array}{rrr} 0\\1\\ -3 \end{array}\right]$ = 
+$\left [\begin{array}{rrr}
+0\\
+1\\
+-3
+\end{array}\right]$ =
+
+ $\left [\begin{array}{rrr}
+0\\
+1\\
+-3
+\end{array}\right]$ \\
+
+$\left [\begin{array}{rrr}
+1&0&0\\
+2&1&0\\
+2&3&2
+\end{array}\right]$ 
+
+$\left [\begin{array}{rrr}
+0,5\\
+-1\\
+-1
+\end{array}\right]$ =
+
+ $\left [\begin{array}{rrr}
+0,5\\
+1\\
+-3
+\end{array}\right] $ = 
+$\left [\begin{array}{rrr}
+0\\
+1\\
+-3
+\end{array}\right]$ + 
+$\left [\begin{array}{rrr}
+0,5\\
+-1\\
+-1
+\end{array}\right]$\\
+
+$\left [\begin{array}{rrr}
+1&0&0\\
+2&1&0\\
+2&3&2
+\end{array}\right]$
+$ \left [\begin{array}{rrr}
+0\\
+0\\
+1
+\end{array}\right] $ = 
+$\left [\begin{array}{rrr}
+0\\
+0\\
+2
+\end{array}\right] $= 2 
+$\left [\begin{array}{rrr}
+0\\
+0\\
+1
+\end{array}\right]$ \\
+
+$T_\beta^\beta = \left [\begin{array}{rrr}
+(1&1)&0\\
+(0&1)&0\\
+0&0&2
+\end{array}\right]$ \ \ Jordan \\
+
+\chapter{Produto Interno }
+\section{Produto Interno}
+\textbf{4)}
+I)
+$\left <ax+b,ax+b \right > = {a^2\over3} +ab + b^2 = b^2 + 2b{a\over 2} + ({a\over2})^2 - ({a\over2})^2 + {a^2\over 3} = (b+ {a\over2})^2 + {a^2\over 12} \ge 0 $\\
+
+$\left <  ax + b, ax+b \right > = 0 \rightarrow\left \{ b+ {a\over2} = 0 <=> b = 0, a = 0\right \}$ \\
+
+II)$ \left < \lambda (ax+b), cx+d \right > = {\lambda ac\over 3} + {\lambda bc\over2} + {\lambda ad\over 2} + \lambda bd = \lambda ( {ac\over3} + {bc\over} + {ad\over} + bd) = \lambda \left < v,w \right >$ \\
+
+III) $\left < v+w, u \right > = \left < (a+c)x +b+d,ex+f \right > = {(a+c)e\over} + {(a+c)f\over2} + {e(b+d)\over2} + (b+d)f = {ae\over3}+{ce\over3}+{af\over2}+ {cf\over2}+ {eb\over2}+{ed\over2} + bf +df = \left < v, u \right > + \left < w,u \right >$ \\
+
+IV)$ \left <v,w \right> = {ac\over3}+ {bc\over2} + {ad\over2} +bd = {ca\over3} + {cb\over2} + {da\over2} + db = \left < w,v \right >$ \\
+
+$cos \theta = {\left < v,w \right >\over \left | v \right | \left | w \right |} $\\
+
+$\left < ax+b,cx+d \right >$ = $\displaystyle \int_{0}^{1} (ax+b)(cx+d)dx = \displaystyle \int_{0}^{1} acx^2 + bcx + adx + bddx = ({acx^3 \over3} + {bcx^2 \over2} + {adx^2 \over2} + bdx) _a^b = {ac\over3} + {bc\over2} + {ad\over2} +bd  $
+
+\section{Ortogonalizacao}
+
+
+\end{document}

@@ -1,0 +1,12 @@
+|lab4-2
+XmenorY <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+X => inst3.IN0
+X => inst6.IN0
+X => inst.IN0
+Y => inst2.IN1
+Y => inst6.IN1
+Y => inst4.IN0
+XigualY <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+XmaiorY <= inst.DB_MAX_OUTPUT_PORT_TYPE
+
+

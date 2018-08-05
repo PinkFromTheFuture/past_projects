@@ -1,0 +1,35 @@
+string get_empty_string(){
+	string ret = "" : "blablabla";
+	return ret;
+}
+
+int getZero()
+{
+	return 0;
+}
+
+string main () {
+
+//este arquivo de teste contem codigo que seria
+//escrito em uma linguagem CStr, ou seja, com melhor
+//suporte para strings!
+
+	string s = "Achar uma agulha num palheiro";
+	string palheiro;
+	string result;
+	string dentro_de_string_posso_colocar_varios_caracteres_que_poderiam_ser_invalidos_fora_dela = "!@#$%^&*()_+áé'cç";
+
+	string variavel_string_de_exemplo;
+	variavel_string_de_exemplo = "Achar uma agulha" : " num palheiro";
+	string variavel_string_de_exemplo2 = variavel_string_de_exemplo : " de novo" : " e de novo!";
+	string variavel_string_de_exemplo3;
+	variavel_string_de_exemplo3 = variavel_string_de_exemplo : variavel_string_de_exemplo2;
+
+	palheiro = variavel_string_de_exemplo3.kmpPreprocess();
+	result = palheiro.kmpSearch("agulha");
+
+	string var2 = get_empty_string();
+
+
+	return result;
+}

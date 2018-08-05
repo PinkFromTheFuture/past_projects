@@ -1,0 +1,36 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 7.164 ns
+From           : 74161:inst9|f74161:sub|9
+To             : overflow
+From Clock     : clockContador
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clockContador'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 420.17 MHz ( period = 2.380 ns )
+From           : 74161:inst9|f74161:sub|99
+To             : 74161:inst9|f74161:sub|9
+From Clock     : clockContador
+To Clock       : clockContador
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

@@ -1,0 +1,12 @@
+*** LISTAGEM DE IMOVEIS PARA VENDA ***
+
+TIPO	CODIGO	ENDERECO				PRECO
+1 	981     sqs 202 bloco a apto 302                800000.00
+1 	504     SQSW 300 bloco L apto 106               743000.00
+1 	561     sqn  415 bloco B apto 101               550000.00
+1 	117     SHTQ quadra 3 lote 2                    270000.00
+1 	2       2                                       2.00
+2 	114     SHIS QL 12 CJ 3 CASA 5                  990000.00
+2 	699     SHIN QI 5 cj 2 casa 18                  880000.00
+2 	230     SHIN QL 12 cj 8 casa 9                  790000.00
+4 	229     sq  315 bloco d                         230000.00

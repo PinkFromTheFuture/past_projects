@@ -1,0 +1,2116 @@
+Grammar
+
+    0 $accept: tac_program $end
+
+    1 tac_program: table_block code_block
+    2            | code_block
+
+    3 table_block: EOL table_block
+    4            | ".table" symbol_list
+
+    5 symbol_list: %empty
+    6            | symbol_list symbol
+    7            | symbol_list EOL
+
+    8 symbol: name_and_type EOL
+    9       | name_and_type '=' constant EOL
+   10       | name_and_type arr_size EOL
+   11       | name_and_type '[' ']' '=' arr_constant EOL
+   12       | name_and_type arr_size '=' arr_constant EOL
+
+   13 name_and_type: type "identifier"
+
+   14 type: CHAR
+   15     | INT
+   16     | FLOAT
+
+   17 constant: "integer constant"
+   18         | "char constant"
+   19         | "float constant"
+
+   20 arr_size: '[' "integer constant" ']'
+
+   21 arr_constant: "literal"
+   22             | '{' constant_list '}'
+
+   23 constant_list: constant
+   24              | constant_list ',' constant
+
+   25 code_block: ".code" instruction_list
+
+   26 instruction_list: %empty
+   27                 | instruction_list EOL
+   28                 | instruction_list instruction EOL
+
+   29 instruction: label cmd
+   30            | cmd
+
+   31 label: "identifier" ':' empty_lines
+
+   32 empty_lines: %empty
+   33            | empty_lines EOL
+
+   34 cmd: binary_operation
+   35    | unary_operation
+   36    | assignment
+   37    | single_operand_cmd
+   38    | mema
+   39    | branch
+   40    | call
+   41    | ret
+
+   42 addressable: "identifier"
+   43            | "param_ref"
+
+   44 target: addressable
+   45       | "temp_ref"
+
+   46 operand: target
+   47        | "special reg"
+   48        | constant
+
+   49 binary_operation: binary_opname target ',' operand ',' operand
+
+   50 binary_opname: ADD
+   51              | SUB
+   52              | MUL
+   53              | DIV
+   54              | AND
+   55              | OR
+   56              | BAND
+   57              | BOR
+   58              | BXOR
+   59              | SHL
+   60              | SHR
+   61              | MOD
+   62              | SEQ
+   63              | SLT
+   64              | SLEQ
+
+   65 unary_operation: unary_opname target ',' operand
+
+   66 unary_opname: MINUS
+   67             | NOT
+   68             | BNOT
+   69             | CHTOINT
+   70             | CHTOFL
+   71             | INTTOFL
+   72             | INTTOCH
+   73             | FLTOINT
+   74             | FLTOCH
+
+   75 assignment: MOV target ',' operand
+   76           | MOV target ',' '*' target
+   77           | MOV target ',' '&' addressable
+   78           | MOV '@' addressable ',' '&' addressable
+   79           | MOV target ',' target '[' operand ']'
+   80           | MOV '*' target ',' operand
+   81           | MOV '*' target ',' '*' target
+   82           | MOV '*' target ',' '&' addressable
+   83           | MOV '*' target ',' target '[' operand ']'
+   84           | MOV target '[' operand ']' ',' operand
+   85           | MOV target '[' operand ']' ',' '*' target
+   86           | MOV target '[' operand ']' ',' '&' addressable
+
+   87 single_operand_cmd: JUMP operand
+   88                   | PARAM operand
+   89                   | PRINT operand
+   90                   | PRINTLN
+   91                   | PRINTLN operand
+   92                   | SCANC target
+   93                   | SCANI target
+   94                   | SCANF target
+   95                   | MEMF operand
+   96                   | PUSH operand
+   97                   | POP target
+   98                   | RAND target
+
+   99 mema: MEMA target ',' operand
+
+  100 branch: BRZ operand ',' operand
+  101       | BRNZ operand ',' operand
+
+  102 call: CALL operand
+  103     | CALL operand ',' "integer constant"
+
+  104 ret: RETURN
+  105    | RETURN operand
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+'&' (38) 77 78 82 86
+'*' (42) 76 80 81 82 83 85
+',' (44) 24 49 65 75 76 77 78 79 80 81 82 83 84 85 86 99 100 101 103
+':' (58) 31
+'=' (61) 9 11 12
+'@' (64) 78
+'[' (91) 11 20 79 83 84 85 86
+']' (93) 11 20 79 83 84 85 86
+'{' (123) 22
+'}' (125) 22
+error (256)
+"identifier" (258) 13 31 42
+"temp_ref" (259) 45
+"special reg" (260) 47
+"param_ref" (261) 43
+"integer constant" (262) 17 20 103
+"char constant" (263) 18
+"float constant" (264) 19
+"literal" (265) 21
+".table" (266) 4
+".code" (267) 25
+CHAR (268) 14
+INT (269) 15
+FLOAT (270) 16
+ADD (271) 50
+SUB (272) 51
+MUL (273) 52
+DIV (274) 53
+AND (275) 54
+OR (276) 55
+BAND (277) 56
+BOR (278) 57
+BXOR (279) 58
+SHL (280) 59
+SHR (281) 60
+MOD (282) 61
+SEQ (283) 62
+SLT (284) 63
+SLEQ (285) 64
+MINUS (286) 66
+NOT (287) 67
+BNOT (288) 68
+CHTOINT (289) 69
+CHTOFL (290) 70
+INTTOFL (291) 71
+INTTOCH (292) 72
+FLTOINT (293) 73
+FLTOCH (294) 74
+BRZ (295) 100
+BRNZ (296) 101
+MOV (297) 75 76 77 78 79 80 81 82 83 84 85 86
+JUMP (298) 87
+PARAM (299) 88
+PRINT (300) 89
+PRINTLN (301) 90 91
+SCANC (302) 92
+SCANI (303) 93
+SCANF (304) 94
+MEMA (305) 99
+MEMF (306) 95
+RAND (307) 98
+CALL (308) 102 103
+RETURN (309) 104 105
+PUSH (310) 96
+POP (311) 97
+EOL (312) 3 7 8 9 10 11 12 27 28 33
+
+
+Nonterminals, with rules where they appear
+
+$accept (68)
+    on left: 0
+tac_program (69)
+    on left: 1 2, on right: 0
+table_block (70)
+    on left: 3 4, on right: 1 3
+symbol_list (71)
+    on left: 5 6 7, on right: 4 6 7
+symbol (72)
+    on left: 8 9 10 11 12, on right: 6
+name_and_type (73)
+    on left: 13, on right: 8 9 10 11 12
+type (74)
+    on left: 14 15 16, on right: 13
+constant (75)
+    on left: 17 18 19, on right: 9 23 24 48
+arr_size (76)
+    on left: 20, on right: 10 12
+arr_constant (77)
+    on left: 21 22, on right: 11 12
+constant_list (78)
+    on left: 23 24, on right: 22 24
+code_block (79)
+    on left: 25, on right: 1 2
+instruction_list (80)
+    on left: 26 27 28, on right: 25 27 28
+instruction (81)
+    on left: 29 30, on right: 28
+label (82)
+    on left: 31, on right: 29
+empty_lines (83)
+    on left: 32 33, on right: 31 33
+cmd (84)
+    on left: 34 35 36 37 38 39 40 41, on right: 29 30
+addressable (85)
+    on left: 42 43, on right: 44 77 78 82 86
+target (86)
+    on left: 44 45, on right: 46 49 65 75 76 77 79 80 81 82 83 84 85
+    86 92 93 94 97 98 99
+operand (87)
+    on left: 46 47 48, on right: 49 65 75 79 80 83 84 85 86 87 88 89
+    91 95 96 99 100 101 102 103 105
+binary_operation (88)
+    on left: 49, on right: 34
+binary_opname (89)
+    on left: 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64, on right:
+    49
+unary_operation (90)
+    on left: 65, on right: 35
+unary_opname (91)
+    on left: 66 67 68 69 70 71 72 73 74, on right: 65
+assignment (92)
+    on left: 75 76 77 78 79 80 81 82 83 84 85 86, on right: 36
+single_operand_cmd (93)
+    on left: 87 88 89 90 91 92 93 94 95 96 97 98, on right: 37
+mema (94)
+    on left: 99, on right: 38
+branch (95)
+    on left: 100 101, on right: 39
+call (96)
+    on left: 102 103, on right: 40
+ret (97)
+    on left: 104 105, on right: 41
+
+
+State 0
+
+    0 $accept: . tac_program $end
+
+    ".table"  shift, and go to state 1
+    ".code"   shift, and go to state 2
+    EOL       shift, and go to state 3
+
+    tac_program  go to state 4
+    table_block  go to state 5
+    code_block   go to state 6
+
+
+State 1
+
+    4 table_block: ".table" . symbol_list
+
+    $default  reduce using rule 5 (symbol_list)
+
+    symbol_list  go to state 7
+
+
+State 2
+
+   25 code_block: ".code" . instruction_list
+
+    $default  reduce using rule 26 (instruction_list)
+
+    instruction_list  go to state 8
+
+
+State 3
+
+    3 table_block: EOL . table_block
+
+    ".table"  shift, and go to state 1
+    EOL       shift, and go to state 3
+
+    table_block  go to state 9
+
+
+State 4
+
+    0 $accept: tac_program . $end
+
+    $end  shift, and go to state 10
+
+
+State 5
+
+    1 tac_program: table_block . code_block
+
+    ".code"  shift, and go to state 2
+
+    code_block  go to state 11
+
+
+State 6
+
+    2 tac_program: code_block .
+
+    $default  reduce using rule 2 (tac_program)
+
+
+State 7
+
+    4 table_block: ".table" symbol_list .
+    6 symbol_list: symbol_list . symbol
+    7            | symbol_list . EOL
+
+    CHAR   shift, and go to state 12
+    INT    shift, and go to state 13
+    FLOAT  shift, and go to state 14
+    EOL    shift, and go to state 15
+
+    $default  reduce using rule 4 (table_block)
+
+    symbol         go to state 16
+    name_and_type  go to state 17
+    type           go to state 18
+
+
+State 8
+
+   25 code_block: ".code" instruction_list .
+   27 instruction_list: instruction_list . EOL
+   28                 | instruction_list . instruction EOL
+
+    "identifier"  shift, and go to state 19
+    ADD           shift, and go to state 20
+    SUB           shift, and go to state 21
+    MUL           shift, and go to state 22
+    DIV           shift, and go to state 23
+    AND           shift, and go to state 24
+    OR            shift, and go to state 25
+    BAND          shift, and go to state 26
+    BOR           shift, and go to state 27
+    BXOR          shift, and go to state 28
+    SHL           shift, and go to state 29
+    SHR           shift, and go to state 30
+    MOD           shift, and go to state 31
+    SEQ           shift, and go to state 32
+    SLT           shift, and go to state 33
+    SLEQ          shift, and go to state 34
+    MINUS         shift, and go to state 35
+    NOT           shift, and go to state 36
+    BNOT          shift, and go to state 37
+    CHTOINT       shift, and go to state 38
+    CHTOFL        shift, and go to state 39
+    INTTOFL       shift, and go to state 40
+    INTTOCH       shift, and go to state 41
+    FLTOINT       shift, and go to state 42
+    FLTOCH        shift, and go to state 43
+    BRZ           shift, and go to state 44
+    BRNZ          shift, and go to state 45
+    MOV           shift, and go to state 46
+    JUMP          shift, and go to state 47
+    PARAM         shift, and go to state 48
+    PRINT         shift, and go to state 49
+    PRINTLN       shift, and go to state 50
+    SCANC         shift, and go to state 51
+    SCANI         shift, and go to state 52
+    SCANF         shift, and go to state 53
+    MEMA          shift, and go to state 54
+    MEMF          shift, and go to state 55
+    RAND          shift, and go to state 56
+    CALL          shift, and go to state 57
+    RETURN        shift, and go to state 58
+    PUSH          shift, and go to state 59
+    POP           shift, and go to state 60
+    EOL           shift, and go to state 61
+
+    $default  reduce using rule 25 (code_block)
+
+    instruction         go to state 62
+    label               go to state 63
+    cmd                 go to state 64
+    binary_operation    go to state 65
+    binary_opname       go to state 66
+    unary_operation     go to state 67
+    unary_opname        go to state 68
+    assignment          go to state 69
+    single_operand_cmd  go to state 70
+    mema                go to state 71
+    branch              go to state 72
+    call                go to state 73
+    ret                 go to state 74
+
+
+State 9
+
+    3 table_block: EOL table_block .
+
+    $default  reduce using rule 3 (table_block)
+
+
+State 10
+
+    0 $accept: tac_program $end .
+
+    $default  accept
+
+
+State 11
+
+    1 tac_program: table_block code_block .
+
+    $default  reduce using rule 1 (tac_program)
+
+
+State 12
+
+   14 type: CHAR .
+
+    $default  reduce using rule 14 (type)
+
+
+State 13
+
+   15 type: INT .
+
+    $default  reduce using rule 15 (type)
+
+
+State 14
+
+   16 type: FLOAT .
+
+    $default  reduce using rule 16 (type)
+
+
+State 15
+
+    7 symbol_list: symbol_list EOL .
+
+    $default  reduce using rule 7 (symbol_list)
+
+
+State 16
+
+    6 symbol_list: symbol_list symbol .
+
+    $default  reduce using rule 6 (symbol_list)
+
+
+State 17
+
+    8 symbol: name_and_type . EOL
+    9       | name_and_type . '=' constant EOL
+   10       | name_and_type . arr_size EOL
+   11       | name_and_type . '[' ']' '=' arr_constant EOL
+   12       | name_and_type . arr_size '=' arr_constant EOL
+
+    EOL  shift, and go to state 75
+    '='  shift, and go to state 76
+    '['  shift, and go to state 77
+
+    arr_size  go to state 78
+
+
+State 18
+
+   13 name_and_type: type . "identifier"
+
+    "identifier"  shift, and go to state 79
+
+
+State 19
+
+   31 label: "identifier" . ':' empty_lines
+
+    ':'  shift, and go to state 80
+
+
+State 20
+
+   50 binary_opname: ADD .
+
+    $default  reduce using rule 50 (binary_opname)
+
+
+State 21
+
+   51 binary_opname: SUB .
+
+    $default  reduce using rule 51 (binary_opname)
+
+
+State 22
+
+   52 binary_opname: MUL .
+
+    $default  reduce using rule 52 (binary_opname)
+
+
+State 23
+
+   53 binary_opname: DIV .
+
+    $default  reduce using rule 53 (binary_opname)
+
+
+State 24
+
+   54 binary_opname: AND .
+
+    $default  reduce using rule 54 (binary_opname)
+
+
+State 25
+
+   55 binary_opname: OR .
+
+    $default  reduce using rule 55 (binary_opname)
+
+
+State 26
+
+   56 binary_opname: BAND .
+
+    $default  reduce using rule 56 (binary_opname)
+
+
+State 27
+
+   57 binary_opname: BOR .
+
+    $default  reduce using rule 57 (binary_opname)
+
+
+State 28
+
+   58 binary_opname: BXOR .
+
+    $default  reduce using rule 58 (binary_opname)
+
+
+State 29
+
+   59 binary_opname: SHL .
+
+    $default  reduce using rule 59 (binary_opname)
+
+
+State 30
+
+   60 binary_opname: SHR .
+
+    $default  reduce using rule 60 (binary_opname)
+
+
+State 31
+
+   61 binary_opname: MOD .
+
+    $default  reduce using rule 61 (binary_opname)
+
+
+State 32
+
+   62 binary_opname: SEQ .
+
+    $default  reduce using rule 62 (binary_opname)
+
+
+State 33
+
+   63 binary_opname: SLT .
+
+    $default  reduce using rule 63 (binary_opname)
+
+
+State 34
+
+   64 binary_opname: SLEQ .
+
+    $default  reduce using rule 64 (binary_opname)
+
+
+State 35
+
+   66 unary_opname: MINUS .
+
+    $default  reduce using rule 66 (unary_opname)
+
+
+State 36
+
+   67 unary_opname: NOT .
+
+    $default  reduce using rule 67 (unary_opname)
+
+
+State 37
+
+   68 unary_opname: BNOT .
+
+    $default  reduce using rule 68 (unary_opname)
+
+
+State 38
+
+   69 unary_opname: CHTOINT .
+
+    $default  reduce using rule 69 (unary_opname)
+
+
+State 39
+
+   70 unary_opname: CHTOFL .
+
+    $default  reduce using rule 70 (unary_opname)
+
+
+State 40
+
+   71 unary_opname: INTTOFL .
+
+    $default  reduce using rule 71 (unary_opname)
+
+
+State 41
+
+   72 unary_opname: INTTOCH .
+
+    $default  reduce using rule 72 (unary_opname)
+
+
+State 42
+
+   73 unary_opname: FLTOINT .
+
+    $default  reduce using rule 73 (unary_opname)
+
+
+State 43
+
+   74 unary_opname: FLTOCH .
+
+    $default  reduce using rule 74 (unary_opname)
+
+
+State 44
+
+  100 branch: BRZ . operand ',' operand
+
+    "identifier"        shift, and go to state 81
+    "temp_ref"          shift, and go to state 82
+    "special reg"       shift, and go to state 83
+    "param_ref"         shift, and go to state 84
+    "integer constant"  shift, and go to state 85
+    "char constant"     shift, and go to state 86
+    "float constant"    shift, and go to state 87
+
+    constant     go to state 88
+    addressable  go to state 89
+    target       go to state 90
+    operand      go to state 91
+
+
+State 45
+
+  101 branch: BRNZ . operand ',' operand
+
+    "identifier"        shift, and go to state 81
+    "temp_ref"          shift, and go to state 82
+    "special reg"       shift, and go to state 83
+    "param_ref"         shift, and go to state 84
+    "integer constant"  shift, and go to state 85
+    "char constant"     shift, and go to state 86
+    "float constant"    shift, and go to state 87
+
+    constant     go to state 88
+    addressable  go to state 89
+    target       go to state 90
+    operand      go to state 92
+
+
+State 46
+
+   75 assignment: MOV . target ',' operand
+   76           | MOV . target ',' '*' target
+   77           | MOV . target ',' '&' addressable
+   78           | MOV . '@' addressable ',' '&' addressable
+   79           | MOV . target ',' target '[' operand ']'
+   80           | MOV . '*' target ',' operand
+   81           | MOV . '*' target ',' '*' target
+   82           | MOV . '*' target ',' '&' addressable
+   83           | MOV . '*' target ',' target '[' operand ']'
+   84           | MOV . target '[' operand ']' ',' operand
+   85           | MOV . target '[' operand ']' ',' '*' target
+   86           | MOV . target '[' operand ']' ',' '&' addressable
+
+    "identifier"  shift, and go to state 81
+    "temp_ref"    shift, and go to state 82
+    "param_ref"   shift, and go to state 84
+    '*'           shift, and go to state 93
+    '@'           shift, and go to state 94
+
+    addressable  go to state 89
+    target       go to state 95
+
+
+State 47
+
+   87 single_operand_cmd: JUMP . operand
+
+    "identifier"        shift, and go to state 81
+    "temp_ref"          shift, and go to state 82
+    "special reg"       shift, and go to state 83
+    "param_ref"         shift, and go to state 84
+    "integer constant"  shift, and go to state 85
+    "char constant"     shift, and go to state 86
+    "float constant"    shift, and go to state 87
+
+    constant     go to state 88
+    addressable  go to state 89
+    target       go to state 90
+    operand      go to state 96
+
+
+State 48
+
+   88 single_operand_cmd: PARAM . operand
+
+    "identifier"        shift, and go to state 81
+    "temp_ref"          shift, and go to state 82
+    "special reg"       shift, and go to state 83
+    "param_ref"         shift, and go to state 84
+    "integer constant"  shift, and go to state 85
+    "char constant"     shift, and go to state 86
+    "float constant"    shift, and go to state 87
+
+    constant     go to state 88
+    addressable  go to state 89
+    target       go to state 90
+    operand      go to state 97
+
+
+State 49
+
+   89 single_operand_cmd: PRINT . operand
+
+    "identifier"        shift, and go to state 81
+    "temp_ref"          shift, and go to state 82
+    "special reg"       shift, and go to state 83
+    "param_ref"         shift, and go to state 84
+    "integer constant"  shift, and go to state 85
+    "char constant"     shift, and go to state 86
+    "float constant"    shift, and go to state 87
+
+    constant     go to state 88
+    addressable  go to state 89
+    target       go to state 90
+    operand      go to state 98
+
+
+State 50
+
+   90 single_operand_cmd: PRINTLN .
+   91                   | PRINTLN . operand
+
+    "identifier"        shift, and go to state 81
+    "temp_ref"          shift, and go to state 82
+    "special reg"       shift, and go to state 83
+    "param_ref"         shift, and go to state 84
+    "integer constant"  shift, and go to state 85
+    "char constant"     shift, and go to state 86
+    "float constant"    shift, and go to state 87
+
+    $default  reduce using rule 90 (single_operand_cmd)
+
+    constant     go to state 88
+    addressable  go to state 89
+    target       go to state 90
+    operand      go to state 99
+
+
+State 51
+
+   92 single_operand_cmd: SCANC . target
+
+    "identifier"  shift, and go to state 81
+    "temp_ref"    shift, and go to state 82
+    "param_ref"   shift, and go to state 84
+
+    addressable  go to state 89
+    target       go to state 100
+
+
+State 52
+
+   93 single_operand_cmd: SCANI . target
+
+    "identifier"  shift, and go to state 81
+    "temp_ref"    shift, and go to state 82
+    "param_ref"   shift, and go to state 84
+
+    addressable  go to state 89
+    target       go to state 101
+
+
+State 53
+
+   94 single_operand_cmd: SCANF . target
+
+    "identifier"  shift, and go to state 81
+    "temp_ref"    shift, and go to state 82
+    "param_ref"   shift, and go to state 84
+
+    addressable  go to state 89
+    target       go to state 102
+
+
+State 54
+
+   99 mema: MEMA . target ',' operand
+
+    "identifier"  shift, and go to state 81
+    "temp_ref"    shift, and go to state 82
+    "param_ref"   shift, and go to state 84
+
+    addressable  go to state 89
+    target       go to state 103
+
+
+State 55
+
+   95 single_operand_cmd: MEMF . operand
+
+    "identifier"        shift, and go to state 81
+    "temp_ref"          shift, and go to state 82
+    "special reg"       shift, and go to state 83
+    "param_ref"         shift, and go to state 84
+    "integer constant"  shift, and go to state 85
+    "char constant"     shift, and go to state 86
+    "float constant"    shift, and go to state 87
+
+    constant     go to state 88
+    addressable  go to state 89
+    target       go to state 90
+    operand      go to state 104
+
+
+State 56
+
+   98 single_operand_cmd: RAND . target
+
+    "identifier"  shift, and go to state 81
+    "temp_ref"    shift, and go to state 82
+    "param_ref"   shift, and go to state 84
+
+    addressable  go to state 89
+    target       go to state 105
+
+
+State 57
+
+  102 call: CALL . operand
+  103     | CALL . operand ',' "integer constant"
+
+    "identifier"        shift, and go to state 81
+    "temp_ref"          shift, and go to state 82
+    "special reg"       shift, and go to state 83
+    "param_ref"         shift, and go to state 84
+    "integer constant"  shift, and go to state 85
+    "char constant"     shift, and go to state 86
+    "float constant"    shift, and go to state 87
+
+    constant     go to state 88
+    addressable  go to state 89
+    target       go to state 90
+    operand      go to state 106
+
+
+State 58
+
+  104 ret: RETURN .
+  105    | RETURN . operand
+
+    "identifier"        shift, and go to state 81
+    "temp_ref"          shift, and go to state 82
+    "special reg"       shift, and go to state 83
+    "param_ref"         shift, and go to state 84
+    "integer constant"  shift, and go to state 85
+    "char constant"     shift, and go to state 86
+    "float constant"    shift, and go to state 87
+
+    $default  reduce using rule 104 (ret)
+
+    constant     go to state 88
+    addressable  go to state 89
+    target       go to state 90
+    operand      go to state 107
+
+
+State 59
+
+   96 single_operand_cmd: PUSH . operand
+
+    "identifier"        shift, and go to state 81
+    "temp_ref"          shift, and go to state 82
+    "special reg"       shift, and go to state 83
+    "param_ref"         shift, and go to state 84
+    "integer constant"  shift, and go to state 85
+    "char constant"     shift, and go to state 86
+    "float constant"    shift, and go to state 87
+
+    constant     go to state 88
+    addressable  go to state 89
+    target       go to state 90
+    operand      go to state 108
+
+
+State 60
+
+   97 single_operand_cmd: POP . target
+
+    "identifier"  shift, and go to state 81
+    "temp_ref"    shift, and go to state 82
+    "param_ref"   shift, and go to state 84
+
+    addressable  go to state 89
+    target       go to state 109
+
+
+State 61
+
+   27 instruction_list: instruction_list EOL .
+
+    $default  reduce using rule 27 (instruction_list)
+
+
+State 62
+
+   28 instruction_list: instruction_list instruction . EOL
+
+    EOL  shift, and go to state 110
+
+
+State 63
+
+   29 instruction: label . cmd
+
+    ADD      shift, and go to state 20
+    SUB      shift, and go to state 21
+    MUL      shift, and go to state 22
+    DIV      shift, and go to state 23
+    AND      shift, and go to state 24
+    OR       shift, and go to state 25
+    BAND     shift, and go to state 26
+    BOR      shift, and go to state 27
+    BXOR     shift, and go to state 28
+    SHL      shift, and go to state 29
+    SHR      shift, and go to state 30
+    MOD      shift, and go to state 31
+    SEQ      shift, and go to state 32
+    SLT      shift, and go to state 33
+    SLEQ     shift, and go to state 34
+    MINUS    shift, and go to state 35
+    NOT      shift, and go to state 36
+    BNOT     shift, and go to state 37
+    CHTOINT  shift, and go to state 38
+    CHTOFL   shift, and go to state 39
+    INTTOFL  shift, and go to state 40
+    INTTOCH  shift, and go to state 41
+    FLTOINT  shift, and go to state 42
+    FLTOCH   shift, and go to state 43
+    BRZ      shift, and go to state 44
+    BRNZ     shift, and go to state 45
+    MOV      shift, and go to state 46
+    JUMP     shift, and go to state 47
+    PARAM    shift, and go to state 48
+    PRINT    shift, and go to state 49
+    PRINTLN  shift, and go to state 50
+    SCANC    shift, and go to state 51
+    SCANI    shift, and go to state 52
+    SCANF    shift, and go to state 53
+    MEMA     shift, and go to state 54
+    MEMF     shift, and go to state 55
+    RAND     shift, and go to state 56
+    CALL     shift, and go to state 57
+    RETURN   shift, and go to state 58
+    PUSH     shift, and go to state 59
+    POP      shift, and go to state 60
+
+    cmd                 go to state 111
+    binary_operation    go to state 65
+    binary_opname       go to state 66
+    unary_operation     go to state 67
+    unary_opname        go to state 68
+    assignment          go to state 69
+    single_operand_cmd  go to state 70
+    mema                go to state 71
+    branch              go to state 72
+    call                go to state 73
+    ret                 go to state 74
+
+
+State 64
+
+   30 instruction: cmd .
+
+    $default  reduce using rule 30 (instruction)
+
+
+State 65
+
+   34 cmd: binary_operation .
+
+    $default  reduce using rule 34 (cmd)
+
+
+State 66
+
+   49 binary_operation: binary_opname . target ',' operand ',' operand
+
+    "identifier"  shift, and go to state 81
+    "temp_ref"    shift, and go to state 82
+    "param_ref"   shift, and go to state 84
+
+    addressable  go to state 89
+    target       go to state 112
+
+
+State 67
+
+   35 cmd: unary_operation .
+
+    $default  reduce using rule 35 (cmd)
+
+
+State 68
+
+   65 unary_operation: unary_opname . target ',' operand
+
+    "identifier"  shift, and go to state 81
+    "temp_ref"    shift, and go to state 82
+    "param_ref"   shift, and go to state 84
+
+    addressable  go to state 89
+    target       go to state 113
+
+
+State 69
+
+   36 cmd: assignment .
+
+    $default  reduce using rule 36 (cmd)
+
+
+State 70
+
+   37 cmd: single_operand_cmd .
+
+    $default  reduce using rule 37 (cmd)
+
+
+State 71
+
+   38 cmd: mema .
+
+    $default  reduce using rule 38 (cmd)
+
+
+State 72
+
+   39 cmd: branch .
+
+    $default  reduce using rule 39 (cmd)
+
+
+State 73
+
+   40 cmd: call .
+
+    $default  reduce using rule 40 (cmd)
+
+
+State 74
+
+   41 cmd: ret .
+
+    $default  reduce using rule 41 (cmd)
+
+
+State 75
+
+    8 symbol: name_and_type EOL .
+
+    $default  reduce using rule 8 (symbol)
+
+
+State 76
+
+    9 symbol: name_and_type '=' . constant EOL
+
+    "integer constant"  shift, and go to state 85
+    "char constant"     shift, and go to state 86
+    "float constant"    shift, and go to state 87
+
+    constant  go to state 114
+
+
+State 77
+
+   11 symbol: name_and_type '[' . ']' '=' arr_constant EOL
+   20 arr_size: '[' . "integer constant" ']'
+
+    "integer constant"  shift, and go to state 115
+    ']'                 shift, and go to state 116
+
+
+State 78
+
+   10 symbol: name_and_type arr_size . EOL
+   12       | name_and_type arr_size . '=' arr_constant EOL
+
+    EOL  shift, and go to state 117
+    '='  shift, and go to state 118
+
+
+State 79
+
+   13 name_and_type: type "identifier" .
+
+    $default  reduce using rule 13 (name_and_type)
+
+
+State 80
+
+   31 label: "identifier" ':' . empty_lines
+
+    $default  reduce using rule 32 (empty_lines)
+
+    empty_lines  go to state 119
+
+
+State 81
+
+   42 addressable: "identifier" .
+
+    $default  reduce using rule 42 (addressable)
+
+
+State 82
+
+   45 target: "temp_ref" .
+
+    $default  reduce using rule 45 (target)
+
+
+State 83
+
+   47 operand: "special reg" .
+
+    $default  reduce using rule 47 (operand)
+
+
+State 84
+
+   43 addressable: "param_ref" .
+
+    $default  reduce using rule 43 (addressable)
+
+
+State 85
+
+   17 constant: "integer constant" .
+
+    $default  reduce using rule 17 (constant)
+
+
+State 86
+
+   18 constant: "char constant" .
+
+    $default  reduce using rule 18 (constant)
+
+
+State 87
+
+   19 constant: "float constant" .
+
+    $default  reduce using rule 19 (constant)
+
+
+State 88
+
+   48 operand: constant .
+
+    $default  reduce using rule 48 (operand)
+
+
+State 89
+
+   44 target: addressable .
+
+    $default  reduce using rule 44 (target)
+
+
+State 90
+
+   46 operand: target .
+
+    $default  reduce using rule 46 (operand)
+
+
+State 91
+
+  100 branch: BRZ operand . ',' operand
+
+    ','  shift, and go to state 120
+
+
+State 92
+
+  101 branch: BRNZ operand . ',' operand
+
+    ','  shift, and go to state 121
+
+
+State 93
+
+   80 assignment: MOV '*' . target ',' operand
+   81           | MOV '*' . target ',' '*' target
+   82           | MOV '*' . target ',' '&' addressable
+   83           | MOV '*' . target ',' target '[' operand ']'
+
+    "identifier"  shift, and go to state 81
+    "temp_ref"    shift, and go to state 82
+    "param_ref"   shift, and go to state 84
+
+    addressable  go to state 89
+    target       go to state 122
+
+
+State 94
+
+   78 assignment: MOV '@' . addressable ',' '&' addressable
+
+    "identifier"  shift, and go to state 81
+    "param_ref"   shift, and go to state 84
+
+    addressable  go to state 123
+
+
+State 95
+
+   75 assignment: MOV target . ',' operand
+   76           | MOV target . ',' '*' target
+   77           | MOV target . ',' '&' addressable
+   79           | MOV target . ',' target '[' operand ']'
+   84           | MOV target . '[' operand ']' ',' operand
+   85           | MOV target . '[' operand ']' ',' '*' target
+   86           | MOV target . '[' operand ']' ',' '&' addressable
+
+    '['  shift, and go to state 124
+    ','  shift, and go to state 125
+
+
+State 96
+
+   87 single_operand_cmd: JUMP operand .
+
+    $default  reduce using rule 87 (single_operand_cmd)
+
+
+State 97
+
+   88 single_operand_cmd: PARAM operand .
+
+    $default  reduce using rule 88 (single_operand_cmd)
+
+
+State 98
+
+   89 single_operand_cmd: PRINT operand .
+
+    $default  reduce using rule 89 (single_operand_cmd)
+
+
+State 99
+
+   91 single_operand_cmd: PRINTLN operand .
+
+    $default  reduce using rule 91 (single_operand_cmd)
+
+
+State 100
+
+   92 single_operand_cmd: SCANC target .
+
+    $default  reduce using rule 92 (single_operand_cmd)
+
+
+State 101
+
+   93 single_operand_cmd: SCANI target .
+
+    $default  reduce using rule 93 (single_operand_cmd)
+
+
+State 102
+
+   94 single_operand_cmd: SCANF target .
+
+    $default  reduce using rule 94 (single_operand_cmd)
+
+
+State 103
+
+   99 mema: MEMA target . ',' operand
+
+    ','  shift, and go to state 126
+
+
+State 104
+
+   95 single_operand_cmd: MEMF operand .
+
+    $default  reduce using rule 95 (single_operand_cmd)
+
+
+State 105
+
+   98 single_operand_cmd: RAND target .
+
+    $default  reduce using rule 98 (single_operand_cmd)
+
+
+State 106
+
+  102 call: CALL operand .
+  103     | CALL operand . ',' "integer constant"
+
+    ','  shift, and go to state 127
+
+    $default  reduce using rule 102 (call)
+
+
+State 107
+
+  105 ret: RETURN operand .
+
+    $default  reduce using rule 105 (ret)
+
+
+State 108
+
+   96 single_operand_cmd: PUSH operand .
+
+    $default  reduce using rule 96 (single_operand_cmd)
+
+
+State 109
+
+   97 single_operand_cmd: POP target .
+
+    $default  reduce using rule 97 (single_operand_cmd)
+
+
+State 110
+
+   28 instruction_list: instruction_list instruction EOL .
+
+    $default  reduce using rule 28 (instruction_list)
+
+
+State 111
+
+   29 instruction: label cmd .
+
+    $default  reduce using rule 29 (instruction)
+
+
+State 112
+
+   49 binary_operation: binary_opname target . ',' operand ',' operand
+
+    ','  shift, and go to state 128
+
+
+State 113
+
+   65 unary_operation: unary_opname target . ',' operand
+
+    ','  shift, and go to state 129
+
+
+State 114
+
+    9 symbol: name_and_type '=' constant . EOL
+
+    EOL  shift, and go to state 130
+
+
+State 115
+
+   20 arr_size: '[' "integer constant" . ']'
+
+    ']'  shift, and go to state 131
+
+
+State 116
+
+   11 symbol: name_and_type '[' ']' . '=' arr_constant EOL
+
+    '='  shift, and go to state 132
+
+
+State 117
+
+   10 symbol: name_and_type arr_size EOL .
+
+    $default  reduce using rule 10 (symbol)
+
+
+State 118
+
+   12 symbol: name_and_type arr_size '=' . arr_constant EOL
+
+    "literal"  shift, and go to state 133
+    '{'        shift, and go to state 134
+
+    arr_constant  go to state 135
+
+
+State 119
+
+   31 label: "identifier" ':' empty_lines .
+   33 empty_lines: empty_lines . EOL
+
+    EOL  shift, and go to state 136
+
+    $default  reduce using rule 31 (label)
+
+
+State 120
+
+  100 branch: BRZ operand ',' . operand
+
+    "identifier"        shift, and go to state 81
+    "temp_ref"          shift, and go to state 82
+    "special reg"       shift, and go to state 83
+    "param_ref"         shift, and go to state 84
+    "integer constant"  shift, and go to state 85
+    "char constant"     shift, and go to state 86
+    "float constant"    shift, and go to state 87
+
+    constant     go to state 88
+    addressable  go to state 89
+    target       go to state 90
+    operand      go to state 137
+
+
+State 121
+
+  101 branch: BRNZ operand ',' . operand
+
+    "identifier"        shift, and go to state 81
+    "temp_ref"          shift, and go to state 82
+    "special reg"       shift, and go to state 83
+    "param_ref"         shift, and go to state 84
+    "integer constant"  shift, and go to state 85
+    "char constant"     shift, and go to state 86
+    "float constant"    shift, and go to state 87
+
+    constant     go to state 88
+    addressable  go to state 89
+    target       go to state 90
+    operand      go to state 138
+
+
+State 122
+
+   80 assignment: MOV '*' target . ',' operand
+   81           | MOV '*' target . ',' '*' target
+   82           | MOV '*' target . ',' '&' addressable
+   83           | MOV '*' target . ',' target '[' operand ']'
+
+    ','  shift, and go to state 139
+
+
+State 123
+
+   78 assignment: MOV '@' addressable . ',' '&' addressable
+
+    ','  shift, and go to state 140
+
+
+State 124
+
+   84 assignment: MOV target '[' . operand ']' ',' operand
+   85           | MOV target '[' . operand ']' ',' '*' target
+   86           | MOV target '[' . operand ']' ',' '&' addressable
+
+    "identifier"        shift, and go to state 81
+    "temp_ref"          shift, and go to state 82
+    "special reg"       shift, and go to state 83
+    "param_ref"         shift, and go to state 84
+    "integer constant"  shift, and go to state 85
+    "char constant"     shift, and go to state 86
+    "float constant"    shift, and go to state 87
+
+    constant     go to state 88
+    addressable  go to state 89
+    target       go to state 90
+    operand      go to state 141
+
+
+State 125
+
+   75 assignment: MOV target ',' . operand
+   76           | MOV target ',' . '*' target
+   77           | MOV target ',' . '&' addressable
+   79           | MOV target ',' . target '[' operand ']'
+
+    "identifier"        shift, and go to state 81
+    "temp_ref"          shift, and go to state 82
+    "special reg"       shift, and go to state 83
+    "param_ref"         shift, and go to state 84
+    "integer constant"  shift, and go to state 85
+    "char constant"     shift, and go to state 86
+    "float constant"    shift, and go to state 87
+    '*'                 shift, and go to state 142
+    '&'                 shift, and go to state 143
+
+    constant     go to state 88
+    addressable  go to state 89
+    target       go to state 144
+    operand      go to state 145
+
+
+State 126
+
+   99 mema: MEMA target ',' . operand
+
+    "identifier"        shift, and go to state 81
+    "temp_ref"          shift, and go to state 82
+    "special reg"       shift, and go to state 83
+    "param_ref"         shift, and go to state 84
+    "integer constant"  shift, and go to state 85
+    "char constant"     shift, and go to state 86
+    "float constant"    shift, and go to state 87
+
+    constant     go to state 88
+    addressable  go to state 89
+    target       go to state 90
+    operand      go to state 146
+
+
+State 127
+
+  103 call: CALL operand ',' . "integer constant"
+
+    "integer constant"  shift, and go to state 147
+
+
+State 128
+
+   49 binary_operation: binary_opname target ',' . operand ',' operand
+
+    "identifier"        shift, and go to state 81
+    "temp_ref"          shift, and go to state 82
+    "special reg"       shift, and go to state 83
+    "param_ref"         shift, and go to state 84
+    "integer constant"  shift, and go to state 85
+    "char constant"     shift, and go to state 86
+    "float constant"    shift, and go to state 87
+
+    constant     go to state 88
+    addressable  go to state 89
+    target       go to state 90
+    operand      go to state 148
+
+
+State 129
+
+   65 unary_operation: unary_opname target ',' . operand
+
+    "identifier"        shift, and go to state 81
+    "temp_ref"          shift, and go to state 82
+    "special reg"       shift, and go to state 83
+    "param_ref"         shift, and go to state 84
+    "integer constant"  shift, and go to state 85
+    "char constant"     shift, and go to state 86
+    "float constant"    shift, and go to state 87
+
+    constant     go to state 88
+    addressable  go to state 89
+    target       go to state 90
+    operand      go to state 149
+
+
+State 130
+
+    9 symbol: name_and_type '=' constant EOL .
+
+    $default  reduce using rule 9 (symbol)
+
+
+State 131
+
+   20 arr_size: '[' "integer constant" ']' .
+
+    $default  reduce using rule 20 (arr_size)
+
+
+State 132
+
+   11 symbol: name_and_type '[' ']' '=' . arr_constant EOL
+
+    "literal"  shift, and go to state 133
+    '{'        shift, and go to state 134
+
+    arr_constant  go to state 150
+
+
+State 133
+
+   21 arr_constant: "literal" .
+
+    $default  reduce using rule 21 (arr_constant)
+
+
+State 134
+
+   22 arr_constant: '{' . constant_list '}'
+
+    "integer constant"  shift, and go to state 85
+    "char constant"     shift, and go to state 86
+    "float constant"    shift, and go to state 87
+
+    constant       go to state 151
+    constant_list  go to state 152
+
+
+State 135
+
+   12 symbol: name_and_type arr_size '=' arr_constant . EOL
+
+    EOL  shift, and go to state 153
+
+
+State 136
+
+   33 empty_lines: empty_lines EOL .
+
+    $default  reduce using rule 33 (empty_lines)
+
+
+State 137
+
+  100 branch: BRZ operand ',' operand .
+
+    $default  reduce using rule 100 (branch)
+
+
+State 138
+
+  101 branch: BRNZ operand ',' operand .
+
+    $default  reduce using rule 101 (branch)
+
+
+State 139
+
+   80 assignment: MOV '*' target ',' . operand
+   81           | MOV '*' target ',' . '*' target
+   82           | MOV '*' target ',' . '&' addressable
+   83           | MOV '*' target ',' . target '[' operand ']'
+
+    "identifier"        shift, and go to state 81
+    "temp_ref"          shift, and go to state 82
+    "special reg"       shift, and go to state 83
+    "param_ref"         shift, and go to state 84
+    "integer constant"  shift, and go to state 85
+    "char constant"     shift, and go to state 86
+    "float constant"    shift, and go to state 87
+    '*'                 shift, and go to state 154
+    '&'                 shift, and go to state 155
+
+    constant     go to state 88
+    addressable  go to state 89
+    target       go to state 156
+    operand      go to state 157
+
+
+State 140
+
+   78 assignment: MOV '@' addressable ',' . '&' addressable
+
+    '&'  shift, and go to state 158
+
+
+State 141
+
+   84 assignment: MOV target '[' operand . ']' ',' operand
+   85           | MOV target '[' operand . ']' ',' '*' target
+   86           | MOV target '[' operand . ']' ',' '&' addressable
+
+    ']'  shift, and go to state 159
+
+
+State 142
+
+   76 assignment: MOV target ',' '*' . target
+
+    "identifier"  shift, and go to state 81
+    "temp_ref"    shift, and go to state 82
+    "param_ref"   shift, and go to state 84
+
+    addressable  go to state 89
+    target       go to state 160
+
+
+State 143
+
+   77 assignment: MOV target ',' '&' . addressable
+
+    "identifier"  shift, and go to state 81
+    "param_ref"   shift, and go to state 84
+
+    addressable  go to state 161
+
+
+State 144
+
+   46 operand: target .
+   79 assignment: MOV target ',' target . '[' operand ']'
+
+    '['  shift, and go to state 162
+
+    $default  reduce using rule 46 (operand)
+
+
+State 145
+
+   75 assignment: MOV target ',' operand .
+
+    $default  reduce using rule 75 (assignment)
+
+
+State 146
+
+   99 mema: MEMA target ',' operand .
+
+    $default  reduce using rule 99 (mema)
+
+
+State 147
+
+  103 call: CALL operand ',' "integer constant" .
+
+    $default  reduce using rule 103 (call)
+
+
+State 148
+
+   49 binary_operation: binary_opname target ',' operand . ',' operand
+
+    ','  shift, and go to state 163
+
+
+State 149
+
+   65 unary_operation: unary_opname target ',' operand .
+
+    $default  reduce using rule 65 (unary_operation)
+
+
+State 150
+
+   11 symbol: name_and_type '[' ']' '=' arr_constant . EOL
+
+    EOL  shift, and go to state 164
+
+
+State 151
+
+   23 constant_list: constant .
+
+    $default  reduce using rule 23 (constant_list)
+
+
+State 152
+
+   22 arr_constant: '{' constant_list . '}'
+   24 constant_list: constant_list . ',' constant
+
+    '}'  shift, and go to state 165
+    ','  shift, and go to state 166
+
+
+State 153
+
+   12 symbol: name_and_type arr_size '=' arr_constant EOL .
+
+    $default  reduce using rule 12 (symbol)
+
+
+State 154
+
+   81 assignment: MOV '*' target ',' '*' . target
+
+    "identifier"  shift, and go to state 81
+    "temp_ref"    shift, and go to state 82
+    "param_ref"   shift, and go to state 84
+
+    addressable  go to state 89
+    target       go to state 167
+
+
+State 155
+
+   82 assignment: MOV '*' target ',' '&' . addressable
+
+    "identifier"  shift, and go to state 81
+    "param_ref"   shift, and go to state 84
+
+    addressable  go to state 168
+
+
+State 156
+
+   46 operand: target .
+   83 assignment: MOV '*' target ',' target . '[' operand ']'
+
+    '['  shift, and go to state 169
+
+    $default  reduce using rule 46 (operand)
+
+
+State 157
+
+   80 assignment: MOV '*' target ',' operand .
+
+    $default  reduce using rule 80 (assignment)
+
+
+State 158
+
+   78 assignment: MOV '@' addressable ',' '&' . addressable
+
+    "identifier"  shift, and go to state 81
+    "param_ref"   shift, and go to state 84
+
+    addressable  go to state 170
+
+
+State 159
+
+   84 assignment: MOV target '[' operand ']' . ',' operand
+   85           | MOV target '[' operand ']' . ',' '*' target
+   86           | MOV target '[' operand ']' . ',' '&' addressable
+
+    ','  shift, and go to state 171
+
+
+State 160
+
+   76 assignment: MOV target ',' '*' target .
+
+    $default  reduce using rule 76 (assignment)
+
+
+State 161
+
+   77 assignment: MOV target ',' '&' addressable .
+
+    $default  reduce using rule 77 (assignment)
+
+
+State 162
+
+   79 assignment: MOV target ',' target '[' . operand ']'
+
+    "identifier"        shift, and go to state 81
+    "temp_ref"          shift, and go to state 82
+    "special reg"       shift, and go to state 83
+    "param_ref"         shift, and go to state 84
+    "integer constant"  shift, and go to state 85
+    "char constant"     shift, and go to state 86
+    "float constant"    shift, and go to state 87
+
+    constant     go to state 88
+    addressable  go to state 89
+    target       go to state 90
+    operand      go to state 172
+
+
+State 163
+
+   49 binary_operation: binary_opname target ',' operand ',' . operand
+
+    "identifier"        shift, and go to state 81
+    "temp_ref"          shift, and go to state 82
+    "special reg"       shift, and go to state 83
+    "param_ref"         shift, and go to state 84
+    "integer constant"  shift, and go to state 85
+    "char constant"     shift, and go to state 86
+    "float constant"    shift, and go to state 87
+
+    constant     go to state 88
+    addressable  go to state 89
+    target       go to state 90
+    operand      go to state 173
+
+
+State 164
+
+   11 symbol: name_and_type '[' ']' '=' arr_constant EOL .
+
+    $default  reduce using rule 11 (symbol)
+
+
+State 165
+
+   22 arr_constant: '{' constant_list '}' .
+
+    $default  reduce using rule 22 (arr_constant)
+
+
+State 166
+
+   24 constant_list: constant_list ',' . constant
+
+    "integer constant"  shift, and go to state 85
+    "char constant"     shift, and go to state 86
+    "float constant"    shift, and go to state 87
+
+    constant  go to state 174
+
+
+State 167
+
+   81 assignment: MOV '*' target ',' '*' target .
+
+    $default  reduce using rule 81 (assignment)
+
+
+State 168
+
+   82 assignment: MOV '*' target ',' '&' addressable .
+
+    $default  reduce using rule 82 (assignment)
+
+
+State 169
+
+   83 assignment: MOV '*' target ',' target '[' . operand ']'
+
+    "identifier"        shift, and go to state 81
+    "temp_ref"          shift, and go to state 82
+    "special reg"       shift, and go to state 83
+    "param_ref"         shift, and go to state 84
+    "integer constant"  shift, and go to state 85
+    "char constant"     shift, and go to state 86
+    "float constant"    shift, and go to state 87
+
+    constant     go to state 88
+    addressable  go to state 89
+    target       go to state 90
+    operand      go to state 175
+
+
+State 170
+
+   78 assignment: MOV '@' addressable ',' '&' addressable .
+
+    $default  reduce using rule 78 (assignment)
+
+
+State 171
+
+   84 assignment: MOV target '[' operand ']' ',' . operand
+   85           | MOV target '[' operand ']' ',' . '*' target
+   86           | MOV target '[' operand ']' ',' . '&' addressable
+
+    "identifier"        shift, and go to state 81
+    "temp_ref"          shift, and go to state 82
+    "special reg"       shift, and go to state 83
+    "param_ref"         shift, and go to state 84
+    "integer constant"  shift, and go to state 85
+    "char constant"     shift, and go to state 86
+    "float constant"    shift, and go to state 87
+    '*'                 shift, and go to state 176
+    '&'                 shift, and go to state 177
+
+    constant     go to state 88
+    addressable  go to state 89
+    target       go to state 90
+    operand      go to state 178
+
+
+State 172
+
+   79 assignment: MOV target ',' target '[' operand . ']'
+
+    ']'  shift, and go to state 179
+
+
+State 173
+
+   49 binary_operation: binary_opname target ',' operand ',' operand .
+
+    $default  reduce using rule 49 (binary_operation)
+
+
+State 174
+
+   24 constant_list: constant_list ',' constant .
+
+    $default  reduce using rule 24 (constant_list)
+
+
+State 175
+
+   83 assignment: MOV '*' target ',' target '[' operand . ']'
+
+    ']'  shift, and go to state 180
+
+
+State 176
+
+   85 assignment: MOV target '[' operand ']' ',' '*' . target
+
+    "identifier"  shift, and go to state 81
+    "temp_ref"    shift, and go to state 82
+    "param_ref"   shift, and go to state 84
+
+    addressable  go to state 89
+    target       go to state 181
+
+
+State 177
+
+   86 assignment: MOV target '[' operand ']' ',' '&' . addressable
+
+    "identifier"  shift, and go to state 81
+    "param_ref"   shift, and go to state 84
+
+    addressable  go to state 182
+
+
+State 178
+
+   84 assignment: MOV target '[' operand ']' ',' operand .
+
+    $default  reduce using rule 84 (assignment)
+
+
+State 179
+
+   79 assignment: MOV target ',' target '[' operand ']' .
+
+    $default  reduce using rule 79 (assignment)
+
+
+State 180
+
+   83 assignment: MOV '*' target ',' target '[' operand ']' .
+
+    $default  reduce using rule 83 (assignment)
+
+
+State 181
+
+   85 assignment: MOV target '[' operand ']' ',' '*' target .
+
+    $default  reduce using rule 85 (assignment)
+
+
+State 182
+
+   86 assignment: MOV target '[' operand ']' ',' '&' addressable .
+
+    $default  reduce using rule 86 (assignment)

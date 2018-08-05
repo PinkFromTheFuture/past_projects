@@ -1,0 +1,1 @@
+char * infix_to_postfix(char *);

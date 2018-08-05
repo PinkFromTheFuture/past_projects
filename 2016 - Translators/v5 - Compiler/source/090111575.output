@@ -1,0 +1,1485 @@
+Terminals unused in grammar
+
+   OPERATOR
+   VOID
+
+
+Grammar
+
+    0 $accept: Begin $end
+
+    1 Begin: Function
+
+    2 $@1: %empty
+
+    3 Function: Type Identifier '(' $@1 FormalArgList ')' CompoundStmt
+
+    4 $@2: %empty
+
+    5 Function: Function Type Identifier '(' $@2 FormalArgList ')' CompoundStmt
+    6         | error '}'
+
+    7 FormalArgList: %empty
+    8              | FormalArg
+    9              | FormalArgList ',' FormalArg
+
+   10 FormalArg: Type Identifier
+
+   11 ArgList: %empty
+   12        | Arg
+   13        | ArgList ',' Arg
+
+   14 Arg: Factor
+   15    | FunctionCall
+   16    | StringConcat
+
+   17 Declaration: Type Identifier
+   18            | Type Attribution
+
+   19 Type: INT
+   20     | STRING
+
+   21 CompoundStmt: '{' StmtList '}'
+   22             | error '}'
+
+   23 StmtList: StmtList Stmt
+   24         | %empty
+
+   25 Stmt: WhileStmt
+   26     | IfStmt
+   27     | Declaration ';'
+   28     | Expr ';'
+   29     | CompoundStmt
+   30     | ReturnStmt ';'
+   31     | error ';'
+   32     | error '{'
+
+   33 $@3: %empty
+
+   34 WhileStmt: WHILE '(' $@3 BooleanExpr ')' CompoundStmt
+
+   35 $@4: %empty
+
+   36 IfStmt: IF '(' getLabelForIfElse BooleanExpr ')' CompoundStmt $@4
+
+   37 $@5: %empty
+
+   38 IfStmt: IF '(' getLabelForIfElse BooleanExpr ')' CompoundStmt $@5 ELSE CompoundStmt
+
+   39 getLabelForIfElse: %empty
+
+   40 ReturnStmt: RETURN Factor
+
+   41 Expr: Rvalue
+   42     | Attribution
+   43     | FunctionCall
+   44     | StringConcat
+
+   45 BooleanExpr: BooleanRvalue
+   46            | Attribution
+   47            | FunctionCall
+   48            | StringConcat
+
+   49 Attribution: Identifier '=' Expr
+
+   50 BooleanRvalue: Rvalue Compare Rvalue
+
+   51 Rvalue: Addition
+
+   52 Compare: EqualTo
+   53        | LessThan
+   54        | GreaterThan
+   55        | LessThanOrEqualTo
+   56        | GreaterThanOrEqualTo
+   57        | NotEqualTo
+
+   58 Addition: Addition '+' Multiplication
+   59         | Addition '-' Multiplication
+   60         | Multiplication
+
+   61 Multiplication: Multiplication '*' Factor
+   62               | Multiplication '/' Factor
+   63               | Term
+
+   64 Term: '(' Expr ')'
+   65     | '-' Term
+   66     | '+' Term
+   67     | Factor
+
+   68 Factor: Identifier
+   69       | NUMBER
+   70       | TEXT
+
+   71 FunctionCall: Identifier '(' ArgList ')'
+   72             | Identifier '.' Identifier '(' ArgList ')'
+
+   73 StringConcat: StringConcat ':' TEXT
+   74             | StringConcat ':' Identifier
+   75             | TEXT ':' TEXT
+   76             | Identifier ':' TEXT
+   77             | TEXT ':' Identifier
+   78             | Identifier ':' Identifier
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+'(' (40) 3 5 34 36 38 64 71 72
+')' (41) 3 5 34 36 38 64 71 72
+'*' (42) 61
+'+' (43) 58 66
+',' (44) 9 13
+'-' (45) 59 65
+'.' (46) 72
+'/' (47) 62
+':' (58) 73 74 75 76 77 78
+';' (59) 27 28 30 31
+'=' (61) 49
+'{' (123) 21 32
+'}' (125) 6 21 22
+error (256) 6 22 31 32
+OPERATOR (258)
+Identifier (259) 3 5 10 17 49 68 71 72 74 76 77 78
+IF (260) 36 38
+ELSE (261) 38
+WHILE (262) 34
+INT (263) 19
+NUMBER (264) 69
+STRING (265) 20
+TEXT (266) 70 73 75 76 77
+VOID (267)
+RETURN (268) 40
+EqualTo (269) 52
+LessThan (270) 53
+GreaterThan (271) 54
+LessThanOrEqualTo (272) 55
+GreaterThanOrEqualTo (273) 56
+NotEqualTo (274) 57
+
+
+Nonterminals, with rules where they appear
+
+$accept (33)
+    on left: 0
+Begin (34)
+    on left: 1, on right: 0
+Function (35)
+    on left: 3 5 6, on right: 1 5
+$@1 (36)
+    on left: 2, on right: 3
+$@2 (37)
+    on left: 4, on right: 5
+FormalArgList (38)
+    on left: 7 8 9, on right: 3 5 9
+FormalArg (39)
+    on left: 10, on right: 8 9
+ArgList (40)
+    on left: 11 12 13, on right: 13 71 72
+Arg (41)
+    on left: 14 15 16, on right: 12 13
+Declaration (42)
+    on left: 17 18, on right: 27
+Type (43)
+    on left: 19 20, on right: 3 5 10 17 18
+CompoundStmt (44)
+    on left: 21 22, on right: 3 5 29 34 36 38
+StmtList (45)
+    on left: 23 24, on right: 21 23
+Stmt (46)
+    on left: 25 26 27 28 29 30 31 32, on right: 23
+WhileStmt (47)
+    on left: 34, on right: 25
+$@3 (48)
+    on left: 33, on right: 34
+IfStmt (49)
+    on left: 36 38, on right: 26
+$@4 (50)
+    on left: 35, on right: 36
+$@5 (51)
+    on left: 37, on right: 38
+getLabelForIfElse (52)
+    on left: 39, on right: 36 38
+ReturnStmt (53)
+    on left: 40, on right: 30
+Expr (54)
+    on left: 41 42 43 44, on right: 28 49 64
+BooleanExpr (55)
+    on left: 45 46 47 48, on right: 34 36 38
+Attribution (56)
+    on left: 49, on right: 18 42 46
+BooleanRvalue (57)
+    on left: 50, on right: 45
+Rvalue (58)
+    on left: 51, on right: 41 50
+Compare (59)
+    on left: 52 53 54 55 56 57, on right: 50
+Addition (60)
+    on left: 58 59 60, on right: 51 58 59
+Multiplication (61)
+    on left: 61 62 63, on right: 58 59 60 61 62
+Term (62)
+    on left: 64 65 66 67, on right: 63 65 66
+Factor (63)
+    on left: 68 69 70, on right: 14 40 61 62 67
+FunctionCall (64)
+    on left: 71 72, on right: 15 43 47
+StringConcat (65)
+    on left: 73 74 75 76 77 78, on right: 16 44 48 73 74
+
+
+State 0
+
+    0 $accept: . Begin $end
+
+    error   shift, and go to state 1
+    INT     shift, and go to state 2
+    STRING  shift, and go to state 3
+
+    Begin     go to state 4
+    Function  go to state 5
+    Type      go to state 6
+
+
+State 1
+
+    6 Function: error . '}'
+
+    '}'  shift, and go to state 7
+
+
+State 2
+
+   19 Type: INT .
+
+    $default  reduce using rule 19 (Type)
+
+
+State 3
+
+   20 Type: STRING .
+
+    $default  reduce using rule 20 (Type)
+
+
+State 4
+
+    0 $accept: Begin . $end
+
+    $end  shift, and go to state 8
+
+
+State 5
+
+    1 Begin: Function .
+    5 Function: Function . Type Identifier '(' $@2 FormalArgList ')' CompoundStmt
+
+    INT     shift, and go to state 2
+    STRING  shift, and go to state 3
+
+    $default  reduce using rule 1 (Begin)
+
+    Type  go to state 9
+
+
+State 6
+
+    3 Function: Type . Identifier '(' $@1 FormalArgList ')' CompoundStmt
+
+    Identifier  shift, and go to state 10
+
+
+State 7
+
+    6 Function: error '}' .
+
+    $default  reduce using rule 6 (Function)
+
+
+State 8
+
+    0 $accept: Begin $end .
+
+    $default  accept
+
+
+State 9
+
+    5 Function: Function Type . Identifier '(' $@2 FormalArgList ')' CompoundStmt
+
+    Identifier  shift, and go to state 11
+
+
+State 10
+
+    3 Function: Type Identifier . '(' $@1 FormalArgList ')' CompoundStmt
+
+    '('  shift, and go to state 12
+
+
+State 11
+
+    5 Function: Function Type Identifier . '(' $@2 FormalArgList ')' CompoundStmt
+
+    '('  shift, and go to state 13
+
+
+State 12
+
+    3 Function: Type Identifier '(' . $@1 FormalArgList ')' CompoundStmt
+
+    $default  reduce using rule 2 ($@1)
+
+    $@1  go to state 14
+
+
+State 13
+
+    5 Function: Function Type Identifier '(' . $@2 FormalArgList ')' CompoundStmt
+
+    $default  reduce using rule 4 ($@2)
+
+    $@2  go to state 15
+
+
+State 14
+
+    3 Function: Type Identifier '(' $@1 . FormalArgList ')' CompoundStmt
+
+    INT     shift, and go to state 2
+    STRING  shift, and go to state 3
+
+    $default  reduce using rule 7 (FormalArgList)
+
+    FormalArgList  go to state 16
+    FormalArg      go to state 17
+    Type           go to state 18
+
+
+State 15
+
+    5 Function: Function Type Identifier '(' $@2 . FormalArgList ')' CompoundStmt
+
+    INT     shift, and go to state 2
+    STRING  shift, and go to state 3
+
+    $default  reduce using rule 7 (FormalArgList)
+
+    FormalArgList  go to state 19
+    FormalArg      go to state 17
+    Type           go to state 18
+
+
+State 16
+
+    3 Function: Type Identifier '(' $@1 FormalArgList . ')' CompoundStmt
+    9 FormalArgList: FormalArgList . ',' FormalArg
+
+    ')'  shift, and go to state 20
+    ','  shift, and go to state 21
+
+
+State 17
+
+    8 FormalArgList: FormalArg .
+
+    $default  reduce using rule 8 (FormalArgList)
+
+
+State 18
+
+   10 FormalArg: Type . Identifier
+
+    Identifier  shift, and go to state 22
+
+
+State 19
+
+    5 Function: Function Type Identifier '(' $@2 FormalArgList . ')' CompoundStmt
+    9 FormalArgList: FormalArgList . ',' FormalArg
+
+    ')'  shift, and go to state 23
+    ','  shift, and go to state 21
+
+
+State 20
+
+    3 Function: Type Identifier '(' $@1 FormalArgList ')' . CompoundStmt
+
+    error  shift, and go to state 24
+    '{'    shift, and go to state 25
+
+    CompoundStmt  go to state 26
+
+
+State 21
+
+    9 FormalArgList: FormalArgList ',' . FormalArg
+
+    INT     shift, and go to state 2
+    STRING  shift, and go to state 3
+
+    FormalArg  go to state 27
+    Type       go to state 18
+
+
+State 22
+
+   10 FormalArg: Type Identifier .
+
+    $default  reduce using rule 10 (FormalArg)
+
+
+State 23
+
+    5 Function: Function Type Identifier '(' $@2 FormalArgList ')' . CompoundStmt
+
+    error  shift, and go to state 24
+    '{'    shift, and go to state 25
+
+    CompoundStmt  go to state 28
+
+
+State 24
+
+   22 CompoundStmt: error . '}'
+
+    '}'  shift, and go to state 29
+
+
+State 25
+
+   21 CompoundStmt: '{' . StmtList '}'
+
+    $default  reduce using rule 24 (StmtList)
+
+    StmtList  go to state 30
+
+
+State 26
+
+    3 Function: Type Identifier '(' $@1 FormalArgList ')' CompoundStmt .
+
+    $default  reduce using rule 3 (Function)
+
+
+State 27
+
+    9 FormalArgList: FormalArgList ',' FormalArg .
+
+    $default  reduce using rule 9 (FormalArgList)
+
+
+State 28
+
+    5 Function: Function Type Identifier '(' $@2 FormalArgList ')' CompoundStmt .
+
+    $default  reduce using rule 5 (Function)
+
+
+State 29
+
+   22 CompoundStmt: error '}' .
+
+    $default  reduce using rule 22 (CompoundStmt)
+
+
+State 30
+
+   21 CompoundStmt: '{' StmtList . '}'
+   23 StmtList: StmtList . Stmt
+
+    error       shift, and go to state 31
+    Identifier  shift, and go to state 32
+    IF          shift, and go to state 33
+    WHILE       shift, and go to state 34
+    INT         shift, and go to state 2
+    NUMBER      shift, and go to state 35
+    STRING      shift, and go to state 3
+    TEXT        shift, and go to state 36
+    RETURN      shift, and go to state 37
+    '('         shift, and go to state 38
+    '{'         shift, and go to state 25
+    '}'         shift, and go to state 39
+    '+'         shift, and go to state 40
+    '-'         shift, and go to state 41
+
+    Declaration     go to state 42
+    Type            go to state 43
+    CompoundStmt    go to state 44
+    Stmt            go to state 45
+    WhileStmt       go to state 46
+    IfStmt          go to state 47
+    ReturnStmt      go to state 48
+    Expr            go to state 49
+    Attribution     go to state 50
+    Rvalue          go to state 51
+    Addition        go to state 52
+    Multiplication  go to state 53
+    Term            go to state 54
+    Factor          go to state 55
+    FunctionCall    go to state 56
+    StringConcat    go to state 57
+
+
+State 31
+
+   22 CompoundStmt: error . '}'
+   31 Stmt: error . ';'
+   32     | error . '{'
+
+    '{'  shift, and go to state 58
+    '}'  shift, and go to state 29
+    ';'  shift, and go to state 59
+
+
+State 32
+
+   49 Attribution: Identifier . '=' Expr
+   68 Factor: Identifier .
+   71 FunctionCall: Identifier . '(' ArgList ')'
+   72             | Identifier . '.' Identifier '(' ArgList ')'
+   76 StringConcat: Identifier . ':' TEXT
+   78             | Identifier . ':' Identifier
+
+    '('  shift, and go to state 60
+    '='  shift, and go to state 61
+    '.'  shift, and go to state 62
+    ':'  shift, and go to state 63
+
+    $default  reduce using rule 68 (Factor)
+
+
+State 33
+
+   36 IfStmt: IF . '(' getLabelForIfElse BooleanExpr ')' CompoundStmt $@4
+   38       | IF . '(' getLabelForIfElse BooleanExpr ')' CompoundStmt $@5 ELSE CompoundStmt
+
+    '('  shift, and go to state 64
+
+
+State 34
+
+   34 WhileStmt: WHILE . '(' $@3 BooleanExpr ')' CompoundStmt
+
+    '('  shift, and go to state 65
+
+
+State 35
+
+   69 Factor: NUMBER .
+
+    $default  reduce using rule 69 (Factor)
+
+
+State 36
+
+   70 Factor: TEXT .
+   75 StringConcat: TEXT . ':' TEXT
+   77             | TEXT . ':' Identifier
+
+    ':'  shift, and go to state 66
+
+    $default  reduce using rule 70 (Factor)
+
+
+State 37
+
+   40 ReturnStmt: RETURN . Factor
+
+    Identifier  shift, and go to state 67
+    NUMBER      shift, and go to state 35
+    TEXT        shift, and go to state 68
+
+    Factor  go to state 69
+
+
+State 38
+
+   64 Term: '(' . Expr ')'
+
+    Identifier  shift, and go to state 32
+    NUMBER      shift, and go to state 35
+    TEXT        shift, and go to state 36
+    '('         shift, and go to state 38
+    '+'         shift, and go to state 40
+    '-'         shift, and go to state 41
+
+    Expr            go to state 70
+    Attribution     go to state 50
+    Rvalue          go to state 51
+    Addition        go to state 52
+    Multiplication  go to state 53
+    Term            go to state 54
+    Factor          go to state 55
+    FunctionCall    go to state 56
+    StringConcat    go to state 57
+
+
+State 39
+
+   21 CompoundStmt: '{' StmtList '}' .
+
+    $default  reduce using rule 21 (CompoundStmt)
+
+
+State 40
+
+   66 Term: '+' . Term
+
+    Identifier  shift, and go to state 67
+    NUMBER      shift, and go to state 35
+    TEXT        shift, and go to state 68
+    '('         shift, and go to state 38
+    '+'         shift, and go to state 40
+    '-'         shift, and go to state 41
+
+    Term    go to state 71
+    Factor  go to state 55
+
+
+State 41
+
+   65 Term: '-' . Term
+
+    Identifier  shift, and go to state 67
+    NUMBER      shift, and go to state 35
+    TEXT        shift, and go to state 68
+    '('         shift, and go to state 38
+    '+'         shift, and go to state 40
+    '-'         shift, and go to state 41
+
+    Term    go to state 72
+    Factor  go to state 55
+
+
+State 42
+
+   27 Stmt: Declaration . ';'
+
+    ';'  shift, and go to state 73
+
+
+State 43
+
+   17 Declaration: Type . Identifier
+   18            | Type . Attribution
+
+    Identifier  shift, and go to state 74
+
+    Attribution  go to state 75
+
+
+State 44
+
+   29 Stmt: CompoundStmt .
+
+    $default  reduce using rule 29 (Stmt)
+
+
+State 45
+
+   23 StmtList: StmtList Stmt .
+
+    $default  reduce using rule 23 (StmtList)
+
+
+State 46
+
+   25 Stmt: WhileStmt .
+
+    $default  reduce using rule 25 (Stmt)
+
+
+State 47
+
+   26 Stmt: IfStmt .
+
+    $default  reduce using rule 26 (Stmt)
+
+
+State 48
+
+   30 Stmt: ReturnStmt . ';'
+
+    ';'  shift, and go to state 76
+
+
+State 49
+
+   28 Stmt: Expr . ';'
+
+    ';'  shift, and go to state 77
+
+
+State 50
+
+   42 Expr: Attribution .
+
+    $default  reduce using rule 42 (Expr)
+
+
+State 51
+
+   41 Expr: Rvalue .
+
+    $default  reduce using rule 41 (Expr)
+
+
+State 52
+
+   51 Rvalue: Addition .
+   58 Addition: Addition . '+' Multiplication
+   59         | Addition . '-' Multiplication
+
+    '+'  shift, and go to state 78
+    '-'  shift, and go to state 79
+
+    $default  reduce using rule 51 (Rvalue)
+
+
+State 53
+
+   60 Addition: Multiplication .
+   61 Multiplication: Multiplication . '*' Factor
+   62               | Multiplication . '/' Factor
+
+    '*'  shift, and go to state 80
+    '/'  shift, and go to state 81
+
+    $default  reduce using rule 60 (Addition)
+
+
+State 54
+
+   63 Multiplication: Term .
+
+    $default  reduce using rule 63 (Multiplication)
+
+
+State 55
+
+   67 Term: Factor .
+
+    $default  reduce using rule 67 (Term)
+
+
+State 56
+
+   43 Expr: FunctionCall .
+
+    $default  reduce using rule 43 (Expr)
+
+
+State 57
+
+   44 Expr: StringConcat .
+   73 StringConcat: StringConcat . ':' TEXT
+   74             | StringConcat . ':' Identifier
+
+    ':'  shift, and go to state 82
+
+    $default  reduce using rule 44 (Expr)
+
+
+State 58
+
+   32 Stmt: error '{' .
+
+    $default  reduce using rule 32 (Stmt)
+
+
+State 59
+
+   31 Stmt: error ';' .
+
+    $default  reduce using rule 31 (Stmt)
+
+
+State 60
+
+   71 FunctionCall: Identifier '(' . ArgList ')'
+
+    Identifier  shift, and go to state 83
+    NUMBER      shift, and go to state 35
+    TEXT        shift, and go to state 36
+
+    $default  reduce using rule 11 (ArgList)
+
+    ArgList       go to state 84
+    Arg           go to state 85
+    Factor        go to state 86
+    FunctionCall  go to state 87
+    StringConcat  go to state 88
+
+
+State 61
+
+   49 Attribution: Identifier '=' . Expr
+
+    Identifier  shift, and go to state 32
+    NUMBER      shift, and go to state 35
+    TEXT        shift, and go to state 36
+    '('         shift, and go to state 38
+    '+'         shift, and go to state 40
+    '-'         shift, and go to state 41
+
+    Expr            go to state 89
+    Attribution     go to state 50
+    Rvalue          go to state 51
+    Addition        go to state 52
+    Multiplication  go to state 53
+    Term            go to state 54
+    Factor          go to state 55
+    FunctionCall    go to state 56
+    StringConcat    go to state 57
+
+
+State 62
+
+   72 FunctionCall: Identifier '.' . Identifier '(' ArgList ')'
+
+    Identifier  shift, and go to state 90
+
+
+State 63
+
+   76 StringConcat: Identifier ':' . TEXT
+   78             | Identifier ':' . Identifier
+
+    Identifier  shift, and go to state 91
+    TEXT        shift, and go to state 92
+
+
+State 64
+
+   36 IfStmt: IF '(' . getLabelForIfElse BooleanExpr ')' CompoundStmt $@4
+   38       | IF '(' . getLabelForIfElse BooleanExpr ')' CompoundStmt $@5 ELSE CompoundStmt
+
+    $default  reduce using rule 39 (getLabelForIfElse)
+
+    getLabelForIfElse  go to state 93
+
+
+State 65
+
+   34 WhileStmt: WHILE '(' . $@3 BooleanExpr ')' CompoundStmt
+
+    $default  reduce using rule 33 ($@3)
+
+    $@3  go to state 94
+
+
+State 66
+
+   75 StringConcat: TEXT ':' . TEXT
+   77             | TEXT ':' . Identifier
+
+    Identifier  shift, and go to state 95
+    TEXT        shift, and go to state 96
+
+
+State 67
+
+   68 Factor: Identifier .
+
+    $default  reduce using rule 68 (Factor)
+
+
+State 68
+
+   70 Factor: TEXT .
+
+    $default  reduce using rule 70 (Factor)
+
+
+State 69
+
+   40 ReturnStmt: RETURN Factor .
+
+    $default  reduce using rule 40 (ReturnStmt)
+
+
+State 70
+
+   64 Term: '(' Expr . ')'
+
+    ')'  shift, and go to state 97
+
+
+State 71
+
+   66 Term: '+' Term .
+
+    $default  reduce using rule 66 (Term)
+
+
+State 72
+
+   65 Term: '-' Term .
+
+    $default  reduce using rule 65 (Term)
+
+
+State 73
+
+   27 Stmt: Declaration ';' .
+
+    $default  reduce using rule 27 (Stmt)
+
+
+State 74
+
+   17 Declaration: Type Identifier .
+   49 Attribution: Identifier . '=' Expr
+
+    '='  shift, and go to state 61
+
+    $default  reduce using rule 17 (Declaration)
+
+
+State 75
+
+   18 Declaration: Type Attribution .
+
+    $default  reduce using rule 18 (Declaration)
+
+
+State 76
+
+   30 Stmt: ReturnStmt ';' .
+
+    $default  reduce using rule 30 (Stmt)
+
+
+State 77
+
+   28 Stmt: Expr ';' .
+
+    $default  reduce using rule 28 (Stmt)
+
+
+State 78
+
+   58 Addition: Addition '+' . Multiplication
+
+    Identifier  shift, and go to state 67
+    NUMBER      shift, and go to state 35
+    TEXT        shift, and go to state 68
+    '('         shift, and go to state 38
+    '+'         shift, and go to state 40
+    '-'         shift, and go to state 41
+
+    Multiplication  go to state 98
+    Term            go to state 54
+    Factor          go to state 55
+
+
+State 79
+
+   59 Addition: Addition '-' . Multiplication
+
+    Identifier  shift, and go to state 67
+    NUMBER      shift, and go to state 35
+    TEXT        shift, and go to state 68
+    '('         shift, and go to state 38
+    '+'         shift, and go to state 40
+    '-'         shift, and go to state 41
+
+    Multiplication  go to state 99
+    Term            go to state 54
+    Factor          go to state 55
+
+
+State 80
+
+   61 Multiplication: Multiplication '*' . Factor
+
+    Identifier  shift, and go to state 67
+    NUMBER      shift, and go to state 35
+    TEXT        shift, and go to state 68
+
+    Factor  go to state 100
+
+
+State 81
+
+   62 Multiplication: Multiplication '/' . Factor
+
+    Identifier  shift, and go to state 67
+    NUMBER      shift, and go to state 35
+    TEXT        shift, and go to state 68
+
+    Factor  go to state 101
+
+
+State 82
+
+   73 StringConcat: StringConcat ':' . TEXT
+   74             | StringConcat ':' . Identifier
+
+    Identifier  shift, and go to state 102
+    TEXT        shift, and go to state 103
+
+
+State 83
+
+   68 Factor: Identifier .
+   71 FunctionCall: Identifier . '(' ArgList ')'
+   72             | Identifier . '.' Identifier '(' ArgList ')'
+   76 StringConcat: Identifier . ':' TEXT
+   78             | Identifier . ':' Identifier
+
+    '('  shift, and go to state 60
+    '.'  shift, and go to state 62
+    ':'  shift, and go to state 63
+
+    $default  reduce using rule 68 (Factor)
+
+
+State 84
+
+   13 ArgList: ArgList . ',' Arg
+   71 FunctionCall: Identifier '(' ArgList . ')'
+
+    ')'  shift, and go to state 104
+    ','  shift, and go to state 105
+
+
+State 85
+
+   12 ArgList: Arg .
+
+    $default  reduce using rule 12 (ArgList)
+
+
+State 86
+
+   14 Arg: Factor .
+
+    $default  reduce using rule 14 (Arg)
+
+
+State 87
+
+   15 Arg: FunctionCall .
+
+    $default  reduce using rule 15 (Arg)
+
+
+State 88
+
+   16 Arg: StringConcat .
+   73 StringConcat: StringConcat . ':' TEXT
+   74             | StringConcat . ':' Identifier
+
+    ':'  shift, and go to state 82
+
+    $default  reduce using rule 16 (Arg)
+
+
+State 89
+
+   49 Attribution: Identifier '=' Expr .
+
+    $default  reduce using rule 49 (Attribution)
+
+
+State 90
+
+   72 FunctionCall: Identifier '.' Identifier . '(' ArgList ')'
+
+    '('  shift, and go to state 106
+
+
+State 91
+
+   78 StringConcat: Identifier ':' Identifier .
+
+    $default  reduce using rule 78 (StringConcat)
+
+
+State 92
+
+   76 StringConcat: Identifier ':' TEXT .
+
+    $default  reduce using rule 76 (StringConcat)
+
+
+State 93
+
+   36 IfStmt: IF '(' getLabelForIfElse . BooleanExpr ')' CompoundStmt $@4
+   38       | IF '(' getLabelForIfElse . BooleanExpr ')' CompoundStmt $@5 ELSE CompoundStmt
+
+    Identifier  shift, and go to state 32
+    NUMBER      shift, and go to state 35
+    TEXT        shift, and go to state 36
+    '('         shift, and go to state 38
+    '+'         shift, and go to state 40
+    '-'         shift, and go to state 41
+
+    BooleanExpr     go to state 107
+    Attribution     go to state 108
+    BooleanRvalue   go to state 109
+    Rvalue          go to state 110
+    Addition        go to state 52
+    Multiplication  go to state 53
+    Term            go to state 54
+    Factor          go to state 55
+    FunctionCall    go to state 111
+    StringConcat    go to state 112
+
+
+State 94
+
+   34 WhileStmt: WHILE '(' $@3 . BooleanExpr ')' CompoundStmt
+
+    Identifier  shift, and go to state 32
+    NUMBER      shift, and go to state 35
+    TEXT        shift, and go to state 36
+    '('         shift, and go to state 38
+    '+'         shift, and go to state 40
+    '-'         shift, and go to state 41
+
+    BooleanExpr     go to state 113
+    Attribution     go to state 108
+    BooleanRvalue   go to state 109
+    Rvalue          go to state 110
+    Addition        go to state 52
+    Multiplication  go to state 53
+    Term            go to state 54
+    Factor          go to state 55
+    FunctionCall    go to state 111
+    StringConcat    go to state 112
+
+
+State 95
+
+   77 StringConcat: TEXT ':' Identifier .
+
+    $default  reduce using rule 77 (StringConcat)
+
+
+State 96
+
+   75 StringConcat: TEXT ':' TEXT .
+
+    $default  reduce using rule 75 (StringConcat)
+
+
+State 97
+
+   64 Term: '(' Expr ')' .
+
+    $default  reduce using rule 64 (Term)
+
+
+State 98
+
+   58 Addition: Addition '+' Multiplication .
+   61 Multiplication: Multiplication . '*' Factor
+   62               | Multiplication . '/' Factor
+
+    '*'  shift, and go to state 80
+    '/'  shift, and go to state 81
+
+    $default  reduce using rule 58 (Addition)
+
+
+State 99
+
+   59 Addition: Addition '-' Multiplication .
+   61 Multiplication: Multiplication . '*' Factor
+   62               | Multiplication . '/' Factor
+
+    '*'  shift, and go to state 80
+    '/'  shift, and go to state 81
+
+    $default  reduce using rule 59 (Addition)
+
+
+State 100
+
+   61 Multiplication: Multiplication '*' Factor .
+
+    $default  reduce using rule 61 (Multiplication)
+
+
+State 101
+
+   62 Multiplication: Multiplication '/' Factor .
+
+    $default  reduce using rule 62 (Multiplication)
+
+
+State 102
+
+   74 StringConcat: StringConcat ':' Identifier .
+
+    $default  reduce using rule 74 (StringConcat)
+
+
+State 103
+
+   73 StringConcat: StringConcat ':' TEXT .
+
+    $default  reduce using rule 73 (StringConcat)
+
+
+State 104
+
+   71 FunctionCall: Identifier '(' ArgList ')' .
+
+    $default  reduce using rule 71 (FunctionCall)
+
+
+State 105
+
+   13 ArgList: ArgList ',' . Arg
+
+    Identifier  shift, and go to state 83
+    NUMBER      shift, and go to state 35
+    TEXT        shift, and go to state 36
+
+    Arg           go to state 114
+    Factor        go to state 86
+    FunctionCall  go to state 87
+    StringConcat  go to state 88
+
+
+State 106
+
+   72 FunctionCall: Identifier '.' Identifier '(' . ArgList ')'
+
+    Identifier  shift, and go to state 83
+    NUMBER      shift, and go to state 35
+    TEXT        shift, and go to state 36
+
+    $default  reduce using rule 11 (ArgList)
+
+    ArgList       go to state 115
+    Arg           go to state 85
+    Factor        go to state 86
+    FunctionCall  go to state 87
+    StringConcat  go to state 88
+
+
+State 107
+
+   36 IfStmt: IF '(' getLabelForIfElse BooleanExpr . ')' CompoundStmt $@4
+   38       | IF '(' getLabelForIfElse BooleanExpr . ')' CompoundStmt $@5 ELSE CompoundStmt
+
+    ')'  shift, and go to state 116
+
+
+State 108
+
+   46 BooleanExpr: Attribution .
+
+    $default  reduce using rule 46 (BooleanExpr)
+
+
+State 109
+
+   45 BooleanExpr: BooleanRvalue .
+
+    $default  reduce using rule 45 (BooleanExpr)
+
+
+State 110
+
+   50 BooleanRvalue: Rvalue . Compare Rvalue
+
+    EqualTo               shift, and go to state 117
+    LessThan              shift, and go to state 118
+    GreaterThan           shift, and go to state 119
+    LessThanOrEqualTo     shift, and go to state 120
+    GreaterThanOrEqualTo  shift, and go to state 121
+    NotEqualTo            shift, and go to state 122
+
+    Compare  go to state 123
+
+
+State 111
+
+   47 BooleanExpr: FunctionCall .
+
+    $default  reduce using rule 47 (BooleanExpr)
+
+
+State 112
+
+   48 BooleanExpr: StringConcat .
+   73 StringConcat: StringConcat . ':' TEXT
+   74             | StringConcat . ':' Identifier
+
+    ':'  shift, and go to state 82
+
+    $default  reduce using rule 48 (BooleanExpr)
+
+
+State 113
+
+   34 WhileStmt: WHILE '(' $@3 BooleanExpr . ')' CompoundStmt
+
+    ')'  shift, and go to state 124
+
+
+State 114
+
+   13 ArgList: ArgList ',' Arg .
+
+    $default  reduce using rule 13 (ArgList)
+
+
+State 115
+
+   13 ArgList: ArgList . ',' Arg
+   72 FunctionCall: Identifier '.' Identifier '(' ArgList . ')'
+
+    ')'  shift, and go to state 125
+    ','  shift, and go to state 105
+
+
+State 116
+
+   36 IfStmt: IF '(' getLabelForIfElse BooleanExpr ')' . CompoundStmt $@4
+   38       | IF '(' getLabelForIfElse BooleanExpr ')' . CompoundStmt $@5 ELSE CompoundStmt
+
+    error  shift, and go to state 24
+    '{'    shift, and go to state 25
+
+    CompoundStmt  go to state 126
+
+
+State 117
+
+   52 Compare: EqualTo .
+
+    $default  reduce using rule 52 (Compare)
+
+
+State 118
+
+   53 Compare: LessThan .
+
+    $default  reduce using rule 53 (Compare)
+
+
+State 119
+
+   54 Compare: GreaterThan .
+
+    $default  reduce using rule 54 (Compare)
+
+
+State 120
+
+   55 Compare: LessThanOrEqualTo .
+
+    $default  reduce using rule 55 (Compare)
+
+
+State 121
+
+   56 Compare: GreaterThanOrEqualTo .
+
+    $default  reduce using rule 56 (Compare)
+
+
+State 122
+
+   57 Compare: NotEqualTo .
+
+    $default  reduce using rule 57 (Compare)
+
+
+State 123
+
+   50 BooleanRvalue: Rvalue Compare . Rvalue
+
+    Identifier  shift, and go to state 67
+    NUMBER      shift, and go to state 35
+    TEXT        shift, and go to state 68
+    '('         shift, and go to state 38
+    '+'         shift, and go to state 40
+    '-'         shift, and go to state 41
+
+    Rvalue          go to state 127
+    Addition        go to state 52
+    Multiplication  go to state 53
+    Term            go to state 54
+    Factor          go to state 55
+
+
+State 124
+
+   34 WhileStmt: WHILE '(' $@3 BooleanExpr ')' . CompoundStmt
+
+    error  shift, and go to state 24
+    '{'    shift, and go to state 25
+
+    CompoundStmt  go to state 128
+
+
+State 125
+
+   72 FunctionCall: Identifier '.' Identifier '(' ArgList ')' .
+
+    $default  reduce using rule 72 (FunctionCall)
+
+
+State 126
+
+   36 IfStmt: IF '(' getLabelForIfElse BooleanExpr ')' CompoundStmt . $@4
+   38       | IF '(' getLabelForIfElse BooleanExpr ')' CompoundStmt . $@5 ELSE CompoundStmt
+
+    ELSE      reduce using rule 37 ($@5)
+    $default  reduce using rule 35 ($@4)
+
+    $@4  go to state 129
+    $@5  go to state 130
+
+
+State 127
+
+   50 BooleanRvalue: Rvalue Compare Rvalue .
+
+    $default  reduce using rule 50 (BooleanRvalue)
+
+
+State 128
+
+   34 WhileStmt: WHILE '(' $@3 BooleanExpr ')' CompoundStmt .
+
+    $default  reduce using rule 34 (WhileStmt)
+
+
+State 129
+
+   36 IfStmt: IF '(' getLabelForIfElse BooleanExpr ')' CompoundStmt $@4 .
+
+    $default  reduce using rule 36 (IfStmt)
+
+
+State 130
+
+   38 IfStmt: IF '(' getLabelForIfElse BooleanExpr ')' CompoundStmt $@5 . ELSE CompoundStmt
+
+    ELSE  shift, and go to state 131
+
+
+State 131
+
+   38 IfStmt: IF '(' getLabelForIfElse BooleanExpr ')' CompoundStmt $@5 ELSE . CompoundStmt
+
+    error  shift, and go to state 24
+    '{'    shift, and go to state 25
+
+    CompoundStmt  go to state 132
+
+
+State 132
+
+   38 IfStmt: IF '(' getLabelForIfElse BooleanExpr ')' CompoundStmt $@5 ELSE CompoundStmt .
+
+    $default  reduce using rule 38 (IfStmt)

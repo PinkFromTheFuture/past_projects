@@ -1,0 +1,20 @@
+// string juca()
+// {
+// 	string b =  "1234";
+// 	return b;
+// }
+
+// string main(){
+// 	string a;
+// 	a = juca();
+// 	return a;
+// }
+
+string main()
+{
+	string a = "1238278831781633718691763363131651931";
+	string b = "abc";
+	b = a;
+	// b = b : b;
+	return b;
+}

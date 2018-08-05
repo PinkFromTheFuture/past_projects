@@ -1,0 +1,72 @@
+voip main () {
+	/* a linha abaixo tem um token que passa do limíte de tamanho: */
+	int a0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678a0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678 = 42;
+	string 123errei;
+	byte i = @;
+	matrix m # j;
+	char essa_linguagem_nao_suporta_o_tipo_char = '@';
+	return:
+	tchau!
+/* comentário não fechado! // :(
+}
+
+Cassandra é uma ser viva muito evoluida!
+Mas, de uma maneira diferente das pessoas... Cassandra, é uma ramificação evolutiva como você e eu.
+
+Com cérebro de formiga, corpo de coral e organismo com longevidade de algumas poucas dezenas de milhões de anos.
+Ela sempre esteve ali:
+Parada, observando tudo,
+abismada com o mundo.
+
+Primeiro viu aparecer macaco,
+derrepente apareceram macacos
+penteados, vestindo roupas pintadas,
+enteados daqueles ainda pelados.
+
+Nos galhos fizeram martelos, 
+nos matos soaram hiatos!
+
+Para cada coisa, uma coisa:
+nome pra tu e pra mim.
+Novas descobertas,
+mais invento novo.
+Criaram número,
+casa, ponte,
+carro, guerra,
+marido, mulher,
+trabalho, lazer!
+Abraçaram pernas,
+mesclaram olhares,
+explicaram vulcões,
+sobrevoaram camarões,
+vislumbraram miragens,
+conquistaram paisagens,
+descensuraram os músicos,
+despenalizaram políticos,
+marginalizaram indigentes,
+e fizeram de tudo um mundo.
+
+Enquanto isso, a formiga continua,
+traça sobre a terra, a via que trilha.
+Trata o trabalho como a tralha que cria:
+os homens do outro lado da via.
+
+Sem entender que as gentes do mundo não sabem
+e não entendem que eles levam mundos dentro de suas cabeças.
+
+Deixo você com um até logo, e a seguinte pergunta:
+Por que você sai de casa usando cueca ou calcinha?
+
+Pronto, alimentamos o ego d'um especimén Heremos-heréctus e agora vamos ser felizes!
+Tchau, tchau!
+
+https://www.youtube.com/watch?v=xXBfF3KFszY
+
+
+int getUmDois(){
+	return 2;
+}
+
+int inutil(){
+	string "inutil";
+}

@@ -1,0 +1,66 @@
+Terceiro trabalho de tradutores (2016.2)
+Analisador de Sintaxe: Linguagem CStr
+Feito por Eduardo Furtado - 09/0111575 - eduardoxfurtado@gmail.com
+
+
+Para compilar e executar o programa em ambiente unix, rode o script "090111575.sh". Por exêmplo:
+sh ./090111575.sh 090111575 codigo_correto1.cstr
+sh ./090111575.sh 090111575 codigo_correto2.cstr
+sh ./090111575.sh 090111575 teste.cstr
+sh ./090111575.sh 090111575 teste2.cstr
+
+Para compilar e executar o programa em ambiente windows, pode-se fazer:
+bison -o 090111575.tab.c -t -d -v 090111575.y & flex -o 090111575.yy.c 090111575.l & gcc -Wall 090111575.tab.c 090111575.yy.c -lfl -o 090111575.o & 090111575.o < codigo_correto1.cstr
+bison -o 090111575.tab.c -t -d -v 090111575.y & flex -o 090111575.yy.c 090111575.l & gcc -Wall 090111575.tab.c 090111575.yy.c -lfl -o 090111575.o & 090111575.o < codigo_correto2.cstr
+bison -o 090111575.tab.c -t -d -v 090111575.y & flex -o 090111575.yy.c 090111575.l & gcc -Wall 090111575.tab.c 090111575.yy.c -lfl -o 090111575.o & 090111575.o < teste.cstr
+bison -o 090111575.tab.c -t -d -v 090111575.y & flex -o 090111575.yy.c 090111575.l & gcc -Wall 090111575.tab.c 090111575.yy.c -lfl -o 090111575.o & 090111575.o < teste2.cstr
+
+
+
+
+para meu desenvolvimento, exemplo de rodada:
+cls & DEL 090111575.yy.c & DEL 090111575.o & DEL 090111575.tab.c & DEL 090111575.tab.h & DEL 090111575.output & bison -o 090111575.tab.c -t -d -v 090111575.y & flex -o 090111575.yy.c 090111575.l & gcc -Wall 090111575.tab.c 090111575.yy.c -lfl -o 090111575.o & 090111575.o < teste.cstr
+
+
+----------------------------------------------------------------------
+
+
+Versão do compilador usado no windows (princípal ambiente de desenvolvimento utilizado):
+
+gcc -v
+Using built-in specs.
+COLLECT_GCC=gcc
+COLLECT_LTO_WRAPPER=c:/mingw/bin/../libexec/gcc/mingw32/5.3.0/lto-wrapper.exe
+Target: mingw32
+Configured with: ../src/gcc-5.3.0/configure --build=x86_64-pc-linux-gnu --host=mingw32 --prefix=/mingw --disable-win32-registry --target=mingw32 --with-arch=i586 --enable-languages=c,c++,objc,obj-c++,fortran,ada --enable-static --enable-shared --enable-threads=posix --with-dwarf2 --disable-sjlj-exceptions --enable-version-specific-runtime-libs --enable-libstdcxx-debug --with-tune=generic --enable-libgomp --disable-libvtv --enable-nls
+Thread model: posix
+gcc version 5.3.0 (GCC)
+
+----------
+
+flex -V
+flex 2.5.35
+
+----------
+
+bison -V
+bison (GNU Bison) 3.0.4
+Written by Robert Corbett and Richard Stallman.
+
+Copyright (C) 2016 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+----------------------------------------
+
+O programa também foi testado no linux:
+
+$ gcc -v
+Using built-in specs.
+COLLECT_GCC=gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 4.8.4-2ubuntu1~14.04.3' --with-bugurl=file:///usr/share/doc/gcc-4.8/README.Bugs --enable-languages=c,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.8 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.8 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --disable-libmudflap --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-4.8-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-4.8-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-4.8-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.3) 

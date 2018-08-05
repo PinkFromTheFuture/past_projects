@@ -1,0 +1,49 @@
+int apenas_if()
+{
+	int a = 2;
+
+	if (a == 2){
+		a = 3;
+	}
+	return a;
+}
+
+int nested_if_elses()
+{
+	int a = 3;
+
+	if (a < 2)
+	{
+		a = 3;
+	}
+	else
+	{
+		if (a == 3)
+		{
+			if (a < 4)
+			{
+				a = 5;
+			}
+			else
+			{
+				a = 6662;
+			}
+		}
+	}
+	return a;
+}
+
+int main()
+{
+	int a = 2;
+
+	if (a > 5){
+		a = a*a;
+	}
+	else
+	{
+		a = 666;
+	}
+	a = nested_if_elses();
+	return a;
+}

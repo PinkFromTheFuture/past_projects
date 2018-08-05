@@ -1,0 +1,300 @@
+int f()
+{
+	return 2;
+}
+
+int f0()
+{
+	int a = 2;
+	string str = a : a;
+	a = f();
+
+	string b;
+	b = f();
+	b = 2 + 3;
+	b = "str" : 3;
+	b = "str" : "texto";
+	b = f() + 2;
+	b = b : b;
+	b = "a" : b;
+	b = b : "a";
+	b = "a" : "a";
+
+	b = a : a;
+	b = "a" : a;
+	b = a : "a";
+	b = "a" : "a";
+	b = a;
+
+	return b;
+}
+
+string f1(){
+	return "aaaa";
+}
+
+int f2(){
+	return "aaaa";
+}
+
+int dois(int a, int b){
+	return b+a;
+}
+
+string f3(){
+	return 2;
+}
+
+string f4(){
+	return "aaaa" : "bbbbbbbbbb";
+}
+
+int f5()
+{
+
+}
+
+int f6(int param){
+	return param * 2;
+}
+
+int f7(int param2){
+	string str;
+	return param2 * str;
+}
+
+string f8(int param2){
+	string str;
+	return param2 * str;
+}
+
+string f82(string param2){
+	string str;
+	return param2 * str;
+}
+
+int f9()
+{
+	int a;
+	return a = 2;
+}
+
+int f92()
+{
+	return "asdasd":"asdasda";
+}
+
+string f10()
+{
+	return f9();
+}
+
+int f11()
+{
+	return f9();
+}
+
+int ifs1()
+{
+	if (2 == 3)
+	{
+		return 3;
+	}
+}
+
+int ifs2()
+{
+	if (2 == 3)
+	{
+		return 3;
+	}
+	else
+	{
+		return 4;
+	}
+}
+
+int ifs3()
+{
+	if (2 == 3)
+	{
+		return 3;
+	}
+	return 3;
+}
+
+int ifs4()
+{
+	if (2 == 3)
+	{
+		ifs2();
+	}
+	else
+	{
+		return 3;
+	}
+}
+
+int ifs5()
+{
+	if (2 == 3)
+	{
+		if (2==3)
+		{
+			return 4;
+		}
+		else
+		{
+			if (2 == 5)
+			{
+				return 5;
+			}
+			else
+			{
+				if (2>=2)
+				{
+					return 1;
+				}
+				else
+				{
+					return 0;
+				}
+			}
+		}
+	}
+	else
+	{
+		return 3;
+	}
+}
+
+int main(){
+
+	while (2 > 3)
+	{
+		return 2;
+	}
+
+	int a = 2;
+	// string b = "asadada";
+	int b = 2;
+
+	string str1;
+	string str2;
+
+
+	if (a == b)
+	{
+		return "foi";
+	}
+	else
+	{
+		if (a > b)
+		{
+			a = a + 1;
+		}
+	}
+
+	if ("errado")
+	{
+		a = 4;
+	}
+
+	if ("wrong1" : "wrong2")
+	{
+		a = 4;
+	}
+
+	if (f1())
+	{
+		a = 4;
+	}
+
+	if (f())
+	{
+		a = 4;
+	}
+
+	if (str1 == str2)
+	{
+		a = 4;
+	}
+
+	if (str1 = "teste")
+	{
+		a = 4;
+	}
+
+	int errada = 2;
+	string FIXME = "2";
+	return FIXME;
+
+
+	return 2+3*4;
+	int a = 4;
+	return a+3*5-2;
+	return 2;
+	return "texto";
+	return a;
+	return "bye";
+
+	string b = "a";
+	return b:b;
+
+	return a = 3;
+
+	return f1();
+
+	return a:"texto";
+	return "dasdada" :  "aaaa";
+	return a = "dasdada" :  "aaaa";
+	return f() + 2;
+	string str = "str agulha str";
+	string palheiro;
+	string result;
+	palheiro = str.kmpPreprocess(2);
+	result = palheiro.kmpSearch("agulha");
+	return result;
+
+	return result;
+
+	kmpSearch("agulha");
+
+	juca(1,2,3);
+	int a = 2;
+
+	dois(3,3,3,3);
+	dois(str,"a");
+	f6(2);
+	f82(2);
+	f82("texto");
+	f82(a);
+	f82(str);
+	dois();
+	int inteiro = 3;
+
+	fun(2,inteiro);
+
+
+	a = 2 + 3; // rvalue addition
+	int a = 2;
+	a = 2 : "texto"; // rvalue addition ??
+
+	a = 2 * 3 * 4; // rvalue addition
+
+	a = f();
+	a.funcao(); // function call Identifier
+
+
+	a = a < 3; // rvalue Rvalue
+
+	int a;
+	a = 2; // rvalue Addition e depois attribution Identifier
+
+	a = "1" : "2"; // string contact TEXT
+	a = a : "2";
+	a = "2" : a;
+	a = a : a;
+
+	a = "oba" : 2; // syntax error
+}

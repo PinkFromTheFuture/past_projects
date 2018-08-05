@@ -1,0 +1,173 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[margin=.9in]{geometry}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{longtable}
+
+\title{Escolha do tema para o projeto de Tradutores: Linguagem CStr}
+\author{Eduardo Furtado --- 09/0111575\\Departamento de Ciência da Computação\\Universidade de Brasília}
+
+\begin{document}
+
+\maketitle
+	
+\section{Área da Ciência da Computação}
+
+\indent
+
+A área escolhida é algoritmos e estruturas de dados em strings. Propõe-se a implementação de um tradutor da linguagem C (CStr) para código de 3 endereços que implemente o tipo primitivo string com operadores e métodos auxiliares. \\
+
+\section{Descrição da linguagem formal para a qual será implementado o tradutor}
+
+\indent
+
+Para fazer o processo de tradução utilizarei ferramentas como o bison e o flex, bem como o gcc para compilar o tradutor que será desenvolvido em linguagem C.
+
+Este trabalho apresenta uma linguagem CStr, a gramática de CStr é baseada em uma versão reduzida da linguagem C \cite{minic}, com acréscimo do tipo primitivo string e o operador de concatenação (.), e métodos segundo \cite{cplusplus}.
+
+A gramática livre de contexto a seguir descreve a linguagem CStr proposta, onde variáveis (simbolos não-terminais) começam com letras maiúsculas, Function é a variável inicial e todos os outros simbolos são terminais. A barra vertical $|$ é usada para indicar definições alternativas para um não-terminal.\\
+
+\begin{longtable}{ r l }
+%%%%	chamada a subrotinas (funções, procedimentos, subrotinas):
+	Function 		$\rightarrow$ 	& Type Identifier ( FormalArgList ) CompoundStmt \\
+	Identifier		$\rightarrow$   & char ( char $|$ digit $|$ \_ )* \\
+	FormalArgList 	$\rightarrow$ 	& FormalArg \\
+									& $|$ FormalArgList , FormalArg \\
+	FormalArg 		$\rightarrow$ 	& Type Identifier \\
+	ArgList			$\rightarrow$ 	& Arg \\
+									& $|$ ArgList , Arg \\
+	Arg				$\rightarrow$ 	& Identifier \\
+	Declaration		$\rightarrow$ 	& Type IdentList ; \\
+	Type			$\rightarrow$ 	& int \\
+									& $|$ float \\
+									& $|$ string \\
+	%StringReference $\rightarrow$	& Identifier $|$ StringConstant \\	
+	StringFunction	$\rightarrow$	& string . Identifier () \\
+									& $|$ string . Identifier ( ArgList ) \\
+	StringConcat	$\rightarrow$	& string . string \\
+	IdentList		$\rightarrow$ 	& Identifier , IdentList \\
+									& $|$ Identifier \\
+	Stmt 			$\rightarrow$ 	& WhileStmt \\
+%								  	& $|$ ForStmt \\
+									& $|$ Expr ; \\
+									& $|$ IfStmt \\
+									& $|$ CompoundStmt \\
+									& $|$ Declaration \\
+									& $|$ StringFunction \\
+									& $|$ StringConcat \\
+									& $|$ ; \\
+%	ForStmt			$\rightarrow$ 	& for ( Expr ; OptExpr ; OptExpr ) Stmt \\
+%	OptExpr			$\rightarrow$ 	& Expr \\
+%									& $|$ $\varepsilon$ \\
+%%%%	comando de repetição (while, until ou for):
+	WhileStmt		$\rightarrow$ 	& while ( Expr ) Stmt \\
+%%%%	comando condicional (if, com tratamento de expressões booleanas):
+	IfStmt			$\rightarrow$ 	& if ( Expr ) Stmt ElsePart \\
+	ElsePart		$\rightarrow$ 	& else Stmt \\
+									& $|$ $\varepsilon$ \\
+	CompoundStmt	$\rightarrow$ 	& \{ StmtList \} \\
+	StmtList		$\rightarrow$ 	& StmtList Stmt \\
+									& $|$ $\varepsilon$ \\
+	Expr			$\rightarrow$ 	& Identifier = Expr \\
+									& $|$ Rvalue \\
+	Rvalue			$\rightarrow$ 	& Rvalue Compare Mag \\
+									& $|$ Mag \\
+	Compare			$\rightarrow$ 	& ==  \\
+									& $|$ $<$ \\
+									& $|$ $>$ \\
+									& $|$ $<=$ \\
+									& $|$ $>=$ \\
+									& $|$ $!=$ \\
+%%%%	tratamento de expressões aritméticas (com pelo menos dois tipos distintos de dados):										
+	Mag				$\rightarrow$ 	& Mag + Term \\
+									& $|$ Mag - Term \\
+									& $|$ Term \\
+	Term			$\rightarrow$ 	& Term * Factor \\
+									& $|$ Term / Factor \\
+									& $|$ Factor \\
+	Factor			$\rightarrow$ 	& ( Expr ) \\
+									& $|$  - Factor \\
+									& $|$  + Factor \\
+									& $|$  Identifier \\
+									& $|$  number \\ \\
+\end{longtable}
+		
+
+A ordem em que as operações aparecem determina a precedência de cada operador, onde a primeira tem menor procedência e a última tem a maior procedência.
+
+
+\section{Motivação para a escolha da linguagem}
+
+\indent
+
+Quando se compara C com outras linguagens de programação, como por exemplo C++, fica evidente que uma das facilidades que o C não tem é no tratamento de strings, algo extremamente abrangente na computação.
+
+Entretanto, C é uma linguagem extremamente usada, e sempre que um programador precisa manipular strings, passa por sua cabeça que seria mais fácil estar utilizando outra linguagem.
+
+Este trabalho pode ser útil ao programador da linguagem e ao usuário leigo para facilitar e agilizar a programação em C quando é necessário manipular strings, disponibilizando strings como um novo tipo primitivo e fornecendo operadores e métodos para esse tipo.
+
+\section{Descrição breve da semântica da linguagem}
+
+\indent
+
+O tradutor será implementado de acordo com o que for aprendido nas aulas e na bibliografia da matéria, bem como bibliografia oficial do manual do C. \cite{compiladores2008}, \cite{gnuc}, \cite{yacc1995}.
+
+Espera-se implementar:
+\begin{itemize}
+	\item String como tipo nativo;
+	\item Operador . para concatenação de strings;
+	\item Funções apresentadas em \cite{cplusplus};
+	\item String matching de maneira eficiente segundo \cite{clrs09};
+\end{itemize}
+
+%\begin{itemize}
+%	\item String como tipo nativo;
+%	\item Operador . para concatenação de strings;
+%	\item Método strcount para contar a ocorrência de uma string em outra string;
+%	\item Método strfind para encontrar a primeira ocorrência de uma string em outra string;
+%	\item Método strreplace para substituir todas as ocorrências de uma cadeia em uma string;
+%	\item Método strexplode para divisão de uma string.
+%\end{itemize}
+
+Ou seja, visa-se encorporar no C uma parte de orientação a objetos para o tipo String. 
+
+
+Abaixo está um exemplo de declaração de uma variável string:
+
+\begin{verbatim}
+	string nome_da_variavel_string = "Isso é uma variável em C do tipo nativo string!";
+\end{verbatim}
+
+A partir disso, será possível concatenar strings:
+\begin{verbatim}
+	string s = "Isso é uma variável em C do tipo nativo string!";
+	string aux = "!";
+	nome_da_variavel_string . "!";
+	nome_da_variavel_string . aux;
+\end{verbatim}
+
+\begin{verbatim}
+	string nome_da_variavel_string = "Isso é uma variável em C do tipo nativo string!";
+	string aux = "!";
+	nome_da_variavel_string . "!";
+	nome_da_variavel_string . aux;
+\end{verbatim}
+
+Além disso, utilizar métodos, como o de matching proposto em \cite{clrs09}:
+\begin{verbatim}
+	string s = "Achar uma agulha num palheiro";
+	string palheiro = s.kmpPreprocess();
+	string result = palheiro.kmpSearch("agulha");
+\end{verbatim}
+
+%XNão será necessário declarar o tamanho da variável. Inicialmente será alocado espaço suficiente para a string, 
+
+
+%%As estruturas de linguagens de programação requeridos (condicionais, laços, expressões lógicas e procedimentos) já fazem parte da linguagem C.
+
+\bibliographystyle{unsrt}
+\bibliography{main}
+
+\end{document}

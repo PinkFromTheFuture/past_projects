@@ -1,0 +1,34 @@
+\begin{thebibliography}{1}
+
+\bibitem{minic}
+{MiniC Grammar}.
+\newblock
+  \url{http://www2.ufersa.edu.br/portal/view/uploads/setores/184/AppendixA.pdf}.
+\newblock [Acessado em 20 de agosto de 2016].
+
+\bibitem{cplusplus}
+{C string lib reference}.
+\newblock \url{http://www.cplusplus.com/reference/cstring/}.
+\newblock [Acessado em 20 de agosto de 2016].
+
+\bibitem{lexeyacctutorial}
+{Lexical Analysis With Flex}.
+\newblock \url{http://epaperpress.com/lexandyacc/index.html}.
+\newblock [Acessado em 5 de outubro de 2016].
+
+\bibitem{aquamentus}
+{Lexical Analysis With Flex}.
+\newblock \url{http://aquamentus.com/flex_bison.html}.
+\newblock [Acessado em 5 de outubro de 2016].
+
+\bibitem{bisonmanual}
+{Lexical Analysis With Flex}.
+\newblock \url{https://www.gnu.org/software/bison/manual/bison.html}.
+\newblock [Acessado em 5 de outubro de 2016].
+
+\bibitem{compiladores2008}
+A.V. AHO, R.~Sethi, and S.~Lam.
+\newblock {\em Compiladores: princ{\'\i}pios, t{\'e}cnicas e ferramentas}.
+\newblock LONGMAN DO BRASIL, 2008.
+
+\end{thebibliography}

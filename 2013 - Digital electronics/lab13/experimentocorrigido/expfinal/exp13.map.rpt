@@ -1,0 +1,326 @@
+Analysis & Synthesis report for exp13
+Fri Dec 13 15:38:16 2013
+Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: 0a9ou4:inst21|74161:inst9
+ 10. Parameter Settings for User Entity Instance: 0a2:inst25|74161:inst9
+ 11. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++------------------------------------+-----------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Dec 13 15:38:16 2013   ;
+; Quartus II Version                 ; 9.1 Build 222 10/21/2009 SJ Web Edition ;
+; Revision Name                      ; exp13                                   ;
+; Top-level Entity Name              ; exp13                                   ;
+; Family                             ; Cyclone II                              ;
+; Total logic elements               ; 21                                      ;
+;     Total combinational functions  ; 21                                      ;
+;     Dedicated logic registers      ; 8                                       ;
+; Total registers                    ; 8                                       ;
+; Total pins                         ; 21                                      ;
+; Total virtual pins                 ; 0                                       ;
+; Total memory bits                  ; 0                                       ;
+; Embedded Multiplier 9-bit elements ; 0                                       ;
+; Total PLLs                         ; 0                                       ;
++------------------------------------+-----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                                      ; exp13              ; exp13              ;
+; Family name                                                                ; Cyclone II         ; Stratix II         ;
+; Use Generated Physical Constraints File                                    ; Off                ;                    ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                         ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                    ;
++------------------------------------+-----------------+------------------------------------+---------------------------------------------------------------+
+; File Name with User-Entered Path   ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                  ;
++------------------------------------+-----------------+------------------------------------+---------------------------------------------------------------+
+; ../exp13/exp13-edu-leo/0a2.bdf     ; yes             ; User Block Diagram/Schematic File  ; C:/USR/aluno/Desktop/exp13/exp13-edu-leo/0a2.bdf              ;
+; ../exp13/exp13-edu-leo/0a9ou4.bdf  ; yes             ; User Block Diagram/Schematic File  ; C:/USR/aluno/Desktop/exp13/exp13-edu-leo/0a9ou4.bdf           ;
+; ../exp13/exp13-edu-leo/bcd7seg.bdf ; yes             ; User Block Diagram/Schematic File  ; C:/USR/aluno/Desktop/exp13/exp13-edu-leo/bcd7seg.bdf          ;
+; exp13.bdf                          ; yes             ; User Block Diagram/Schematic File  ; C:/USR/aluno/Desktop/expfinal/exp13.bdf                       ;
+; 74248.bdf                          ; yes             ; Megafunction                       ; c:/prg/altera/91/quartus/libraries/others/maxplus2/74248.bdf  ;
+; 74161.tdf                          ; yes             ; Megafunction                       ; c:/prg/altera/91/quartus/libraries/others/maxplus2/74161.tdf  ;
+; f74161.bdf                         ; yes             ; Megafunction                       ; c:/prg/altera/91/quartus/libraries/others/maxplus2/f74161.bdf ;
++------------------------------------+-----------------+------------------------------------+---------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                          ;
++---------------------------------------------+----------------------------------------+
+; Resource                                    ; Usage                                  ;
++---------------------------------------------+----------------------------------------+
+; Estimated Total logic elements              ; 21                                     ;
+;                                             ;                                        ;
+; Total combinational functions               ; 21                                     ;
+; Logic element usage by number of LUT inputs ;                                        ;
+;     -- 4 input functions                    ; 12                                     ;
+;     -- 3 input functions                    ; 4                                      ;
+;     -- <=2 input functions                  ; 5                                      ;
+;                                             ;                                        ;
+; Logic elements by mode                      ;                                        ;
+;     -- normal mode                          ; 21                                     ;
+;     -- arithmetic mode                      ; 0                                      ;
+;                                             ;                                        ;
+; Total registers                             ; 8                                      ;
+;     -- Dedicated logic registers            ; 8                                      ;
+;     -- I/O registers                        ; 0                                      ;
+;                                             ;                                        ;
+; I/O pins                                    ; 21                                     ;
+; Maximum fan-out node                        ; 0a9ou4:inst21|74161:inst9|f74161:sub|9 ;
+; Maximum fan-out                             ; 13                                     ;
+; Total fan-out                               ; 105                                    ;
+; Average fan-out                             ; 2.10                                   ;
++---------------------------------------------+----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                 ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                         ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+--------------+
+; |exp13                     ; 21 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 21   ; 0            ; |exp13                                      ; work         ;
+;    |0a2:inst25|            ; 5 (1)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp13|0a2:inst25                           ;              ;
+;       |74161:inst9|        ; 4 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp13|0a2:inst25|74161:inst9               ;              ;
+;          |f74161:sub|      ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp13|0a2:inst25|74161:inst9|f74161:sub    ;              ;
+;    |0a9ou4:inst21|         ; 6 (2)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp13|0a9ou4:inst21                        ;              ;
+;       |74161:inst9|        ; 4 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp13|0a9ou4:inst21|74161:inst9            ;              ;
+;          |f74161:sub|      ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp13|0a9ou4:inst21|74161:inst9|f74161:sub ;              ;
+;    |bcd7seg:inst12|        ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp13|bcd7seg:inst12                       ;              ;
+;       |74248:inst|         ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp13|bcd7seg:inst12|74248:inst            ;              ;
+;    |bcd7seg:inst15|        ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp13|bcd7seg:inst15                       ;              ;
+;       |74248:inst|         ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp13|bcd7seg:inst15|74248:inst            ;              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 8     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 0a9ou4:inst21|74161:inst9 ;
++------------------------+------------+----------------------------------+
+; Parameter Name         ; Value      ; Type                             ;
++------------------------+------------+----------------------------------+
+; DEVICE_FAMILY          ; Cyclone II ; Untyped                          ;
+; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                     ;
+; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                   ;
++------------------------+------------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 0a2:inst25|74161:inst9 ;
++------------------------+------------+-------------------------------+
+; Parameter Name         ; Value      ; Type                          ;
++------------------------+------------+-------------------------------+
+; DEVICE_FAMILY          ; Cyclone II ; Untyped                       ;
+; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                  ;
+; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                ;
++------------------------+------------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
+    Info: Processing started: Fri Dec 13 15:38:15 2013
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off exp13 -c exp13
+Info: Found 1 design units, including 1 entities, in source file /usr/aluno/my documents/fdiv.v
+    Info: Found entity 1: fdiv
+Info: Found 1 design units, including 1 entities, in source file /usr/aluno/desktop/exp13/exp13-edu-leo/toplevel.bdf
+    Info: Found entity 1: toplevel
+Info: Found 1 design units, including 1 entities, in source file /usr/aluno/desktop/exp13/exp13-edu-leo/0a2.bdf
+    Info: Found entity 1: 0a2
+Info: Found 1 design units, including 1 entities, in source file /usr/aluno/desktop/exp13/exp13-edu-leo/0a5.bdf
+    Info: Found entity 1: 0a5
+Info: Found 1 design units, including 1 entities, in source file /usr/aluno/desktop/exp13/exp13-edu-leo/0a6.bdf
+    Info: Found entity 1: 0a6
+Info: Found 1 design units, including 1 entities, in source file /usr/aluno/desktop/exp13/exp13-edu-leo/0a9.bdf
+    Info: Found entity 1: 0a9
+Info: Found 1 design units, including 1 entities, in source file /usr/aluno/desktop/exp13/exp13-edu-leo/0a9ou4.bdf
+    Info: Found entity 1: 0a9ou4
+Info: Found 1 design units, including 1 entities, in source file /usr/aluno/desktop/exp13/exp13-edu-leo/bcd7seg.bdf
+    Info: Found entity 1: bcd7seg
+Info: Found 2 design units, including 1 entities, in source file /usr/aluno/desktop/exp13/exp13-edu-leo/clk_div.vhd
+    Info: Found design unit 1: clk_div-clk_div_rtl
+    Info: Found entity 1: clk_div
+Info: Found 1 design units, including 1 entities, in source file /usr/aluno/desktop/exp13/exp13-edu-leo/lab11.bdf
+    Info: Found entity 1: lab11
+Info: Found 1 design units, including 1 entities, in source file /usr/aluno/desktop/exp13/exp13-edu-leo/lab11b.bdf
+    Info: Found entity 1: lab11b
+Info: Found 1 design units, including 1 entities, in source file /usr/aluno/desktop/exp13/exp13-edu-leo/lab12.bdf
+    Info: Found entity 1: Lab12
+Info: Found 1 design units, including 1 entities, in source file /usr/aluno/desktop/exp13/exp13-edu-leo/lab12b.bdf
+    Info: Found entity 1: Lab12b
+Info: Found 1 design units, including 1 entities, in source file /usr/aluno/desktop/exp13/exp13-edu-leo/lab12c.bdf
+    Info: Found entity 1: Lab12c
+Info: Found 1 design units, including 1 entities, in source file /usr/aluno/desktop/exp13/exp13-edu-leo/lab15.bdf
+    Info: Found entity 1: lab15
+Info: Found 1 design units, including 1 entities, in source file /usr/aluno/desktop/exp13/exp13-edu-leo/lab122.bdf
+    Info: Found entity 1: lab122
+Info: Found 1 design units, including 1 entities, in source file exp13.bdf
+    Info: Found entity 1: exp13
+Info: Elaborating entity "exp13" for the top level hierarchy
+Info: Elaborating entity "bcd7seg" for hierarchy "bcd7seg:inst12"
+Info: Elaborating entity "74248" for hierarchy "bcd7seg:inst12|74248:inst"
+Info: Elaborated megafunction instantiation "bcd7seg:inst12|74248:inst"
+Info: Elaborating entity "0a9ou4" for hierarchy "0a9ou4:inst21"
+Info: Elaborating entity "74161" for hierarchy "0a9ou4:inst21|74161:inst9"
+Info: Elaborated megafunction instantiation "0a9ou4:inst21|74161:inst9"
+Info: Elaborating entity "f74161" for hierarchy "0a9ou4:inst21|74161:inst9|f74161:sub"
+Info: Elaborated megafunction instantiation "0a9ou4:inst21|74161:inst9|f74161:sub", which is child of megafunction instantiation "0a9ou4:inst21|74161:inst9"
+Info: Elaborating entity "0a2" for hierarchy "0a2:inst25"
+Info: Ignored 6 buffer(s)
+    Info: Ignored 6 CARRY buffer(s)
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX7[1]" is stuck at GND
+Info: Implemented 42 device resources after synthesis - the final resource count might be different
+    Info: Implemented 1 input pins
+    Info: Implemented 20 output pins
+    Info: Implemented 21 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 191 megabytes
+    Info: Processing ended: Fri Dec 13 15:38:16 2013
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
+
+

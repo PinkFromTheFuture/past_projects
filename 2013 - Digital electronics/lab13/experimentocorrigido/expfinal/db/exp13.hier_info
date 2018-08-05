@@ -1,0 +1,218 @@
+|exp13
+HEX6[0] <= bcd7seg:inst12.OA
+HEX6[1] <= bcd7seg:inst12.OB
+HEX6[2] <= bcd7seg:inst12.OC
+HEX6[3] <= bcd7seg:inst12.OD
+HEX6[4] <= bcd7seg:inst12.OE
+HEX6[5] <= bcd7seg:inst12.OF
+HEX6[6] <= bcd7seg:inst12.OG
+pin_name => 0a9ou4:inst21.clockContador
+HEX7[0] <= bcd7seg:inst15.OA
+HEX7[1] <= bcd7seg:inst15.OB
+HEX7[2] <= bcd7seg:inst15.OC
+HEX7[3] <= bcd7seg:inst15.OD
+HEX7[4] <= bcd7seg:inst15.OE
+HEX7[5] <= bcd7seg:inst15.OF
+HEX7[6] <= bcd7seg:inst15.OG
+OUT[0] <= 0a9ou4:inst21.Q0
+OUT[1] <= 0a9ou4:inst21.Q1
+OUT[2] <= 0a9ou4:inst21.Q2
+OUT[3] <= 0a9ou4:inst21.Q3
+OUT2[0] <= 0a2:inst25.Q0
+OUT2[1] <= 0a2:inst25.Q1
+
+
+|exp13|bcd7seg:inst12
+OA <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+A => 74248:inst.A
+B => 74248:inst.B
+D => 74248:inst.D
+C => 74248:inst.C
+OB <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+OC <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+OD <= inst11.DB_MAX_OUTPUT_PORT_TYPE
+OE <= inst12.DB_MAX_OUTPUT_PORT_TYPE
+OF <= inst13.DB_MAX_OUTPUT_PORT_TYPE
+OG <= inst14.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|exp13|bcd7seg:inst12|74248:inst
+OG <= 88.DB_MAX_OUTPUT_PORT_TYPE
+B => 54.IN0
+B => 57.IN1
+A => 54.IN1
+A => 56.IN1
+RBIN => 54.IN2
+RBIN => 54.IN3
+C => 54.IN4
+C => 58.IN1
+D => 54.IN5
+D => 62.IN0
+BIN => 55.IN0
+LTN => 60.IN1
+LTN => 61.IN1
+LTN => 64.IN1
+LTN => 59.IN1
+OF <= 89.DB_MAX_OUTPUT_PORT_TYPE
+OE <= 90.DB_MAX_OUTPUT_PORT_TYPE
+RBON <= 87.DB_MAX_OUTPUT_PORT_TYPE
+OD <= 91.DB_MAX_OUTPUT_PORT_TYPE
+OC <= 92.DB_MAX_OUTPUT_PORT_TYPE
+OB <= 93.DB_MAX_OUTPUT_PORT_TYPE
+OA <= 94.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|exp13|0a9ou4:inst21
+Q0 <= 74161:inst9.QA
+clockContador => 74161:inst9.CLK
+I1 => inst5.IN0
+I4 => inst8.IN0
+I2 => inst6.IN0
+I3 => inst7.IN0
+Q1 <= 74161:inst9.QB
+Q2 <= 74161:inst9.QC
+Q3 <= 74161:inst9.QD
+overflow <= inst.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|exp13|0a9ou4:inst21|74161:inst9
+clk => f74161:sub.clk
+ldn => f74161:sub.ldn
+clrn => ~NO_FANOUT~
+enp => f74161:sub.enp
+ent => f74161:sub.ent
+d => f74161:sub.d
+c => f74161:sub.c
+b => f74161:sub.b
+a => f74161:sub.a
+qd <= f74161:sub.qd
+qc <= f74161:sub.qc
+qb <= f74161:sub.qb
+qa <= f74161:sub.qa
+rco <= f74161:sub.rco
+
+
+|exp13|0a9ou4:inst21|74161:inst9|f74161:sub
+RCO <= 105.DB_MAX_OUTPUT_PORT_TYPE
+CLRN => 110.ACLR
+CLRN => 99.ACLR
+CLRN => 87.ACLR
+CLRN => 9.ACLR
+CLK => 110.CLK
+CLK => 99.CLK
+CLK => 87.CLK
+CLK => 9.CLK
+D => 113.IN0
+LDN => 117.IN0
+LDN => 77.IN1
+LDN => 86.IN1
+LDN => 98.IN1
+LDN => 108.IN1
+ENP => 106.IN0
+ENP => 96.IN0
+ENP => 89.IN0
+ENP => 79.IN0
+C => 101.IN0
+B => 91.IN0
+A => 76.IN0
+ENT => 82.DATAIN
+QD <= 110.DB_MAX_OUTPUT_PORT_TYPE
+QC <= 99.DB_MAX_OUTPUT_PORT_TYPE
+QB <= 87.DB_MAX_OUTPUT_PORT_TYPE
+QA <= 9.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|exp13|0a2:inst25
+Q0 <= 74161:inst9.QA
+clockContador => 74161:inst9.CLK
+Q1 <= 74161:inst9.QB
+overflow <= inst.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|exp13|0a2:inst25|74161:inst9
+clk => f74161:sub.clk
+ldn => f74161:sub.ldn
+clrn => ~NO_FANOUT~
+enp => f74161:sub.enp
+ent => f74161:sub.ent
+d => f74161:sub.d
+c => f74161:sub.c
+b => f74161:sub.b
+a => f74161:sub.a
+qd <= f74161:sub.qd
+qc <= f74161:sub.qc
+qb <= f74161:sub.qb
+qa <= f74161:sub.qa
+rco <= f74161:sub.rco
+
+
+|exp13|0a2:inst25|74161:inst9|f74161:sub
+RCO <= 105.DB_MAX_OUTPUT_PORT_TYPE
+CLRN => 110.ACLR
+CLRN => 99.ACLR
+CLRN => 87.ACLR
+CLRN => 9.ACLR
+CLK => 110.CLK
+CLK => 99.CLK
+CLK => 87.CLK
+CLK => 9.CLK
+D => 113.IN0
+LDN => 117.IN0
+LDN => 77.IN1
+LDN => 86.IN1
+LDN => 98.IN1
+LDN => 108.IN1
+ENP => 106.IN0
+ENP => 96.IN0
+ENP => 89.IN0
+ENP => 79.IN0
+C => 101.IN0
+B => 91.IN0
+A => 76.IN0
+ENT => 82.DATAIN
+QD <= 110.DB_MAX_OUTPUT_PORT_TYPE
+QC <= 99.DB_MAX_OUTPUT_PORT_TYPE
+QB <= 87.DB_MAX_OUTPUT_PORT_TYPE
+QA <= 9.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|exp13|bcd7seg:inst15
+OA <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+A => 74248:inst.A
+B => 74248:inst.B
+D => 74248:inst.D
+C => 74248:inst.C
+OB <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+OC <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+OD <= inst11.DB_MAX_OUTPUT_PORT_TYPE
+OE <= inst12.DB_MAX_OUTPUT_PORT_TYPE
+OF <= inst13.DB_MAX_OUTPUT_PORT_TYPE
+OG <= inst14.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|exp13|bcd7seg:inst15|74248:inst
+OG <= 88.DB_MAX_OUTPUT_PORT_TYPE
+B => 54.IN0
+B => 57.IN1
+A => 54.IN1
+A => 56.IN1
+RBIN => 54.IN2
+RBIN => 54.IN3
+C => 54.IN4
+C => 58.IN1
+D => 54.IN5
+D => 62.IN0
+BIN => 55.IN0
+LTN => 60.IN1
+LTN => 61.IN1
+LTN => 64.IN1
+LTN => 59.IN1
+OF <= 89.DB_MAX_OUTPUT_PORT_TYPE
+OE <= 90.DB_MAX_OUTPUT_PORT_TYPE
+RBON <= 87.DB_MAX_OUTPUT_PORT_TYPE
+OD <= 91.DB_MAX_OUTPUT_PORT_TYPE
+OC <= 92.DB_MAX_OUTPUT_PORT_TYPE
+OB <= 93.DB_MAX_OUTPUT_PORT_TYPE
+OA <= 94.DB_MAX_OUTPUT_PORT_TYPE
+
+

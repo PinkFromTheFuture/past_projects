@@ -1,0 +1,61 @@
+to-do
+
+DONE - while
+DONE - if
+DONE - if else
+DONE - adicionar na documentação que mudei o return na gramática, de return expr pra return factor
+DONE - adicionar referencia pro algoritmo de infix_to_postfix: http://electrofriends.com/source-codes/software-programs/c/data-structures-c/c-program-for-infix-to-postfix-conversion/
+DONE - colocar na documentação que modifiquei a gramática: o rvalue e adicionei o booleanrvalue.
+DONE - revisar o leia-me pelo linux
+DONE - revisar o script de execução no linux
+DONE - if (0 == strcmp(node->child->description, "FunctionCall")) - parece que isso ainda não foi implementado. função addQuadruplasForExpressions tac.c
+
+
+
+
+- strings:
+	1 - implementar o retorno de TEXT (ver se é possível)
+	2 - colocar warnings dizendo que a concatenação de variáveis não é possível por conta do tac
+	3 - colocar warnings dizendo que a atribuição de uma string pra outra tem perda de dados, caso não sejam do mesmo tamanho. (tac5.cstr)
+- refactoring
+DONE - falar do "bug" do tac, vs otimização de código? //this is a dummy line, to prevent two labels in a row.
+DONE - comentar que trocar o return por um print no tac resolve: error: tac1.cstr.tac(9,1): returning to nowherepink
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- se sobrar tempo, eliminar o addition, já que o que o rvalue faz é simplesmente ir pro addition.
+
+- se sobrar muito tempoarrumar bug: ao fazer
+{
+	int a = 2;
+	a = 3;
+}
+o valor na tabela de símbolos de a não é alterado.
+
+- se sobrar muito tempo arrumar bug: ao fazer
+{
+	int a = funcao(param1, param2);
+}
+o valor de a na TS e na tabela do tac fica como o último parametro (param2).
+

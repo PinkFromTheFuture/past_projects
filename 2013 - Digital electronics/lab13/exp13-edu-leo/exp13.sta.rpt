@@ -1,0 +1,526 @@
+TimeQuest Timing Analyzer report for exp13
+Sun Dec 08 15:43:25 2013
+Quartus II 32-bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clockContador'
+ 12. Slow Model Hold: 'clockContador'
+ 13. Slow Model Minimum Pulse Width: 'clockContador'
+ 14. Clock to Output Times
+ 15. Minimum Clock to Output Times
+ 16. Fast Model Setup Summary
+ 17. Fast Model Hold Summary
+ 18. Fast Model Recovery Summary
+ 19. Fast Model Removal Summary
+ 20. Fast Model Minimum Pulse Width Summary
+ 21. Fast Model Setup: 'clockContador'
+ 22. Fast Model Hold: 'clockContador'
+ 23. Fast Model Minimum Pulse Width: 'clockContador'
+ 24. Clock to Output Times
+ 25. Minimum Clock to Output Times
+ 26. Multicorner Timing Analysis Summary
+ 27. Clock to Output Times
+ 28. Minimum Clock to Output Times
+ 29. Setup Transfers
+ 30. Hold Transfers
+ 31. Report TCCS
+ 32. Report RSKM
+ 33. Unconstrained Paths
+ 34. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                    ;
++--------------------+-----------------------------------------------------------------+
+; Quartus II Version ; Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; exp13                                                           ;
+; Device Family      ; Cyclone II                                                      ;
+; Device Name        ; EP2C35F672C6                                                    ;
+; Timing Models      ; Final                                                           ;
+; Delay Model        ; Combined                                                        ;
+; Rise/Fall Delays   ; Unavailable                                                     ;
++--------------------+-----------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                       ;
++---------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------+
+; Clock Name    ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets           ;
++---------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------+
+; clockContador ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clockContador } ;
++---------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                      ;
++------------+-----------------+---------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name    ; Note                                                          ;
++------------+-----------------+---------------+---------------------------------------------------------------+
+; 936.33 MHz ; 420.17 MHz      ; clockContador ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+---------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------------+
+; Slow Model Setup Summary               ;
++---------------+--------+---------------+
+; Clock         ; Slack  ; End Point TNS ;
++---------------+--------+---------------+
+; clockContador ; -0.068 ; -0.174        ;
++---------------+--------+---------------+
+
+
++---------------------------------------+
+; Slow Model Hold Summary               ;
++---------------+-------+---------------+
+; Clock         ; Slack ; End Point TNS ;
++---------------+-------+---------------+
+; clockContador ; 0.391 ; 0.000         ;
++---------------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++---------------+--------+---------------+
+; Clock         ; Slack  ; End Point TNS ;
++---------------+--------+---------------+
+; clockContador ; -1.380 ; -5.380        ;
++---------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clockContador'                                                                                                         ;
++--------+----------------------------+----------------------------+---------------+---------------+--------------+------------+------------+
+; Slack  ; From Node                  ; To Node                    ; Launch Clock  ; Latch Clock   ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------+----------------------------+---------------+---------------+--------------+------------+------------+
+; -0.068 ; 74161:inst9|f74161:sub|99  ; 74161:inst9|f74161:sub|87  ; clockContador ; clockContador ; 1.000        ; 0.000      ; 1.104      ;
+; -0.067 ; 74161:inst9|f74161:sub|99  ; 74161:inst9|f74161:sub|110 ; clockContador ; clockContador ; 1.000        ; 0.000      ; 1.103      ;
+; -0.039 ; 74161:inst9|f74161:sub|87  ; 74161:inst9|f74161:sub|99  ; clockContador ; clockContador ; 1.000        ; 0.000      ; 1.075      ;
+; -0.039 ; 74161:inst9|f74161:sub|87  ; 74161:inst9|f74161:sub|110 ; clockContador ; clockContador ; 1.000        ; 0.000      ; 1.075      ;
+; -0.036 ; 74161:inst9|f74161:sub|110 ; 74161:inst9|f74161:sub|87  ; clockContador ; clockContador ; 1.000        ; 0.000      ; 1.072      ;
+; 0.229  ; 74161:inst9|f74161:sub|9   ; 74161:inst9|f74161:sub|110 ; clockContador ; clockContador ; 1.000        ; 0.000      ; 0.807      ;
+; 0.229  ; 74161:inst9|f74161:sub|9   ; 74161:inst9|f74161:sub|99  ; clockContador ; clockContador ; 1.000        ; 0.000      ; 0.807      ;
+; 0.230  ; 74161:inst9|f74161:sub|9   ; 74161:inst9|f74161:sub|87  ; clockContador ; clockContador ; 1.000        ; 0.000      ; 0.806      ;
+; 0.379  ; 74161:inst9|f74161:sub|9   ; 74161:inst9|f74161:sub|9   ; clockContador ; clockContador ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; 74161:inst9|f74161:sub|87  ; 74161:inst9|f74161:sub|87  ; clockContador ; clockContador ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; 74161:inst9|f74161:sub|110 ; 74161:inst9|f74161:sub|110 ; clockContador ; clockContador ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; 74161:inst9|f74161:sub|99  ; 74161:inst9|f74161:sub|99  ; clockContador ; clockContador ; 1.000        ; 0.000      ; 0.657      ;
++--------+----------------------------+----------------------------+---------------+---------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clockContador'                                                                                                         ;
++-------+----------------------------+----------------------------+---------------+---------------+--------------+------------+------------+
+; Slack ; From Node                  ; To Node                    ; Launch Clock  ; Latch Clock   ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------+----------------------------+---------------+---------------+--------------+------------+------------+
+; 0.391 ; 74161:inst9|f74161:sub|9   ; 74161:inst9|f74161:sub|9   ; clockContador ; clockContador ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; 74161:inst9|f74161:sub|99  ; 74161:inst9|f74161:sub|99  ; clockContador ; clockContador ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; 74161:inst9|f74161:sub|110 ; 74161:inst9|f74161:sub|110 ; clockContador ; clockContador ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; 74161:inst9|f74161:sub|87  ; 74161:inst9|f74161:sub|87  ; clockContador ; clockContador ; 0.000        ; 0.000      ; 0.657      ;
+; 0.540 ; 74161:inst9|f74161:sub|9   ; 74161:inst9|f74161:sub|87  ; clockContador ; clockContador ; 0.000        ; 0.000      ; 0.806      ;
+; 0.541 ; 74161:inst9|f74161:sub|9   ; 74161:inst9|f74161:sub|99  ; clockContador ; clockContador ; 0.000        ; 0.000      ; 0.807      ;
+; 0.541 ; 74161:inst9|f74161:sub|9   ; 74161:inst9|f74161:sub|110 ; clockContador ; clockContador ; 0.000        ; 0.000      ; 0.807      ;
+; 0.806 ; 74161:inst9|f74161:sub|110 ; 74161:inst9|f74161:sub|87  ; clockContador ; clockContador ; 0.000        ; 0.000      ; 1.072      ;
+; 0.809 ; 74161:inst9|f74161:sub|87  ; 74161:inst9|f74161:sub|99  ; clockContador ; clockContador ; 0.000        ; 0.000      ; 1.075      ;
+; 0.809 ; 74161:inst9|f74161:sub|87  ; 74161:inst9|f74161:sub|110 ; clockContador ; clockContador ; 0.000        ; 0.000      ; 1.075      ;
+; 0.837 ; 74161:inst9|f74161:sub|99  ; 74161:inst9|f74161:sub|110 ; clockContador ; clockContador ; 0.000        ; 0.000      ; 1.103      ;
+; 0.838 ; 74161:inst9|f74161:sub|99  ; 74161:inst9|f74161:sub|87  ; clockContador ; clockContador ; 0.000        ; 0.000      ; 1.104      ;
++-------+----------------------------+----------------------------+---------------+---------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clockContador'                                                                         ;
++--------+--------------+----------------+------------------+---------------+------------+--------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock         ; Clock Edge ; Target                         ;
++--------+--------------+----------------+------------------+---------------+------------+--------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clockContador ; Rise       ; clockContador                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clockContador ; Rise       ; 74161:inst9|f74161:sub|110     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clockContador ; Rise       ; 74161:inst9|f74161:sub|110     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clockContador ; Rise       ; 74161:inst9|f74161:sub|87      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clockContador ; Rise       ; 74161:inst9|f74161:sub|87      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clockContador ; Rise       ; 74161:inst9|f74161:sub|9       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clockContador ; Rise       ; 74161:inst9|f74161:sub|9       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clockContador ; Rise       ; 74161:inst9|f74161:sub|99      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clockContador ; Rise       ; 74161:inst9|f74161:sub|99      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clockContador ; Rise       ; clockContador|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clockContador ; Rise       ; clockContador|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clockContador ; Rise       ; clockContador~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clockContador ; Rise       ; clockContador~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clockContador ; Rise       ; clockContador~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clockContador ; Rise       ; clockContador~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clockContador ; Rise       ; inst9|sub|110|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clockContador ; Rise       ; inst9|sub|110|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clockContador ; Rise       ; inst9|sub|87|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clockContador ; Rise       ; inst9|sub|87|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clockContador ; Rise       ; inst9|sub|99|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clockContador ; Rise       ; inst9|sub|99|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clockContador ; Rise       ; inst9|sub|9|clk                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clockContador ; Rise       ; inst9|sub|9|clk                ;
++--------+--------------+----------------+------------------+---------------+------------+--------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++-----------+---------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port    ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+---------------+-------+-------+------------+-----------------+
+; Q0        ; clockContador ; 6.247 ; 6.247 ; Rise       ; clockContador   ;
+; Q1        ; clockContador ; 6.079 ; 6.079 ; Rise       ; clockContador   ;
+; Q2        ; clockContador ; 6.526 ; 6.526 ; Rise       ; clockContador   ;
+; Q3        ; clockContador ; 6.060 ; 6.060 ; Rise       ; clockContador   ;
+; overflow  ; clockContador ; 6.976 ; 6.976 ; Rise       ; clockContador   ;
++-----------+---------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++-----------+---------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port    ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+---------------+-------+-------+------------+-----------------+
+; Q0        ; clockContador ; 6.247 ; 6.247 ; Rise       ; clockContador   ;
+; Q1        ; clockContador ; 6.079 ; 6.079 ; Rise       ; clockContador   ;
+; Q2        ; clockContador ; 6.526 ; 6.526 ; Rise       ; clockContador   ;
+; Q3        ; clockContador ; 6.060 ; 6.060 ; Rise       ; clockContador   ;
+; overflow  ; clockContador ; 6.847 ; 6.847 ; Rise       ; clockContador   ;
++-----------+---------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------+
+; Fast Model Setup Summary              ;
++---------------+-------+---------------+
+; Clock         ; Slack ; End Point TNS ;
++---------------+-------+---------------+
+; clockContador ; 0.508 ; 0.000         ;
++---------------+-------+---------------+
+
+
++---------------------------------------+
+; Fast Model Hold Summary               ;
++---------------+-------+---------------+
+; Clock         ; Slack ; End Point TNS ;
++---------------+-------+---------------+
+; clockContador ; 0.215 ; 0.000         ;
++---------------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++---------------+--------+---------------+
+; Clock         ; Slack  ; End Point TNS ;
++---------------+--------+---------------+
+; clockContador ; -1.380 ; -5.380        ;
++---------------+--------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clockContador'                                                                                                        ;
++-------+----------------------------+----------------------------+---------------+---------------+--------------+------------+------------+
+; Slack ; From Node                  ; To Node                    ; Launch Clock  ; Latch Clock   ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------+----------------------------+---------------+---------------+--------------+------------+------------+
+; 0.508 ; 74161:inst9|f74161:sub|99  ; 74161:inst9|f74161:sub|87  ; clockContador ; clockContador ; 1.000        ; 0.000      ; 0.524      ;
+; 0.509 ; 74161:inst9|f74161:sub|99  ; 74161:inst9|f74161:sub|110 ; clockContador ; clockContador ; 1.000        ; 0.000      ; 0.523      ;
+; 0.514 ; 74161:inst9|f74161:sub|87  ; 74161:inst9|f74161:sub|110 ; clockContador ; clockContador ; 1.000        ; 0.000      ; 0.518      ;
+; 0.517 ; 74161:inst9|f74161:sub|87  ; 74161:inst9|f74161:sub|99  ; clockContador ; clockContador ; 1.000        ; 0.000      ; 0.515      ;
+; 0.519 ; 74161:inst9|f74161:sub|110 ; 74161:inst9|f74161:sub|87  ; clockContador ; clockContador ; 1.000        ; 0.000      ; 0.513      ;
+; 0.629 ; 74161:inst9|f74161:sub|9   ; 74161:inst9|f74161:sub|87  ; clockContador ; clockContador ; 1.000        ; 0.000      ; 0.403      ;
+; 0.629 ; 74161:inst9|f74161:sub|9   ; 74161:inst9|f74161:sub|110 ; clockContador ; clockContador ; 1.000        ; 0.000      ; 0.403      ;
+; 0.629 ; 74161:inst9|f74161:sub|9   ; 74161:inst9|f74161:sub|99  ; clockContador ; clockContador ; 1.000        ; 0.000      ; 0.403      ;
+; 0.665 ; 74161:inst9|f74161:sub|9   ; 74161:inst9|f74161:sub|9   ; clockContador ; clockContador ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; 74161:inst9|f74161:sub|87  ; 74161:inst9|f74161:sub|87  ; clockContador ; clockContador ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; 74161:inst9|f74161:sub|110 ; 74161:inst9|f74161:sub|110 ; clockContador ; clockContador ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; 74161:inst9|f74161:sub|99  ; 74161:inst9|f74161:sub|99  ; clockContador ; clockContador ; 1.000        ; 0.000      ; 0.367      ;
++-------+----------------------------+----------------------------+---------------+---------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clockContador'                                                                                                         ;
++-------+----------------------------+----------------------------+---------------+---------------+--------------+------------+------------+
+; Slack ; From Node                  ; To Node                    ; Launch Clock  ; Latch Clock   ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------+----------------------------+---------------+---------------+--------------+------------+------------+
+; 0.215 ; 74161:inst9|f74161:sub|9   ; 74161:inst9|f74161:sub|9   ; clockContador ; clockContador ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; 74161:inst9|f74161:sub|99  ; 74161:inst9|f74161:sub|99  ; clockContador ; clockContador ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; 74161:inst9|f74161:sub|110 ; 74161:inst9|f74161:sub|110 ; clockContador ; clockContador ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; 74161:inst9|f74161:sub|87  ; 74161:inst9|f74161:sub|87  ; clockContador ; clockContador ; 0.000        ; 0.000      ; 0.367      ;
+; 0.251 ; 74161:inst9|f74161:sub|9   ; 74161:inst9|f74161:sub|99  ; clockContador ; clockContador ; 0.000        ; 0.000      ; 0.403      ;
+; 0.251 ; 74161:inst9|f74161:sub|9   ; 74161:inst9|f74161:sub|110 ; clockContador ; clockContador ; 0.000        ; 0.000      ; 0.403      ;
+; 0.251 ; 74161:inst9|f74161:sub|9   ; 74161:inst9|f74161:sub|87  ; clockContador ; clockContador ; 0.000        ; 0.000      ; 0.403      ;
+; 0.361 ; 74161:inst9|f74161:sub|110 ; 74161:inst9|f74161:sub|87  ; clockContador ; clockContador ; 0.000        ; 0.000      ; 0.513      ;
+; 0.363 ; 74161:inst9|f74161:sub|87  ; 74161:inst9|f74161:sub|99  ; clockContador ; clockContador ; 0.000        ; 0.000      ; 0.515      ;
+; 0.366 ; 74161:inst9|f74161:sub|87  ; 74161:inst9|f74161:sub|110 ; clockContador ; clockContador ; 0.000        ; 0.000      ; 0.518      ;
+; 0.371 ; 74161:inst9|f74161:sub|99  ; 74161:inst9|f74161:sub|110 ; clockContador ; clockContador ; 0.000        ; 0.000      ; 0.523      ;
+; 0.372 ; 74161:inst9|f74161:sub|99  ; 74161:inst9|f74161:sub|87  ; clockContador ; clockContador ; 0.000        ; 0.000      ; 0.524      ;
++-------+----------------------------+----------------------------+---------------+---------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clockContador'                                                                         ;
++--------+--------------+----------------+------------------+---------------+------------+--------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock         ; Clock Edge ; Target                         ;
++--------+--------------+----------------+------------------+---------------+------------+--------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clockContador ; Rise       ; clockContador                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clockContador ; Rise       ; 74161:inst9|f74161:sub|110     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clockContador ; Rise       ; 74161:inst9|f74161:sub|110     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clockContador ; Rise       ; 74161:inst9|f74161:sub|87      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clockContador ; Rise       ; 74161:inst9|f74161:sub|87      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clockContador ; Rise       ; 74161:inst9|f74161:sub|9       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clockContador ; Rise       ; 74161:inst9|f74161:sub|9       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clockContador ; Rise       ; 74161:inst9|f74161:sub|99      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clockContador ; Rise       ; 74161:inst9|f74161:sub|99      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clockContador ; Rise       ; clockContador|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clockContador ; Rise       ; clockContador|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clockContador ; Rise       ; clockContador~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clockContador ; Rise       ; clockContador~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clockContador ; Rise       ; clockContador~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clockContador ; Rise       ; clockContador~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clockContador ; Rise       ; inst9|sub|110|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clockContador ; Rise       ; inst9|sub|110|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clockContador ; Rise       ; inst9|sub|87|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clockContador ; Rise       ; inst9|sub|87|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clockContador ; Rise       ; inst9|sub|99|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clockContador ; Rise       ; inst9|sub|99|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clockContador ; Rise       ; inst9|sub|9|clk                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clockContador ; Rise       ; inst9|sub|9|clk                ;
++--------+--------------+----------------+------------------+---------------+------------+--------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++-----------+---------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port    ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+---------------+-------+-------+------------+-----------------+
+; Q0        ; clockContador ; 3.530 ; 3.530 ; Rise       ; clockContador   ;
+; Q1        ; clockContador ; 3.457 ; 3.457 ; Rise       ; clockContador   ;
+; Q2        ; clockContador ; 3.649 ; 3.649 ; Rise       ; clockContador   ;
+; Q3        ; clockContador ; 3.437 ; 3.437 ; Rise       ; clockContador   ;
+; overflow  ; clockContador ; 3.832 ; 3.832 ; Rise       ; clockContador   ;
++-----------+---------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++-----------+---------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port    ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+---------------+-------+-------+------------+-----------------+
+; Q0        ; clockContador ; 3.530 ; 3.530 ; Rise       ; clockContador   ;
+; Q1        ; clockContador ; 3.457 ; 3.457 ; Rise       ; clockContador   ;
+; Q2        ; clockContador ; 3.649 ; 3.649 ; Rise       ; clockContador   ;
+; Q3        ; clockContador ; 3.437 ; 3.437 ; Rise       ; clockContador   ;
+; overflow  ; clockContador ; 3.784 ; 3.784 ; Rise       ; clockContador   ;
++-----------+---------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                          ;
++------------------+--------+-------+----------+---------+---------------------+
+; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -0.068 ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+;  clockContador   ; -0.068 ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -0.174 ; 0.0   ; 0.0      ; 0.0     ; -5.38               ;
+;  clockContador   ; -0.174 ; 0.000 ; N/A      ; N/A     ; -5.380              ;
++------------------+--------+-------+----------+---------+---------------------+
+
+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++-----------+---------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port    ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+---------------+-------+-------+------------+-----------------+
+; Q0        ; clockContador ; 6.247 ; 6.247 ; Rise       ; clockContador   ;
+; Q1        ; clockContador ; 6.079 ; 6.079 ; Rise       ; clockContador   ;
+; Q2        ; clockContador ; 6.526 ; 6.526 ; Rise       ; clockContador   ;
+; Q3        ; clockContador ; 6.060 ; 6.060 ; Rise       ; clockContador   ;
+; overflow  ; clockContador ; 6.976 ; 6.976 ; Rise       ; clockContador   ;
++-----------+---------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++-----------+---------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port    ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+---------------+-------+-------+------------+-----------------+
+; Q0        ; clockContador ; 3.530 ; 3.530 ; Rise       ; clockContador   ;
+; Q1        ; clockContador ; 3.457 ; 3.457 ; Rise       ; clockContador   ;
+; Q2        ; clockContador ; 3.649 ; 3.649 ; Rise       ; clockContador   ;
+; Q3        ; clockContador ; 3.437 ; 3.437 ; Rise       ; clockContador   ;
+; overflow  ; clockContador ; 3.784 ; 3.784 ; Rise       ; clockContador   ;
++-----------+---------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Setup Transfers                                                           ;
++---------------+---------------+----------+----------+----------+----------+
+; From Clock    ; To Clock      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------+---------------+----------+----------+----------+----------+
+; clockContador ; clockContador ; 12       ; 0        ; 0        ; 0        ;
++---------------+---------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------+
+; Hold Transfers                                                            ;
++---------------+---------------+----------+----------+----------+----------+
+; From Clock    ; To Clock      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------+---------------+----------+----------+----------+----------+
+; clockContador ; clockContador ; 12       ; 0        ; 0        ; 0        ;
++---------------+---------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 0     ; 0    ;
+; Unconstrained Input Port Paths  ; 0     ; 0    ;
+; Unconstrained Output Ports      ; 5     ; 5    ;
+; Unconstrained Output Port Paths ; 8     ; 8    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
+    Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sun Dec 08 15:43:23 2013
+Info: Command: quartus_sta exp13 -c exp13
+Info: qsta_default_script.tcl version: #1
+Warning (20013): Ignored assignments for entity "exp13" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name LL_ROOT_REGION ON -entity exp13 -section_id "Root Region" was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name LL_MEMBER_STATE LOCKED -entity exp13 -section_id "Root Region" was ignored
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'exp13.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clockContador clockContador
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.068
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.068        -0.174 clockContador 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 clockContador 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380        -5.380 clockContador 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332146): Worst-case setup slack is 0.508
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.508         0.000 clockContador 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clockContador 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380        -5.380 clockContador 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 312 megabytes
+    Info: Processing ended: Sun Dec 08 15:43:25 2013
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+

@@ -1,0 +1,29 @@
+\begin{thebibliography}{1}
+
+\bibitem{minic}
+{MiniC Grammar}.
+\newblock
+  \url{http://www2.ufersa.edu.br/portal/view/uploads/setores/184/AppendixA.pdf}.
+\newblock [Acessado em 20 de agosto de 2016].
+
+\bibitem{clrs09}
+Thomas~H. Cormen, Charles~E. Leiserson, Ronald~L. Rivest, and Clifford Stein.
+\newblock {\em {I}ntroduction to {A}lgorithms}.
+\newblock The MIT Press, 3 edition, 2009.
+
+\bibitem{lexeyacctutorial}
+{Lexical Analysis With Flex}.
+\newblock \url{http://epaperpress.com/lexandyacc/index.html}.
+\newblock [Acessado em 5 de outubro de 2016].
+
+\bibitem{aquamentus}
+{Lexical Analysis With Flex}.
+\newblock \url{http://aquamentus.com/flex_bison.html}.
+\newblock [Acessado em 5 de outubro de 2016].
+
+\bibitem{bisonmanual}
+{Lexical Analysis With Flex}.
+\newblock \url{https://www.gnu.org/software/bison/manual/bison.html}.
+\newblock [Acessado em 5 de outubro de 2016].
+
+\end{thebibliography}

@@ -1,0 +1,6 @@
+# O banco pode ser criado e populado com os arquivos no diretório Script.
+# Para criar registros de atletas com fotos, favor utilizar a crud
+# É importante na hoa de utilizar a crud criar um usuário 'root'@ localhost com senha '1234', ou mudar as configuraçoes
+no arquivo CRDU/controladores/dbHandler.php
+
+#Divirta-se 

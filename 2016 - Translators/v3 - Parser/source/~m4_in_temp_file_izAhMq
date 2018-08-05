@@ -1,0 +1,3799 @@
+m4_init()
+m4_define([b4_mergers], 
+[[]])
+
+m4_define([b4_symbol_numbers],
+[[0], [1], [2], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12], [13], [14], [15], [16], [17], [18], [19], [20], [21], [22], [23], [24], [25], [26], [27], [28], [29], [30], [31], [32], [33], [34], [35], [36], [37], [38], [39], [40], [41], [42], [43], [44], [45], [46], [47], [48], [49], [50], [51], [52], [53], [54], [55], [56], [57], [58]])
+
+m4_define([b4_type_names],
+[[0, 1, 2, 5, 6, 7, 8, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 38, 39, 40, 41, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58],
+[35, 36, 37, 42, 43, 44],
+[3],
+[9],
+[4, 11]])
+
+m4_define([b4_actions], 
+[b4_case(2, [b4_syncline(197, [["090111575.y"]])
+[    {
+					strcpy(pair->description, "Begin");
+				        strcpy(pair->value, "");
+						]b4_lhs_value([[NODE]])[ = createNode(pair);
+						newChild(]b4_lhs_value([[NODE]])[, ]b4_rhs_value(1, 1, [[NODE]])[);
+						showTree(]b4_lhs_value([[NODE]])[, 0);
+				        printSymbolTable();
+				}]])
+
+b4_case(3, [b4_syncline(205, [["090111575.y"]])
+[    {
+					strcpy(pair->description, "Function3333333333");
+			        strcpy(pair->value, "");
+			        ]b4_lhs_value([[NODE]])[ = createNode(pair);
+			        newBrother(]b4_lhs_value([[NODE]])[,]b4_rhs_value(7, 1, [[NODE]])[);
+printf("juca\n");
+
+			        newChild(]b4_lhs_value([[NODE]])[,]b4_rhs_value(7, 2, [[NODE]])[);
+
+			        strcpy(pair->description, "Identifier");
+			        strcpy(pair->value, ]b4_rhs_value(7, 3, [[str_value]])[);
+			        newChild(]b4_lhs_value([[NODE]])[,createNode(pair));
+
+			        strcpy(pair->description, "(");
+			        strcpy(pair->value, "");
+			        newChild(]b4_lhs_value([[NODE]])[,createNode(pair));
+
+			        newChild(]b4_lhs_value([[NODE]])[,]b4_rhs_value(7, 5, [[NODE]])[);
+
+			        strcpy(pair->description, ")");
+			        strcpy(pair->value, "");
+			        newChild(]b4_lhs_value([[NODE]])[,createNode(pair));
+
+			        newChild(]b4_lhs_value([[NODE]])[,]b4_rhs_value(7, 7, [[NODE]])[);
+				}]])
+
+b4_case(4, [b4_syncline(230, [["090111575.y"]])
+[    {
+					strcpy(pair->description, "Function2222");
+			        strcpy(pair->value, "");
+			        ]b4_lhs_value([[NODE]])[ = createNode(pair);
+			        newChild(]b4_lhs_value([[NODE]])[,]b4_rhs_value(6, 1, [[NODE]])[);
+
+			        strcpy(pair->description, "Identifier");
+			        strcpy(pair->value, ]b4_rhs_value(6, 2, [[str_value]])[);
+			        newChild(]b4_lhs_value([[NODE]])[,createNode(pair));
+
+			        strcpy(pair->description, "(");
+			        strcpy(pair->value, "");
+			        newChild(]b4_lhs_value([[NODE]])[,createNode(pair));
+
+			        newChild(]b4_lhs_value([[NODE]])[,]b4_rhs_value(6, 4, [[NODE]])[);
+
+			        strcpy(pair->description, ")");
+			        strcpy(pair->value, "");
+			        newChild(]b4_lhs_value([[NODE]])[,createNode(pair));
+
+			        newChild(]b4_lhs_value([[NODE]])[,]b4_rhs_value(6, 6, [[NODE]])[);
+			    }]])
+
+b4_case(5, [b4_syncline(252, [["090111575.y"]])
+[    {
+					strcpy(pair->description, "FormalArgList");
+					strcpy(pair->value, "");
+					]b4_lhs_value([[NODE]])[ = createNode(pair);
+					newChild(]b4_lhs_value([[NODE]])[,NULL);
+			    }]])
+
+b4_case(6, [b4_syncline(258, [["090111575.y"]])
+[    {
+printf("0\n");
+					strcpy(pair->description, "FormalArg");
+			        strcpy(pair->value, "");
+			        ]b4_lhs_value([[NODE]])[ = createNode(pair);
+			        newChild(]b4_lhs_value([[NODE]])[,NULL);
+			    }]])
+
+b4_case(7, [b4_syncline(265, [["090111575.y"]])
+[    {
+printf("1\n");
+					strcpy(pair->description, "FormalArgList");
+			        strcpy(pair->value, "");
+			        ]b4_lhs_value([[NODE]])[ = createNode(pair);
+			        newChild(]b4_lhs_value([[NODE]])[,]b4_rhs_value(3, 1, [[NODE]])[);
+printf("2\n");
+			        strcpy(pair->description, ",");
+			        strcpy(pair->value, "");
+			        newChild(]b4_lhs_value([[NODE]])[,createNode(pair));
+printf("3\n");
+			        strcpy(pair->description, "FormalArg");
+			        strcpy(pair->value, "");
+			        ]b4_lhs_value([[NODE]])[ = createNode(pair);
+			        newChild(]b4_lhs_value([[NODE]])[,NULL);
+			    }]])
+
+b4_case(8, [b4_syncline(281, [["090111575.y"]])
+[    { printf("bison: FormalArg 1\n"); }]])
+
+b4_case(9, [b4_syncline(283, [["090111575.y"]])
+[    { printf("bison: ArgList 0\n"); }]])
+
+b4_case(10, [b4_syncline(284, [["090111575.y"]])
+[    { printf("bison: ArgList 1\n"); }]])
+
+b4_case(11, [b4_syncline(285, [["090111575.y"]])
+[    { printf("bison: ArgList 2\n"); }]])
+
+b4_case(12, [b4_syncline(287, [["090111575.y"]])
+[    { printf("bison: Arg 1\n"); }]])
+
+b4_case(13, [b4_syncline(288, [["090111575.y"]])
+[    { printf("bison: Arg 2\n"); }]])
+
+b4_case(14, [b4_syncline(289, [["090111575.y"]])
+[    { printf("bison: Arg 3\n"); }]])
+
+b4_case(15, [b4_syncline(291, [["090111575.y"]])
+[    { printf("bison: Declaration 1\n"); }]])
+
+b4_case(16, [b4_syncline(292, [["090111575.y"]])
+[    { printf("bison: Declaration 1\n"); }]])
+
+b4_case(17, [b4_syncline(294, [["090111575.y"]])
+[    {
+					strcpy(pair->description, "Type");
+			        strcpy(pair->value, "");
+			        ]b4_lhs_value([[NODE]])[ = createNode(pair);
+
+			        strcpy(pair->description, "int");
+			        strcpy(pair->value, "");
+			        newChild(]b4_lhs_value([[NODE]])[,createNode(pair));
+			    }]])
+
+b4_case(18, [b4_syncline(303, [["090111575.y"]])
+[    {
+					strcpy(pair->description, "string");
+			        strcpy(pair->value, "");
+			        ]b4_lhs_value([[NODE]])[ = createNode(pair);
+			        newChild(]b4_lhs_value([[NODE]])[,NULL);
+			    }]])
+
+b4_case(19, [b4_syncline(309, [["090111575.y"]])
+[    {
+					strcpy(pair->description, "CompoundStmt");
+			        strcpy(pair->value, "");
+			        ]b4_lhs_value([[NODE]])[ = createNode(pair);
+			        newChild(]b4_lhs_value([[NODE]])[,NULL);
+			        newChild(]b4_lhs_value([[NODE]])[,NULL);
+			        newChild(]b4_lhs_value([[NODE]])[,NULL);
+			    }]])
+
+b4_case(20, [b4_syncline(317, [["090111575.y"]])
+[    { printf("bison: StmtList 1\n"); }]])
+
+b4_case(21, [b4_syncline(318, [["090111575.y"]])
+[    { printf("bison: StmtList 2\n"); }]])
+
+b4_case(22, [b4_syncline(320, [["090111575.y"]])
+[    { printf("bison: Stmt 1\n"); }]])
+
+b4_case(23, [b4_syncline(321, [["090111575.y"]])
+[    { printf("bison: Stmt 5\n"); }]])
+
+b4_case(24, [b4_syncline(322, [["090111575.y"]])
+[    { printf("bison: Stmt 2\n"); }]])
+
+b4_case(25, [b4_syncline(323, [["090111575.y"]])
+[    { printf("bison: Stmt 3\n"); }]])
+
+b4_case(26, [b4_syncline(324, [["090111575.y"]])
+[    { printf("bison: Stmt 4\n"); }]])
+
+b4_case(27, [b4_syncline(325, [["090111575.y"]])
+[    { printf("bison: Stmt 8\n"); }]])
+
+b4_case(28, [b4_syncline(327, [["090111575.y"]])
+[    { printf("bison: WhileStmt 1\n"); }]])
+
+b4_case(29, [b4_syncline(329, [["090111575.y"]])
+[    { printf("bison: IfStmt 1\n"); }]])
+
+b4_case(30, [b4_syncline(330, [["090111575.y"]])
+[    { printf("bison: IfStmt 1\n"); }]])
+
+b4_case(31, [b4_syncline(332, [["090111575.y"]])
+[    { printf("bison: ReturnStmt 1\n"); }]])
+
+b4_case(32, [b4_syncline(333, [["090111575.y"]])
+[    { printf("bison: ReturnStmt 2\n"); }]])
+
+b4_case(33, [b4_syncline(335, [["090111575.y"]])
+[    { printf("bison: Expr 1\n"); }]])
+
+b4_case(34, [b4_syncline(336, [["090111575.y"]])
+[    { printf("bison: Expr 2\n"); }]])
+
+b4_case(35, [b4_syncline(337, [["090111575.y"]])
+[    { printf("bison: Expr 3\n"); }]])
+
+b4_case(36, [b4_syncline(338, [["090111575.y"]])
+[    { printf("bison: Expr 4\n"); }]])
+
+b4_case(37, [b4_syncline(340, [["090111575.y"]])
+[    { printf("bison: Attribution 1\n"); }]])
+
+b4_case(38, [b4_syncline(342, [["090111575.y"]])
+[    { printf("bison: Rvalue 1\n"); }]])
+
+b4_case(39, [b4_syncline(343, [["090111575.y"]])
+[    { printf("bison: Rvalue 2\n"); }]])
+
+b4_case(40, [b4_syncline(345, [["090111575.y"]])
+[    { printf("bison: Compare 1\n"); }]])
+
+b4_case(41, [b4_syncline(346, [["090111575.y"]])
+[    { printf("bison: Compare 2\n"); }]])
+
+b4_case(42, [b4_syncline(347, [["090111575.y"]])
+[    { printf("bison: Compare 3\n"); }]])
+
+b4_case(43, [b4_syncline(348, [["090111575.y"]])
+[    { printf("bison: Compare 4\n"); }]])
+
+b4_case(44, [b4_syncline(349, [["090111575.y"]])
+[    { printf("bison: Compare 5\n"); }]])
+
+b4_case(45, [b4_syncline(350, [["090111575.y"]])
+[    { printf("bison: Compare 6\n"); }]])
+
+b4_case(46, [b4_syncline(352, [["090111575.y"]])
+[    { printf("bison: Addition 1\n"); }]])
+
+b4_case(47, [b4_syncline(353, [["090111575.y"]])
+[    { printf("bison: Addition 2\n"); }]])
+
+b4_case(48, [b4_syncline(354, [["090111575.y"]])
+[    { printf("bison: Addition 3\n"); }]])
+
+b4_case(49, [b4_syncline(356, [["090111575.y"]])
+[    { printf("bison: Multiplication 1\n"); }]])
+
+b4_case(50, [b4_syncline(357, [["090111575.y"]])
+[    { printf("bison: Multiplication 2\n"); }]])
+
+b4_case(51, [b4_syncline(358, [["090111575.y"]])
+[    { printf("bison: Multiplication 3\n"); }]])
+
+b4_case(52, [b4_syncline(360, [["090111575.y"]])
+[    { printf("bison: Term 1\n"); }]])
+
+b4_case(53, [b4_syncline(361, [["090111575.y"]])
+[    { printf("bison: Term 2\n"); }]])
+
+b4_case(54, [b4_syncline(362, [["090111575.y"]])
+[    { printf("bison: Term 3\n"); }]])
+
+b4_case(55, [b4_syncline(363, [["090111575.y"]])
+[    { printf("bison: Term 4\n"); }]])
+
+b4_case(56, [b4_syncline(365, [["090111575.y"]])
+[    { printf("bison: Factor 1\n"); }]])
+
+b4_case(57, [b4_syncline(366, [["090111575.y"]])
+[    { printf("bison: Factor 2\n"); }]])
+
+b4_case(58, [b4_syncline(367, [["090111575.y"]])
+[    { printf("bison: Factor 3\n"); }]])
+
+b4_case(59, [b4_syncline(369, [["090111575.y"]])
+[    { printf("bison: FunctionCall 1\n"); }]])
+
+b4_case(60, [b4_syncline(370, [["090111575.y"]])
+[    { printf("bison: FunctionCall 1\n"); }]])
+
+b4_case(61, [b4_syncline(372, [["090111575.y"]])
+[    { printf("bison: StringConcat 0\n"); }]])
+
+b4_case(62, [b4_syncline(373, [["090111575.y"]])
+[    { printf("bison: StringConcat 0.5\n"); }]])
+
+b4_case(63, [b4_syncline(374, [["090111575.y"]])
+[    { printf("bison: StringConcat 1\n"); }]])
+
+b4_case(64, [b4_syncline(375, [["090111575.y"]])
+[    { printf("bison: StringConcat 2\n"); }]])
+
+b4_case(65, [b4_syncline(376, [["090111575.y"]])
+[    { printf("bison: StringConcat 3\n"); }]])
+
+b4_case(66, [b4_syncline(377, [["090111575.y"]])
+[    { printf("bison: StringConcat 4\n"); }]])
+
+])
+
+m4_define([b4_rline_max],
+[[377]])
+
+
+m4_define([b4_symbol(50, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(7, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(7, number)],
+[[7]])
+
+
+m4_define([b4_symbol(50, number)],
+[[50]])
+
+
+m4_define([b4_symbol(38, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(43, has_type)],
+[[1]])
+
+
+m4_define([b4_symbol(53, number)],
+[[53]])
+
+
+m4_define([b4_symbol(5, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(12, id)],
+[[VOID]])
+
+
+m4_define([b4_symbol(56, number)],
+[[56]])
+
+
+m4_define([b4_symbol(49, is_token)],
+[[0]])
+
+
+m4_define([b4_symbol(54, is_token)],
+[[0]])
+
+
+m4_define([b4_conflict_list_heads],
+[[     0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0]])
+
+
+m4_define([b4_symbol(4, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(46, id)],
+[[WhileStmt]])
+
+
+m4_define([b4_conflicting_rules_min],
+[[0]])
+
+
+m4_define([b4_symbol(49, type)],
+[[]])
+
+
+m4_define([b4_symbol(46, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(55, user_number)],
+[[-1]])
+
+
+m4_define([b4_symbol(5, id)],
+[[IF]])
+
+
+m4_define([b4_symbol(39, type)],
+[[]])
+
+
+m4_define([b4_symbol(5, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(39, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(1, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(39, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(44, has_type)],
+[[1]])
+
+
+m4_define([b4_symbol(29, type)],
+[[]])
+
+
+m4_define([b4_symbol(6, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(23, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(32, user_number)],
+[[274]])
+
+
+m4_define([b4_symbol(39, id)],
+[[ArgList]])
+
+
+m4_define([b4_symbol(4, type)],
+[[str_value]])
+
+
+m4_define([b4_symbol(55, is_token)],
+[[0]])
+
+
+m4_define([b4_last],
+[[133]])
+
+
+m4_define([b4_symbol(19, type)],
+[[]])
+
+
+m4_define([b4_symbol(41, id)],
+[[Declaration]])
+
+
+m4_define([b4_symbol(12, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(15, has_id)],
+[[0]])
+
+
+m4_define([b4_symbol(36, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(0, tag)],
+[[$][end]])
+
+
+m4_define([b4_symbol(18, has_id)],
+[[0]])
+
+
+m4_define([b4_symbol(0, id)],
+[[]])
+
+
+m4_define([b4_symbol(12, tag)],
+[[VOID]])
+
+
+m4_define([b4_symbol(10, is_token)],
+[[1]])
+
+
+m4_define([b4_symbol(9, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(52, has_printer)],
+[[0]])
+
+
+m4_define([b4_max_left_semantic_context],
+[[0]])
+
+
+m4_define([b4_symbol(45, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(7, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(50, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(33, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(34, id)],
+[[]])
+
+
+m4_define([b4_symbol(56, is_token)],
+[[0]])
+
+
+m4_define([b4_symbol(31, tag)],
+[[GreaterThanOrEqualTo]])
+
+
+m4_define([b4_symbol(27, has_printer)],
+[[0]])
+
+
+m4_define([b4_defact],
+[[     0,    17,    18,     0,     2,     0,     1,     0,     0,     0,
+       5,     5,     0,     6,     0,     0,     0,     0,     8,     0,
+      21,     4,     7,     3,     0,    56,     0,     0,    57,    58,
+      31,     0,    19,     0,     0,     0,     0,    26,    20,    22,
+      25,     0,     0,    34,    33,    39,    48,    51,    55,    35,
+      36,     9,     0,     0,     0,     0,     0,     0,    32,     0,
+      56,    58,    54,    53,    23,    15,    16,    27,    24,    40,
+      41,    42,    43,    44,    45,     0,     0,     0,     0,     0,
+       0,    56,     0,    10,    12,    13,    14,    37,     0,    66,
+      64,     0,     0,    65,    63,    52,    38,    46,    47,    49,
+      50,    62,    61,    59,     0,     9,     0,     0,    11,     0,
+      29,    28,    60,     0,    30]])
+
+
+m4_define([b4_symbol(36, user_number)],
+[[-1]])
+
+
+m4_define([b4_conflicting_rules],
+[[     0]])
+
+
+m4_define([b4_symbol(25, tag)],
+[['.']])
+
+
+m4_define([b4_symbol(7, tag)],
+[[WHILE]])
+
+
+m4_define([b4_symbol(50, tag)],
+[[Attribution]])
+
+
+m4_define([b4_symbol(21, has_id)],
+[[0]])
+
+
+m4_define([b4_user_token_number_max],
+[[275]])
+
+
+m4_define([b4_symbol(30, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(24, has_id)],
+[[0]])
+
+
+m4_define([b4_symbol(19, tag)],
+[[';']])
+
+
+m4_define([b4_symbol(13, user_number)],
+[[268]])
+
+
+m4_define([b4_symbol(54, type)],
+[[]])
+
+
+m4_define([b4_symbol(44, tag)],
+[[StmtList]])
+
+
+m4_define([b4_symbol(27, has_id)],
+[[1]])
+
+
+m4_define([b4_rline],
+[[     0,   197,   197,   205,   230,   252,   258,   265,   281,   283,
+     284,   285,   287,   288,   289,   291,   292,   294,   303,   309,
+     317,   318,   320,   321,   322,   323,   324,   325,   327,   329,
+     330,   332,   333,   335,   336,   337,   338,   340,   342,   343,
+     345,   346,   347,   348,   349,   350,   352,   353,   354,   356,
+     357,   358,   360,   361,   362,   363,   365,   366,   367,   369,
+     370,   372,   373,   374,   375,   376,   377]])
+
+
+m4_define([b4_translate_min],
+[[0]])
+
+
+m4_define([b4_token_table_flag],
+[[0]])
+
+
+m4_define([b4_percent_define_bison_variables(lr.keep-unreachable-state)],
+[[]])
+
+
+m4_define([b4_symbol(11, is_token)],
+[[1]])
+
+
+m4_define([b4_symbol(27, id)],
+[[EqualTo]])
+
+
+m4_define([b4_symbol(46, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(38, tag)],
+[[FormalArg]])
+
+
+m4_define([b4_symbol(51, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(44, type)],
+[[NODE]])
+
+
+m4_define([b4_symbol(8, has_type)],
+[[0]])
+
+
+m4_define([b4_percent_define_loc(lr.default-reduction)],
+[[[[<default value>:-1.-1]], [[<default value>:-1.-1]]]])
+
+
+m4_define([b4_spec_name_prefix],
+[[]])
+
+
+m4_define([b4_symbol(56, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(57, is_token)],
+[[0]])
+
+
+m4_define([b4_spec_verbose_file],
+[[090111575.output]])
+
+
+m4_define([b4_rules_number],
+[[66]])
+
+
+m4_define([b4_symbol(34, type)],
+[[]])
+
+
+m4_define([b4_symbol(57, tag)],
+[[FunctionCall]])
+
+
+m4_define([b4_symbol(33, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(24, type)],
+[[]])
+
+
+m4_define([b4_symbol(30, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(42, user_number)],
+[[-1]])
+
+
+m4_define([b4_dprec_max],
+[[0]])
+
+
+m4_define([b4_use_push_for_pull_flag],
+[[0]])
+
+
+m4_define([b4_symbol(33, has_id)],
+[[1]])
+
+
+m4_define([b4_stos_max],
+[[58]])
+
+
+m4_define([b4_defgoto_min],
+[[-1]])
+
+
+m4_define([b4_symbol(19, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(12, is_token)],
+[[1]])
+
+
+m4_define([b4_symbol(36, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(14, type)],
+[[]])
+
+
+m4_define([b4_symbol(1, user_number)],
+[[256]])
+
+
+m4_define([b4_symbol(22, id)],
+[[]])
+
+
+m4_define([b4_symbol(10, number)],
+[[10]])
+
+
+m4_define([b4_symbol(17, user_number)],
+[[125]])
+
+
+m4_define([b4_symbol(39, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(47, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(9, has_type)],
+[[1]])
+
+
+m4_define([b4_symbol(52, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(13, number)],
+[[13]])
+
+
+m4_define([b4_pact],
+[[    15,   -51,   -51,    11,    15,    33,   -51,    45,     1,     5,
+      15,    15,    60,   -51,    49,    64,    42,    15,   -51,    42,
+     -51,   -51,   -51,   -51,    57,    -4,    58,    63,   -51,    37,
+       3,     3,   -51,    27,    27,    76,    94,   -51,   -51,   -51,
+     -51,    95,    96,   -51,    81,    24,    84,   -51,   -51,   -51,
+      92,     9,     3,   115,    35,     3,     3,    41,   -51,   105,
+     -51,   -51,   -51,   -51,   -51,   101,   -51,   -51,   -51,   -51,
+     -51,   -51,   -51,   -51,   -51,    27,    27,    27,    31,    31,
+      65,    18,    68,   -51,   -51,   -51,    92,   -51,   108,   -51,
+     -51,   109,   110,   -51,   -51,   -51,    24,    84,    84,   -51,
+     -51,   -51,   -51,   -51,     9,     9,    42,    80,   -51,    82,
+     117,   -51,   -51,    42,   -51]])
+
+
+m4_define([b4_pkgdatadir],
+[[C:\MinGW\msys\1.0\bin\data]])
+
+
+m4_define([b4_symbol(10, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(16, number)],
+[[16]])
+
+
+m4_define([b4_symbol(58, is_token)],
+[[0]])
+
+
+m4_define([b4_symbol(56, id)],
+[[Factor]])
+
+
+m4_define([b4_symbol(19, number)],
+[[19]])
+
+
+m4_define([b4_symbol(47, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(16, has_destructor)],
+[[0]])
+
+
+m4_define([b4_percent_define_bison_variables(lr.type)],
+[[]])
+
+
+m4_define([b4_spec_defines_file],
+[[090111575.tab.h]])
+
+
+m4_define([b4_symbol(15, id)],
+[[]])
+
+
+m4_define([b4_symbol(37, has_printer)],
+[[0]])
+
+
+m4_define([b4_conflict_list_heads_max],
+[[0]])
+
+
+m4_define([b4_symbol(46, user_number)],
+[[-1]])
+
+
+m4_define([b4_symbol(44, has_destructor)],
+[[0]])
+
+
+m4_define([b4_nterms_number],
+[[25]])
+
+
+m4_define([b4_symbol(42, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(13, is_token)],
+[[1]])
+
+
+m4_define([b4_symbol(13, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(49, id)],
+[[Expr]])
+
+
+m4_define([b4_symbol(45, has_id)],
+[[1]])
+
+
+m4_define([b4_spec_outfile],
+[[090111575.tab.c]])
+
+
+m4_define([b4_symbol(48, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(5, user_number)],
+[[260]])
+
+
+m4_define([b4_symbol(53, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(48, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(22, number)],
+[[22]])
+
+
+m4_define([b4_immediate_max],
+[[0]])
+
+
+m4_define([b4_symbol(25, number)],
+[[25]])
+
+
+m4_define([b4_symbol(51, id)],
+[[Rvalue]])
+
+
+m4_define([b4_symbol(8, id)],
+[[INT]])
+
+
+m4_define([b4_symbol(14, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(6, type)],
+[[]])
+
+
+m4_define([b4_symbol(23, user_number)],
+[[43]])
+
+
+m4_define([b4_pact_ninf],
+[[-51]])
+
+
+m4_define([b4_symbol(41, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(28, number)],
+[[28]])
+
+
+m4_define([b4_symbol(1, tag)],
+[[error]])
+
+
+m4_define([b4_percent_define_loc(parse.trace)],
+[[[[<command line>:3.-1]], [[<command line>:3.-1]]]])
+
+
+m4_define([b4_symbol(10, has_destructor)],
+[[0]])
+
+
+m4_define([b4_percent_define_syncline(lr.type)],
+[[]])
+
+
+m4_define([b4_symbol(13, tag)],
+[[RETURN]])
+
+
+m4_define([b4_symbol(10, id)],
+[[STRING]])
+
+
+m4_define([b4_symbol(2, has_id)],
+[[0]])
+
+
+m4_define([b4_symbol(5, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(14, is_token)],
+[[1]])
+
+
+m4_define([b4_symbol(32, tag)],
+[[NotEqualTo]])
+
+
+m4_define([b4_symbol(51, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(49, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(44, id)],
+[[StmtList]])
+
+
+m4_define([b4_symbol(8, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(54, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(54, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(43, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(9, user_number)],
+[[264]])
+
+
+m4_define([b4_symbol(57, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(52, user_number)],
+[[-1]])
+
+
+m4_define([b4_symbol(31, number)],
+[[31]])
+
+
+m4_define([b4_symbol(26, tag)],
+[[':']])
+
+
+m4_define([b4_symbol(8, tag)],
+[[INT]])
+
+
+m4_define([b4_symbol(51, tag)],
+[[Rvalue]])
+
+
+m4_define([b4_symbol(3, id)],
+[[OPERATOR]])
+
+
+m4_define([b4_symbol(34, number)],
+[[34]])
+
+
+m4_define([b4_symbol(2, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(18, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(37, number)],
+[[37]])
+
+
+m4_define([b4_symbol(27, user_number)],
+[[269]])
+
+
+m4_define([b4_symbol(45, tag)],
+[[Stmt]])
+
+
+m4_define([b4_symbol(20, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(37, id)],
+[[FormalArgList]])
+
+
+m4_define([b4_symbol(39, tag)],
+[[ArgList]])
+
+
+m4_define([b4_symbol(15, is_token)],
+[[1]])
+
+
+m4_define([b4_percent_define(lr.type)],
+[[lalr]])
+
+
+m4_define([b4_symbol(20, is_token)],
+[[1]])
+
+
+m4_define([b4_symbol(56, type)],
+[[]])
+
+
+m4_define([b4_symbol(58, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(55, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(27, has_destructor)],
+[[0]])
+
+
+m4_define([b4_nondeterministic_flag],
+[[0]])
+
+
+m4_define([b4_symbol(46, type)],
+[[]])
+
+
+m4_define([b4_symbol(58, tag)],
+[[StringConcat]])
+
+
+m4_define([b4_table_min],
+[[0]])
+
+
+m4_define([b4_symbol(47, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(40, number)],
+[[40]])
+
+
+m4_define([b4_symbol(56, user_number)],
+[[-1]])
+
+
+m4_define([b4_tname],
+[["$][end", "error", "$][undefined", "OPERATOR", "Identifier", "IF", "ELSE",
+  "WHILE", "INT", "NUMBER", "STRING", "TEXT", "VOID", "RETURN", "'('",
+  "')'", "'{'", "'}'", "','", "';'", "'='", "'*'", "'/'", "'+'", "'-'",
+  "'.'", "':'", "EqualTo", "LessThan", "GreaterThan", "LessThanOrEqualTo",
+  "GreaterThanOrEqualTo", "NotEqualTo", "IFX", "$][accept", "Begin",
+  "Function", "FormalArgList", "FormalArg", "ArgList", "Arg",
+  "Declaration", "Type", "CompoundStmt", "StmtList", "Stmt", "WhileStmt",
+  "IfStmt", "ReturnStmt", "Expr", "Attribution", "Rvalue", "Compare",
+  "Addition", "Multiplication", "Term", "Factor", "FunctionCall",
+  "StringConcat", ]b4_null[]])
+
+
+m4_define([b4_symbol(36, type)],
+[[NODE]])
+
+
+m4_define([b4_symbol(43, number)],
+[[43]])
+
+
+m4_define([b4_symbol(6, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(55, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(46, number)],
+[[46]])
+
+
+m4_define([b4_symbol(24, has_destructor)],
+[[0]])
+
+
+m4_define([b4_check_max],
+[[113]])
+
+
+m4_define([b4_symbol(49, number)],
+[[49]])
+
+
+m4_define([b4_symbol(32, id)],
+[[NotEqualTo]])
+
+
+m4_define([b4_symbol(26, type)],
+[[]])
+
+
+m4_define([b4_symbol(10, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(24, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(33, user_number)],
+[[275]])
+
+
+m4_define([b4_symbol(16, is_token)],
+[[1]])
+
+
+m4_define([b4_symbol(1, type)],
+[[]])
+
+
+m4_define([b4_symbol(21, is_token)],
+[[1]])
+
+
+m4_define([b4_symbol(16, type)],
+[[]])
+
+
+m4_define([b4_symbol(56, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(9, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(52, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(21, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(0, number)],
+[[0]])
+
+
+m4_define([b4_undef_token_number],
+[[2]])
+
+
+m4_define([b4_symbol(10, user_number)],
+[[265]])
+
+
+m4_define([b4_symbol(3, number)],
+[[3]])
+
+
+m4_define([b4_symbol(25, id)],
+[[]])
+
+
+m4_define([b4_symbol(6, number)],
+[[6]])
+
+
+m4_define([b4_symbol(9, number)],
+[[9]])
+
+
+m4_define([b4_symbol(52, number)],
+[[52]])
+
+
+m4_define([b4_symbol(6, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(53, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(55, number)],
+[[55]])
+
+
+m4_define([b4_symbol(11, has_type)],
+[[1]])
+
+
+m4_define([b4_dprec],
+[[     0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0]])
+
+
+m4_define([b4_symbol(58, number)],
+[[58]])
+
+
+m4_define([b4_symbol(17, is_token)],
+[[1]])
+
+
+m4_define([b4_symbol(22, is_token)],
+[[1]])
+
+
+m4_define([b4_percent_define_kind(parse.trace)],
+[[keyword]])
+
+
+m4_define([b4_symbol(28, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(37, user_number)],
+[[-1]])
+
+
+m4_define([b4_symbol(57, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(20, tag)],
+[['=']])
+
+
+m4_define([b4_symbol(30, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(18, id)],
+[[]])
+
+
+m4_define([b4_symbol(3, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(2, tag)],
+[[$][undefined]])
+
+
+m4_define([b4_percent_define_loc(parse.error)],
+[[[[090111575.y:146.9]], [[090111575.y:146.20]]]])
+
+
+m4_define([b4_symbol(14, tag)],
+[['(']])
+
+
+m4_define([b4_symbol(51, type)],
+[[]])
+
+
+m4_define([b4_symbol(8, type)],
+[[]])
+
+
+m4_define([b4_symbol(20, id)],
+[[]])
+
+
+m4_define([b4_symbol(14, user_number)],
+[[40]])
+
+
+m4_define([b4_symbol(12, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(41, type)],
+[[]])
+
+
+m4_define([b4_symbol(0, has_destructor)],
+[[0]])
+
+
+m4_define([b4_percent_define(lr.default-reduction)],
+[[most]])
+
+
+m4_define([b4_symbol(33, tag)],
+[[IFX]])
+
+
+m4_define([b4_spec_graph_file],
+[[]])
+
+
+m4_define([b4_symbol(54, id)],
+[[Multiplication]])
+
+
+m4_define([b4_symbol(38, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(18, is_token)],
+[[1]])
+
+
+m4_define([b4_symbol(57, has_printer)],
+[[0]])
+
+
+m4_define([b4_defact_max],
+[[66]])
+
+
+m4_define([b4_symbol(23, is_token)],
+[[1]])
+
+
+m4_define([b4_symbol(31, type)],
+[[]])
+
+
+m4_define([b4_symbol(58, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(11, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(27, tag)],
+[[EqualTo]])
+
+
+m4_define([b4_symbol(9, tag)],
+[[NUMBER]])
+
+
+m4_define([b4_symbol(52, tag)],
+[[Compare]])
+
+
+m4_define([b4_symbol(14, has_id)],
+[[0]])
+
+
+m4_define([b4_symbol(13, id)],
+[[RETURN]])
+
+
+m4_define([b4_symbol(17, has_id)],
+[[0]])
+
+
+m4_define([b4_symbol(21, type)],
+[[]])
+
+
+m4_define([b4_symbol(35, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(34, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(43, user_number)],
+[[-1]])
+
+
+m4_define([b4_symbol(46, tag)],
+[[WhileStmt]])
+
+
+m4_define([b4_symbol(47, id)],
+[[IfStmt]])
+
+
+m4_define([b4_symbol(11, type)],
+[[str_value]])
+
+
+m4_define([b4_glr_flag],
+[[0]])
+
+
+m4_define([b4_symbol(2, user_number)],
+[[257]])
+
+
+m4_define([b4_symbol(18, user_number)],
+[[44]])
+
+
+m4_define([b4_symbol(13, has_type)],
+[[0]])
+
+
+m4_define([b4_merger_min],
+[[0]])
+
+
+m4_define([b4_symbol(19, is_token)],
+[[1]])
+
+
+m4_define([b4_symbol(6, id)],
+[[ELSE]])
+
+
+m4_define([b4_symbol(11, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(32, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(24, is_token)],
+[[1]])
+
+
+m4_define([b4_r1_max],
+[[58]])
+
+
+m4_define([b4_symbol(20, user_number)],
+[[61]])
+
+
+m4_define([b4_toknum_min],
+[[0]])
+
+
+m4_define([b4_yacc_flag],
+[[0]])
+
+
+m4_define([b4_stos],
+[[     0,     8,    10,    35,    36,    42,     0,    42,     4,     4,
+      14,    14,    37,    38,    42,    37,    15,    18,     4,    15,
+      16,    43,    38,    43,    44,     4,     5,     7,     9,    11,
+      13,    14,    17,    23,    24,    41,    42,    43,    45,    46,
+      47,    48,    49,    50,    51,    53,    54,    55,    56,    57,
+      58,    14,    20,    25,    26,    14,    14,    26,    49,    49,
+       4,    11,    55,    55,    19,     4,    50,    19,    19,    27,
+      28,    29,    30,    31,    32,    52,    23,    24,    21,    22,
+      26,     4,    39,    40,    56,    57,    58,    49,     4,     4,
+      11,    49,    49,     4,    11,    15,    53,    54,    54,    56,
+      56,     4,    11,    15,    18,    14,    15,    15,    40,    39,
+      43,    45,    15,     6,    43]])
+
+
+m4_define([b4_symbol(58, type)],
+[[]])
+
+
+m4_define([b4_symbol(20, has_id)],
+[[0]])
+
+
+m4_define([b4_symbol(23, has_id)],
+[[0]])
+
+
+m4_define([b4_symbol(26, has_id)],
+[[0]])
+
+
+m4_define([b4_symbol(48, type)],
+[[]])
+
+
+m4_define([b4_percent_define_syncline(lr.default-reduction)],
+[[]])
+
+
+m4_define([b4_symbol(29, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(38, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(42, id)],
+[[Type]])
+
+
+m4_define([b4_symbol(47, user_number)],
+[[-1]])
+
+
+m4_define([b4_symbol(38, type)],
+[[]])
+
+
+m4_define([b4_tag_seen_flag],
+[[1]])
+
+
+m4_define([b4_symbol(40, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(14, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(6, user_number)],
+[[261]])
+
+
+m4_define([b4_pact_max],
+[[117]])
+
+
+m4_define([b4_symbol(28, type)],
+[[]])
+
+
+m4_define([b4_symbol(25, is_token)],
+[[1]])
+
+
+m4_define([b4_symbol(1, id)],
+[[error]])
+
+
+m4_define([b4_symbol(30, is_token)],
+[[1]])
+
+
+m4_define([b4_percent_define_syncline(lr.keep-unreachable-state)],
+[[]])
+
+
+m4_define([b4_percent_define_loc(lr.type)],
+[[[[<default value>:-1.-1]], [[<default value>:-1.-1]]]])
+
+
+m4_define([b4_symbol(15, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(3, type)],
+[[char_value]])
+
+
+m4_define([b4_symbol(24, user_number)],
+[[45]])
+
+
+m4_define([b4_symbol(18, type)],
+[[]])
+
+
+m4_define([b4_pgoto_min],
+[[-51]])
+
+
+m4_define([b4_symbol(35, id)],
+[[Begin]])
+
+
+m4_define([b4_symbol(32, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(35, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(49, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(38, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(18, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(12, number)],
+[[12]])
+
+
+m4_define([b4_r2_min],
+[[0]])
+
+
+m4_define([b4_symbol(15, number)],
+[[15]])
+
+
+m4_define([b4_percent_define_kind(parse.error)],
+[[keyword]])
+
+
+m4_define([b4_symbol(15, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(20, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(18, number)],
+[[18]])
+
+
+m4_define([b4_symbol(26, is_token)],
+[[1]])
+
+
+m4_define([b4_symbol(44, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(31, is_token)],
+[[1]])
+
+
+m4_define([b4_symbol(53, user_number)],
+[[-1]])
+
+
+m4_define([b4_rline_min],
+[[0]])
+
+
+m4_define([b4_symbol(28, id)],
+[[LessThan]])
+
+
+m4_define([b4_symbol(21, tag)],
+[['*']])
+
+
+m4_define([b4_symbol(3, tag)],
+[[OPERATOR]])
+
+
+m4_define([b4_symbol(46, has_destructor)],
+[[0]])
+
+
+m4_define([b4_conflicting_rules_max],
+[[0]])
+
+
+m4_define([b4_symbol(3, has_printer)],
+[[0]])
+
+
+m4_define([b4_defines_flag],
+[[1]])
+
+
+m4_define([b4_symbol(19, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(15, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(28, user_number)],
+[[270]])
+
+
+m4_define([b4_symbol(15, tag)],
+[[')']])
+
+
+m4_define([b4_symbol(40, tag)],
+[[Arg]])
+
+
+m4_define([b4_symbol(30, id)],
+[[LessThanOrEqualTo]])
+
+
+m4_define([b4_symbol(21, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(41, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(30, user_number)],
+[[272]])
+
+
+m4_define([b4_symbol(44, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(34, tag)],
+[[$][accept]])
+
+
+m4_define([b4_symbol(53, type)],
+[[]])
+
+
+m4_define([b4_symbol(43, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(47, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(21, number)],
+[[21]])
+
+
+m4_define([b4_symbol(16, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(12, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(21, has_type)],
+[[0]])
+
+
+m4_define([b4_defgoto],
+[[    -1,     3,     4,    12,    13,    82,    83,    35,    14,    37,
+      24,    38,    39,    40,    41,    42,    43,    44,    75,    45,
+      46,    47,    48,    49,    50]])
+
+
+m4_define([b4_symbol(24, number)],
+[[24]])
+
+
+m4_define([b4_symbol(28, tag)],
+[[LessThan]])
+
+
+m4_define([b4_symbol(43, type)],
+[[NODE]])
+
+
+m4_define([b4_symbol(27, is_token)],
+[[1]])
+
+
+m4_define([b4_symbol(32, is_token)],
+[[1]])
+
+
+m4_define([b4_symbol(53, tag)],
+[[Addition]])
+
+
+m4_define([b4_symbol(27, number)],
+[[27]])
+
+
+m4_define([b4_percent_define_kind(lr.default-reduction)],
+[[keyword]])
+
+
+m4_define([b4_symbol(23, id)],
+[[]])
+
+
+m4_define([b4_symbol(48, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(57, user_number)],
+[[-1]])
+
+
+m4_define([b4_symbol(40, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(33, type)],
+[[]])
+
+
+m4_define([b4_symbol(47, tag)],
+[[IfStmt]])
+
+
+m4_define([b4_symbol(7, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(50, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(1, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(57, id)],
+[[FunctionCall]])
+
+
+m4_define([b4_symbol(23, type)],
+[[]])
+
+
+m4_define([b4_symbol(4, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(25, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(50, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(7, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(34, user_number)],
+[[-1]])
+
+
+m4_define([b4_symbol(53, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(17, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(13, type)],
+[[]])
+
+
+m4_define([b4_symbol(22, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(56, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(16, id)],
+[[]])
+
+
+m4_define([b4_symbol(30, number)],
+[[30]])
+
+
+m4_define([b4_check],
+[[     0,    51,    16,    51,     4,    19,    51,     4,    30,    31,
+      14,     0,     9,     4,    11,    14,    20,    14,     9,    14,
+      11,    25,    26,     8,    24,    10,    23,    24,    78,    79,
+      52,     4,    14,    55,    56,     4,     9,     4,    11,     4,
+       9,    14,    11,    25,    26,     4,    11,    23,    24,     4,
+      23,    24,    11,     4,   104,   105,   104,   105,    16,   104,
+     105,     4,     5,    26,     7,     8,     9,    10,    11,     4,
+      13,    14,    14,    16,    17,    15,    11,    14,    18,    15,
+      23,    24,    18,    15,     4,     5,    18,     7,     8,     9,
+      10,    11,   106,    13,    14,    19,    16,    15,     4,   113,
+      18,    76,    77,    23,    24,    21,    22,   107,    27,    28,
+      29,    30,    31,    32,    19,    19,    33,    34,    26,     4,
+      15,    20,    14,     6,    15,    15,   105,    11,    17,   107,
+     104,    75,    -1,    36]])
+
+
+m4_define([b4_symbol(28, is_token)],
+[[1]])
+
+
+m4_define([b4_symbol(33, number)],
+[[33]])
+
+
+m4_define([b4_symbol(33, is_token)],
+[[1]])
+
+
+m4_define([b4_symbol(36, number)],
+[[36]])
+
+
+m4_define([b4_symbol(0, is_token)],
+[[1]])
+
+
+m4_define([b4_symbol(11, user_number)],
+[[266]])
+
+
+m4_define([b4_percent_define_bison_variables(lr.default-reduction)],
+[[]])
+
+
+m4_define([b4_symbol(39, number)],
+[[39]])
+
+
+m4_define([b4_symbol(29, has_destructor)],
+[[0]])
+
+
+m4_define([b4_merger],
+[[     0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0]])
+
+
+m4_define([b4_symbol(52, id)],
+[[Compare]])
+
+
+m4_define([b4_symbol(9, id)],
+[[NUMBER]])
+
+
+m4_define([b4_percent_define(parse.trace)],
+[[]])
+
+
+m4_define([b4_symbol(54, has_printer)],
+[[0]])
+
+
+m4_define([b4_translate_max],
+[[33]])
+
+
+m4_define([b4_symbol(18, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(29, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(23, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(57, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(38, user_number)],
+[[-1]])
+
+
+m4_define([b4_symbol(11, id)],
+[[TEXT]])
+
+
+m4_define([b4_symbol(29, is_token)],
+[[1]])
+
+
+m4_define([b4_symbol(26, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbols_number],
+[[59]])
+
+
+m4_define([b4_symbol(31, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(34, is_token)],
+[[0]])
+
+
+m4_define([b4_symbol(40, user_number)],
+[[-1]])
+
+
+m4_define([b4_symbol(1, is_token)],
+[[0]])
+
+
+m4_define([b4_symbol(42, number)],
+[[42]])
+
+
+m4_define([b4_immediate],
+[[     0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0]])
+
+
+m4_define([b4_symbol(45, id)],
+[[Stmt]])
+
+
+m4_define([b4_pre_prologue],
+[[]b4_syncline(2, [["090111575.y"]])[
+
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <string.h>
+
+	/*define o tipo de informação que vamos passar pra ele:*/
+	// #define YYSTYPE double
+	/*geramos esta funcao com o flex, que eh padrao*/
+	extern int yylex();
+
+	extern int parse_multiple_line_comments();
+	extern int parse_single_line_comments();
+	extern int parse_string();
+
+	extern int g_line_counter;
+
+	/* protótipo da função de tratamento de erros do bison */
+	void yyerror (char const *s);
+
+
+
+
+
+
+
+
+
+
+
+	// tavam no .h:
+					//structure of the a node
+					typedef struct treeNode {
+					    char description@{200@};
+						char value@{200@};
+						int countBeside;
+					    struct treeNode *father, *listBrother, *child;
+					} NODE;
+
+					//structure of the pair, pair is a information bring of the sintatic
+					typedef struct pairData {
+					    char description@{200@};
+						char value@{200@};
+					} pairData;
+
+
+					//structure of the fourData, fourData is a information bring of the sintatic to inser line in symbol table
+					typedef struct fourData {
+					    char name@{200@};
+					    char value@{200@};
+					    char type@{200@};
+					    char category@{200@};
+					} fourData;
+
+
+					//structure of table symb
+					//category ha two values: variable,function,param
+					//type is INT ,FLOAT or VOID
+					//scope: global or function name
+					//name: ID
+					typedef struct tabSymbol {
+					    char name@{200@};
+					    char value@{200@};
+					    char scope@{200@};
+					    char type@{200@};
+					    char category@{200@};
+					    struct tabSymbol *previous, *next;
+					} tabSymbol;
+
+
+					void printSymbolTable();
+					void createLineSymbolTable(fourData*);
+					void setScopeActual(const char*);
+					void printScopeActual();
+					void printPair(pairData*);
+					void printNode(NODE*);
+					NODE *createNode(pairData*);
+					void newItemToList(NODE*, NODE*);
+					void newChild(NODE*, NODE*);
+	void newBrother(NODE*, NODE*);
+					void showTree(NODE*, int);
+					void findVarType(char *);
+					void newAttrValue(char *);
+					void lastVariableDeclaration(char *);
+
+
+	//tavam no .c:
+					//store the actual scope, if a global or function name
+					char scopeActual@{200@};
+
+					//Qtd of items of the symbol table
+					int tamSymbolTable = 0;
+
+
+					//store actual line of symbol table
+					tabSymbol *auxLine;
+
+					//first line of symbol table
+					tabSymbol *firstLine;
+
+
+					//last type found
+					char varType @{200@};
+
+					//last variable to include value in table symb on declaration of variables
+					char lastVar @{200@};
+
+
+
+
+	//tavam no .y:
+					//description and value of the a rule of a structure of the my grammar
+					pairData *pair;
+
+					//data of symbols
+					fourData *four;
+
+					//actual id to after insert type var
+					char lastType@{200@};
+
+					//actual id to after insert type function
+					char lastTypeFunction@{200@};
+
+
+
+
+
+
+
+
+
+
+
+
+]])
+
+
+m4_define([b4_symbol(5, type)],
+[[]])
+
+
+m4_define([b4_symbol(45, number)],
+[[45]])
+
+
+m4_define([b4_symbol(15, user_number)],
+[[41]])
+
+
+m4_define([b4_symbol(48, number)],
+[[48]])
+
+
+m4_define([b4_percent_define_how(parse.trace)],
+[[0]])
+
+
+m4_define([b4_symbol(54, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(4, id)],
+[[Identifier]])
+
+
+m4_define([b4_symbol(23, has_destructor)],
+[[0]])
+
+
+m4_define([b4_defgoto_max],
+[[83]])
+
+
+m4_define([b4_symbol(58, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(19, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(24, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(22, tag)],
+[['/']])
+
+
+m4_define([b4_symbol(38, id)],
+[[FormalArg]])
+
+
+m4_define([b4_symbol(4, tag)],
+[[Identifier]])
+
+
+m4_define([b4_symbol(51, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(8, has_destructor)],
+[[0]])
+
+
+m4_define([b4_dprec_min],
+[[0]])
+
+
+m4_define([b4_symbol(2, number)],
+[[2]])
+
+
+m4_define([b4_symbol(35, is_token)],
+[[0]])
+
+
+m4_define([b4_stos_min],
+[[0]])
+
+
+m4_define([b4_symbol(20, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(40, is_token)],
+[[0]])
+
+
+m4_define([b4_symbol(2, is_token)],
+[[0]])
+
+
+m4_define([b4_symbol(5, number)],
+[[5]])
+
+
+m4_define([b4_symbol(16, tag)],
+[['{']])
+
+
+m4_define([b4_symbol(35, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(41, tag)],
+[[Declaration]])
+
+
+m4_define([b4_symbol(51, number)],
+[[51]])
+
+
+m4_define([b4_symbol(44, user_number)],
+[[-1]])
+
+
+m4_define([b4_symbol(8, number)],
+[[8]])
+
+
+m4_define([b4_symbol(40, id)],
+[[Arg]])
+
+
+m4_define([b4_r1],
+[[     0,    34,    35,    36,    36,    37,    37,    37,    38,    39,
+      39,    39,    40,    40,    40,    41,    41,    42,    42,    43,
+      44,    44,    45,    45,    45,    45,    45,    45,    46,    47,
+      47,    48,    48,    49,    49,    49,    49,    50,    51,    51,
+      52,    52,    52,    52,    52,    52,    53,    53,    53,    54,
+      54,    54,    55,    55,    55,    55,    56,    56,    56,    57,
+      57,    58,    58,    58,    58,    58,    58]])
+
+
+m4_define([b4_r2],
+[[     0,     2,     1,     7,     6,     0,     1,     3,     2,     0,
+       1,     3,     1,     1,     1,     2,     2,     1,     1,     3,
+       2,     0,     1,     2,     2,     1,     1,     2,     5,     5,
+       7,     1,     2,     1,     1,     1,     1,     3,     3,     1,
+       1,     1,     1,     1,     1,     1,     3,     3,     1,     3,
+       3,     1,     3,     2,     2,     1,     1,     1,     1,     4,
+       6,     3,     3,     3,     3,     3,     3]])
+
+
+m4_define([b4_symbol(54, number)],
+[[54]])
+
+
+m4_define([b4_symbol(3, user_number)],
+[[258]])
+
+
+m4_define([b4_symbol(57, number)],
+[[57]])
+
+
+m4_define([b4_symbol(5, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(19, user_number)],
+[[59]])
+
+
+m4_define([b4_symbol(35, tag)],
+[[Begin]])
+
+
+m4_define([b4_symbol(12, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(21, user_number)],
+[[42]])
+
+
+m4_define([b4_percent_define_loc(lr.keep-unreachable-state)],
+[[[[<default value>:-1.-1]], [[<default value>:-1.-1]]]])
+
+
+m4_define([b4_symbol(29, tag)],
+[[GreaterThan]])
+
+
+m4_define([b4_symbol(25, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(55, type)],
+[[]])
+
+
+m4_define([b4_symbol(54, tag)],
+[[Multiplication]])
+
+
+m4_define([b4_symbol(30, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(33, id)],
+[[IFX]])
+
+
+m4_define([b4_percent_define_syncline(parse.trace)],
+[[]b4_syncline(3, [["<command line>"]])[]])
+
+
+m4_define([b4_symbol(36, is_token)],
+[[0]])
+
+
+m4_define([b4_conflict_list_heads_min],
+[[0]])
+
+
+m4_define([b4_symbol(41, is_token)],
+[[0]])
+
+
+m4_define([b4_symbol(2, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(3, is_token)],
+[[1]])
+
+
+m4_define([b4_symbol(48, tag)],
+[[ReturnStmt]])
+
+
+m4_define([b4_symbol(45, type)],
+[[]])
+
+
+m4_define([b4_parser_file_name],
+[[090111575.tab.c]])
+
+
+m4_define([b4_percent_define(lr.keep-unreachable-state)],
+[[false]])
+
+
+m4_define([b4_symbol(39, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(35, type)],
+[[NODE]])
+
+
+m4_define([b4_symbol(48, user_number)],
+[[-1]])
+
+
+m4_define([b4_immediate_min],
+[[0]])
+
+
+m4_define([b4_symbol(41, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(7, user_number)],
+[[262]])
+
+
+m4_define([b4_symbol(50, user_number)],
+[[-1]])
+
+
+m4_define([b4_symbol(10, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(26, id)],
+[[]])
+
+
+m4_define([b4_symbol(25, type)],
+[[]])
+
+
+m4_define([b4_symbol(37, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(0, type)],
+[[]])
+
+
+m4_define([b4_symbol(0, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(13, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(16, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(26, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(31, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(25, user_number)],
+[[46]])
+
+
+m4_define([b4_symbol(16, has_id)],
+[[0]])
+
+
+m4_define([b4_symbol(15, type)],
+[[]])
+
+
+m4_define([b4_symbol(37, is_token)],
+[[0]])
+
+
+m4_define([b4_symbol(19, has_id)],
+[[0]])
+
+
+m4_define([b4_tokens_number],
+[[34]])
+
+
+m4_define([b4_symbol(42, is_token)],
+[[0]])
+
+
+m4_define([b4_symbol(4, is_token)],
+[[1]])
+
+
+m4_define([b4_synclines_flag],
+[[1]])
+
+
+m4_define([b4_symbol(34, has_destructor)],
+[[0]])
+
+
+m4_define([b4_states_number],
+[[115]])
+
+
+m4_define([b4_percent_define(parse.error)],
+[[verbose]])
+
+
+m4_define([b4_symbol(19, id)],
+[[]])
+
+
+m4_define([b4_version],
+[[3.0.4]])
+
+
+m4_define([b4_symbol(21, id)],
+[[]])
+
+
+m4_define([b4_symbol(45, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(31, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(54, user_number)],
+[[-1]])
+
+
+m4_define([b4_symbol(27, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(32, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(22, has_id)],
+[[0]])
+
+
+m4_define([b4_symbol(4, has_printer)],
+[[0]])
+
+
+m4_define([b4_table_max],
+[[114]])
+
+
+m4_define([b4_symbol(55, id)],
+[[Term]])
+
+
+m4_define([b4_symbol(25, has_id)],
+[[0]])
+
+
+m4_define([b4_symbol(38, is_token)],
+[[0]])
+
+
+m4_define([b4_epilogue],
+[[]b4_syncline(381, [["090111575.y"]])[
+
+
+/* Epílogo ( código no final do arquivo ) */
+/* Chamado quando há um erro sintático na entrada . */
+void yyerror ( char const *s) {
+	printf ("Line %d: %s\n", g_line_counter, s);
+}
+
+int main ( void ) {
+
+	pair = (pairData *) malloc (sizeof(pairData));
+    four = (fourData *) malloc (sizeof(fourData));
+
+	/* Chama o parser . */
+	return yyparse () ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Print the symboltable
+void printSymbolTable(){
+
+    tabSymbol *aux;
+
+    aux = firstLine;
+
+    printf("\n\nTABELA DE SIMBOLOS -------------------\n");
+
+    if(tamSymbolTable > 0){
+
+        while(aux != NULL){
+            //printf("\nNAME: %s\nVALUE: %s\nSCOPE: %s \nTYPE: %s \nCATEGORY: %s\n", aux->name,aux->value,aux->scope,aux->type,aux->category);
+            printf("\nNAME: %s\nVALUE: %s\nSCOPE: %s \nTYPE: %s \nCATEGORY: %s\n", aux->name,aux->value,aux->scope,aux->type,aux->category);
+            aux = aux->next;
+        }
+        //printf("\n");
+        printf("\n");
+
+    }
+
+    printf("\n\n\n\n");
+}
+
+
+void lastVariableDeclaration(char * variable){
+
+    strcpy(lastVar ,variable);
+}
+
+void newAttrValue(char * value){
+
+    tabSymbol *aux;
+
+    aux = firstLine;
+
+
+    if(tamSymbolTable > 0){
+
+        while(aux != NULL){
+
+            if(strcmp(aux->name,lastVar) == 0){
+                strcpy(aux->value , value);
+            }
+
+            aux = aux->next;
+        }
+    }
+}
+
+//Create a new line to symbol table, and do the appointments next and previous
+void createLineSymbolTable(fourData * data){
+
+    tabSymbol *line;
+    line = (tabSymbol *) malloc (sizeof(tabSymbol));
+
+    //if is first entrance of symbol table
+    if(tamSymbolTable == 0){
+
+        //get data informatios from syntactic
+        strcpy(line->name ,data->name);
+        strcpy(line->value ,data->value);
+
+        if( strcmp(data->category,"VARIABLE") == 0 && strcmp(data->type,"MATRIX") != 0 ){
+            strcpy(line->type,varType);
+        }else{
+            strcpy(line->type,data->type);
+        }
+
+
+        strcpy(line->category ,data->category);
+        strcpy(line->scope,scopeActual);
+
+        //how is first, no have others entrances in list
+        line->previous = NULL;
+        line->next = NULL;
+
+        tamSymbolTable++;
+
+        auxLine = line;
+
+        //this i will use to printer all table
+        firstLine = line;
+
+    }else{
+
+        //get data informatios from syntactic
+        strcpy(line->name ,data->name);
+        strcpy(line->value ,data->value);
+
+        if( strcmp(data->category,"VARIABLE") == 0  && strcmp(data->type,"MATRIX") != 0 ){
+            strcpy(line->type,varType);
+        }else{
+            strcpy(line->type,data->type);
+        }
+
+        strcpy(line->category ,data->category);
+        strcpy(line->scope,scopeActual);
+
+        //This previous pointer to auxLine
+        line->previous = auxLine;
+        line->next = NULL;
+
+        //Previous pointer to this
+        auxLine->next = line;
+
+        tamSymbolTable++;
+
+        //Now, auxLine is this
+        auxLine = line;
+
+
+    }
+
+}
+
+
+//set global var with actual type
+void findVarType(char * type){
+    strcpy(varType,type);
+}
+
+
+//syntactic set the actual scope in global variable scopeActual
+void setScopeActual(const char *scopeName){
+
+    tabSymbol *aux;
+
+    if(strcmp(scopeName,"") !=0){
+        strcpy(scopeActual,scopeName);
+    }
+
+    aux = firstLine;
+
+    if(tamSymbolTable > 0){
+
+        while(aux != NULL){
+
+            if( strcmp(aux->category,"VARIABLE") == 0 && strcmp(scopeActual,"GLOBAL") != 0 && strcmp(aux->scope,"-") == 0 && strcmp(scopeName,"-") != 0 ){
+                strcpy(aux->scope,scopeName);
+            }
+
+            aux = aux->next;
+        }
+    }
+
+
+
+}
+
+//syntactic set the actual scope in global variable scopeActual
+void printScopeActual(){
+    printf("ScopeActual: %s\n", scopeActual);
+}
+
+
+//print a any node, this function was to test my tree is correct ( debug )
+void printNode(NODE * node){
+
+    if(node != NULL){
+        printf("Description: %s Value: %s\n", node->description, node->value);
+    }
+}
+
+//print a any node, this function was to test to verify if the sitatic is sent correct
+void printPair(pairData * pair){
+    printf("Description: %s Value: %s\n", pair->description, pair->value);
+}
+
+//add a child to no void list of childs
+void newItemToList(NODE *root, NODE *item) {
+
+    int flag = 0;
+    NODE *temp;
+
+    //if have a child, so do the inclusion, else not do action
+    if(item != NULL){
+
+        //if is the first child
+        if (root->listBrother == NULL) {
+            root->listBrother = item;
+        } else {
+
+            //add a new child in a child list
+            temp = root->listBrother;
+
+            while(flag == 0){
+
+                if(temp->listBrother != NULL){
+                    temp = temp->listBrother;
+                }else{
+                    flag = 1;
+                }
+
+            }
+
+            //effect of the add
+            temp->listBrother = item;
+        }
+    }
+}
+
+//Create a node without father and child...
+NODE *createNode(pairData *pair) {
+    NODE *node;
+
+    node = (NODE *) malloc (sizeof(NODE));
+
+    //Copy the ffont value
+    strcpy(node->description , pair->description);
+    strcpy(node->value , pair->value);
+
+    //How i am creating a pure node, so the family is NULL
+    node->countBeside = 0;
+    node->father = NULL;
+    node->child = NULL;
+    node->listBrother = NULL;
+
+    return node;
+}
+
+//Add a child in list of childs
+void newChild(NODE *root, NODE *item) {
+
+    int flag = 0;
+    NODE *temp;
+
+    //if really have a child to add
+    if(item != NULL){
+
+        //if is the first child
+        if (root->child == NULL) {
+            //set the father and child of the new child
+            item->father = root;
+            root->child = item;
+
+        } else{
+            //insert the child in list
+            newItemToList(root->child, item);
+        }
+
+        //now, node have more one child
+        root->countBeside++;
+
+        temp = item;
+
+        //verify all childs of the list and set the father to this
+        while(flag == 0){
+
+            if(temp != NULL){
+                temp = temp->listBrother;
+
+                if(temp != NULL){
+                    temp->father = root;
+                }
+            }else{
+                flag = 1;
+            }
+
+        }
+    }
+}
+
+
+void newBrother(NODE *root, NODE *item) {
+
+    int flag = 0;
+    NODE *temp;
+printf("a1\n");
+
+	root = root->father;
+	printf("%s\n", root->description);
+
+	exit(0);
+
+    //if really have a child to add
+    if(item != NULL){
+printf("a2\n");
+    	
+printf("a3\n");
+        //insert the child in list
+        newItemToList(root->child, item);
+printf("a4\n");
+
+        //now, node have more one child
+        root->countBeside++;
+printf("a5\n");
+
+        temp = item;
+printf("a6\n");
+        //verify all childs of the list and set the father to this
+        while(flag == 0){
+
+            if(temp != NULL){
+                temp = temp->listBrother;
+
+                if(temp != NULL){
+                    temp->father = root;
+                }
+            }else{
+                flag = 1;
+            }
+
+        }
+
+
+    }
+}
+
+
+void printTree(NODE* root, int tabulation) {
+
+    NODE* aux = NULL;
+    int i=0;
+
+    //if have a tree
+    if (root != NULL) {
+
+
+        //tabulation, each time than print a node, this is add
+        for(i = 0; i < tabulation; i++){
+            printf("|\t");
+            // printf("  ");
+        }
+
+
+        //printf("%s %s\n", root->description, root->value);
+        printf("%s %s\n", root->description, root->value);
+
+        aux = root->child;
+
+        //recursion to print the childs e childs of childs
+        while (aux != NULL) {
+            printTree(aux, tabulation + 1);
+            aux = aux->listBrother;
+        }
+
+    }
+
+}
+
+//print a tree form a root or subroot
+void showTree(NODE* root, int tabulation) {
+
+    printf("\n\nARVORE -------------------\n\n");
+
+    printTree(root,tabulation);
+
+}
+]])
+
+
+m4_define([b4_symbol(29, user_number)],
+[[271]])
+
+
+m4_define([b4_symbol(43, is_token)],
+[[0]])
+
+
+m4_define([b4_symbol(10, tag)],
+[[STRING]])
+
+
+m4_define([b4_symbol(28, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(5, is_token)],
+[[1]])
+
+
+m4_define([b4_symbol(22, has_printer)],
+[[0]])
+
+
+m4_define([b4_percent_define_how(parse.error)],
+[[2]])
+
+
+m4_define([b4_symbol(31, user_number)],
+[[273]])
+
+
+m4_define([b4_symbol(7, type)],
+[[]])
+
+
+m4_define([b4_symbol(50, type)],
+[[]])
+
+
+m4_define([b4_symbol(14, id)],
+[[]])
+
+
+m4_define([b4_spec_file_prefix],
+[[]])
+
+
+m4_define([b4_pgoto],
+[[   -51,   -51,   -51,   116,   111,    21,    26,   -51,     0,   -14,
+     -51,    22,   -51,   -51,   -51,   -22,    97,   -51,   -51,    56,
+      25,    83,   -50,   -48,   -45]])
+
+
+m4_define([b4_symbol(40, type)],
+[[]])
+
+
+m4_define([b4_final_state_number],
+[[6]])
+
+
+m4_define([b4_symbol(23, tag)],
+[['+']])
+
+
+m4_define([b4_symbol(48, id)],
+[[ReturnStmt]])
+
+
+m4_define([b4_symbol(5, tag)],
+[[IF]])
+
+
+m4_define([b4_symbol(28, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(33, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(49, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(30, type)],
+[[]])
+
+
+m4_define([b4_symbol(58, user_number)],
+[[-1]])
+
+
+m4_define([b4_check_min],
+[[-1]])
+
+
+m4_define([b4_symbol(17, tag)],
+[['}']])
+
+
+m4_define([b4_symbol(31, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(0, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(39, is_token)],
+[[0]])
+
+
+m4_define([b4_symbol(7, id)],
+[[WHILE]])
+
+
+m4_define([b4_symbol(50, id)],
+[[Attribution]])
+
+
+m4_define([b4_symbol(44, is_token)],
+[[0]])
+
+
+m4_define([b4_symbol(42, tag)],
+[[Type]])
+
+
+m4_define([b4_symbol(8, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(51, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(34, has_id)],
+[[0]])
+
+
+m4_define([b4_symbol(6, is_token)],
+[[1]])
+
+
+m4_define([b4_symbol(20, type)],
+[[]])
+
+
+m4_define([b4_symbol(37, has_id)],
+[[1]])
+
+
+m4_define([b4_percent_define_user_variables],
+[[[[[[parse.trace]], [[<command line>:3.-1]], [[<command line>:3.-1]]]],[[[[parse.error]], [[090111575.y:146.9]], [[090111575.y:146.20]]]]]])
+
+
+m4_define([b4_symbol(11, number)],
+[[11]])
+
+
+m4_define([b4_symbol(36, tag)],
+[[Function]])
+
+
+m4_define([b4_symbol(26, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(48, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(14, number)],
+[[14]])
+
+
+m4_define([b4_symbol(35, user_number)],
+[[-1]])
+
+
+m4_define([b4_symbol(10, type)],
+[[]])
+
+
+m4_define([b4_symbol(17, number)],
+[[17]])
+
+
+m4_define([b4_symbol(17, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(55, tag)],
+[[Term]])
+
+
+m4_define([b4_symbol(43, id)],
+[[CompoundStmt]])
+
+
+m4_define([b4_percent_define_syncline(parse.error)],
+[[]b4_syncline(146, [["090111575.y"]])[]])
+
+
+m4_define([b4_symbol(29, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(34, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(12, user_number)],
+[[267]])
+
+
+m4_define([b4_symbol(49, tag)],
+[[Expr]])
+
+
+m4_define([b4_symbol(45, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(1, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(57, type)],
+[[]])
+
+
+m4_define([b4_symbol(14, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(45, is_token)],
+[[0]])
+
+
+m4_define([b4_symbol(40, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(50, is_token)],
+[[0]])
+
+
+m4_define([b4_symbol(7, is_token)],
+[[1]])
+
+
+m4_define([b4_symbol(2, id)],
+[[]])
+
+
+m4_define([b4_symbol(43, has_id)],
+[[1]])
+
+
+m4_define([b4_toknum],
+[[     0,   256,   257,   258,   259,   260,   261,   262,   263,   264,
+     265,   266,   267,   268,    40,    41,   123,   125,    44,    59,
+      61,    42,    47,    43,    45,    46,    58,   269,   270,   271,
+     272,   273,   274,   275]])
+
+
+m4_define([b4_symbol(55, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(47, type)],
+[[]])
+
+
+m4_define([b4_symbol(46, has_id)],
+[[1]])
+
+
+m4_define([b4_dir_prefix],
+[[]])
+
+
+m4_define([b4_symbol(20, number)],
+[[20]])
+
+
+m4_define([b4_symbol(49, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(23, number)],
+[[23]])
+
+
+m4_define([b4_symbol(42, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(36, id)],
+[[Function]])
+
+
+m4_define([b4_symbol(37, type)],
+[[NODE]])
+
+
+m4_define([b4_symbol(26, number)],
+[[26]])
+
+
+m4_define([b4_symbol(39, user_number)],
+[[-1]])
+
+
+m4_define([b4_symbol(11, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(29, number)],
+[[29]])
+
+
+m4_define([b4_symbol(32, has_printer)],
+[[0]])
+
+
+m4_define([b4_file_name],
+[["090111575.y"]])
+
+
+m4_define([b4_symbol(27, type)],
+[[]])
+
+
+m4_define([b4_symbol(41, user_number)],
+[[-1]])
+
+
+m4_define([b4_percent_define_kind(lr.keep-unreachable-state)],
+[[keyword]])
+
+
+m4_define([b4_symbol(35, has_type)],
+[[1]])
+
+
+m4_define([b4_symbol(40, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(2, type)],
+[[]])
+
+
+m4_define([b4_symbol(2, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(0, has_id)],
+[[0]])
+
+
+m4_define([b4_symbol(0, user_number)],
+[[0]])
+
+
+m4_define([b4_symbol(46, is_token)],
+[[0]])
+
+
+m4_define([b4_symbol(17, type)],
+[[]])
+
+
+m4_define([b4_symbol(51, is_token)],
+[[0]])
+
+
+m4_define([b4_symbol(16, user_number)],
+[[123]])
+
+
+m4_define([b4_symbol(3, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(8, is_token)],
+[[1]])
+
+
+m4_define([b4_defact_min],
+[[0]])
+
+
+m4_define([b4_symbol(29, id)],
+[[GreaterThan]])
+
+
+m4_define([b4_symbol(6, has_id)],
+[[1]])
+
+
+m4_define([b4_table_ninf],
+[[-1]])
+
+
+m4_define([b4_symbol(52, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(9, has_id)],
+[[1]])
+
+
+m4_define([b4_symbol(55, has_id)],
+[[1]])
+
+
+m4_define([b4_percent_define_kind(lr.type)],
+[[keyword]])
+
+
+m4_define([b4_symbol(31, id)],
+[[GreaterThanOrEqualTo]])
+
+
+m4_define([b4_symbol(58, has_id)],
+[[1]])
+
+
+m4_define([b4_merger_max],
+[[0]])
+
+
+m4_define([b4_symbol(32, number)],
+[[32]])
+
+
+m4_define([b4_toknum_max],
+[[275]])
+
+
+m4_define([b4_symbol(35, number)],
+[[35]])
+
+
+m4_define([b4_symbol(38, number)],
+[[38]])
+
+
+m4_define([b4_union_members],
+[[]b4_syncline(138, [["090111575.y"]])[
+
+	int int_value;
+	char str_value@{255@};
+	char char_value;
+
+	struct treeNode *NODE;
+]])
+
+
+m4_define([b4_symbol(36, has_type)],
+[[1]])
+
+
+m4_define([b4_symbol(36, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(41, has_type)],
+[[0]])
+
+
+m4_define([b4_symbol(11, tag)],
+[[TEXT]])
+
+
+m4_define([b4_symbol(3, has_type)],
+[[1]])
+
+
+m4_define([b4_symbol(45, user_number)],
+[[-1]])
+
+
+m4_define([b4_symbol(47, is_token)],
+[[0]])
+
+
+m4_define([b4_symbol(9, is_token)],
+[[1]])
+
+
+m4_define([b4_symbol(52, is_token)],
+[[0]])
+
+
+m4_define([b4_r1_min],
+[[0]])
+
+
+m4_define([b4_symbol(4, user_number)],
+[[259]])
+
+
+m4_define([b4_symbol(28, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(24, id)],
+[[]])
+
+
+m4_define([b4_symbol(30, tag)],
+[[LessThanOrEqualTo]])
+
+
+m4_define([b4_symbol(13, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(22, user_number)],
+[[47]])
+
+
+m4_define([b4_symbol(24, tag)],
+[['-']])
+
+
+m4_define([b4_file_name_all_but_ext],
+[[090111575.tab]])
+
+
+m4_define([b4_symbol(58, id)],
+[[StringConcat]])
+
+
+m4_define([b4_symbol(52, type)],
+[[]])
+
+
+m4_define([b4_symbol(9, type)],
+[[int_value]])
+
+
+m4_define([b4_symbol(6, tag)],
+[[ELSE]])
+
+
+m4_define([b4_symbol(56, has_destructor)],
+[[0]])
+
+
+m4_define([b4_translate],
+[[     0,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+      14,    15,    21,    23,    18,    24,    25,    22,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,    26,    19,
+       2,    20,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,    16,     2,    17,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     1,     2,     3,     4,
+       5,     6,     7,     8,     9,    10,    11,    12,    13,    27,
+      28,    29,    30,    31,    32,    33]])
+
+
+m4_define([b4_symbol(41, number)],
+[[41]])
+
+
+m4_define([b4_symbol(25, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(18, tag)],
+[[',']])
+
+
+m4_define([b4_symbol(44, number)],
+[[44]])
+
+
+m4_define([b4_symbol(42, type)],
+[[NODE]])
+
+
+m4_define([b4_symbol(37, has_type)],
+[[1]])
+
+
+m4_define([b4_symbol(43, tag)],
+[[CompoundStmt]])
+
+
+m4_define([b4_pgoto_max],
+[[116]])
+
+
+m4_define([b4_symbol(47, number)],
+[[47]])
+
+
+m4_define([b4_symbol(42, has_type)],
+[[1]])
+
+
+m4_define([b4_symbol(4, has_type)],
+[[1]])
+
+
+m4_define([b4_symbol(17, id)],
+[[]])
+
+
+m4_define([b4_symbol(48, is_token)],
+[[0]])
+
+
+m4_define([b4_symbol(32, type)],
+[[]])
+
+
+m4_define([b4_symbol(53, is_token)],
+[[0]])
+
+
+m4_define([b4_pact_min],
+[[-51]])
+
+
+m4_define([b4_symbol(37, tag)],
+[[FormalArgList]])
+
+
+m4_define([b4_symbol(49, user_number)],
+[[-1]])
+
+
+m4_define([b4_symbol(53, has_destructor)],
+[[0]])
+
+
+m4_define([b4_table],
+[[     5,    84,    21,    85,     7,    23,    86,    25,    58,    59,
+      51,     6,    28,    81,    29,    10,    52,    31,    28,    11,
+      29,    53,    54,     1,    36,     2,    33,    34,    99,   100,
+      87,    60,    51,    91,    92,    60,    28,     8,    61,    89,
+      28,    31,    61,    53,    54,    93,    90,    76,    77,     9,
+      33,    34,    94,    18,    84,    84,    85,    85,    20,    86,
+      86,    25,    26,    57,    27,     1,    28,     2,    29,   101,
+      30,    31,    55,    20,    32,    16,   102,    56,    17,    19,
+      33,    34,    17,   103,    25,    26,   104,    27,     1,    28,
+       2,    29,   110,    30,    31,    64,    20,   112,    65,   114,
+     104,    97,    98,    33,    34,    78,    79,    36,    69,    70,
+      71,    72,    73,    74,    67,    68,    62,    63,    80,    88,
+      95,    52,   105,   113,   106,   107,   109,    15,    22,   111,
+     108,    96,     0,    66]])
+
+
+m4_define([b4_symbol(42, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(22, has_destructor)],
+[[0]])
+
+
+m4_define([b4_symbol(22, type)],
+[[]])
+
+
+m4_define([b4_symbol(51, user_number)],
+[[-1]])
+
+
+m4_define([b4_symbol(8, user_number)],
+[[263]])
+
+
+m4_define([b4_r2_max],
+[[7]])
+
+
+m4_define([b4_symbol(56, tag)],
+[[Factor]])
+
+
+m4_define([b4_symbol(1, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(17, has_printer)],
+[[0]])
+
+
+m4_define([b4_symbol(53, id)],
+[[Addition]])
+
+
+m4_define([b4_symbol(1, number)],
+[[1]])
+
+
+m4_define([b4_symbol(12, type)],
+[[]])
+
+
+m4_define([b4_symbol(26, user_number)],
+[[58]])
+
+
+m4_define([b4_symbol(4, number)],
+[[4]])
+
+

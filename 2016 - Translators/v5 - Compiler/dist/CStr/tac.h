@@ -1,0 +1,12 @@
+void printTacCode();
+void printTacTableEntries();
+int addQuadrupla(char *, char *, char *, char *);
+void printQuadruplas();
+void addTacTableEntry(char *, char *, char *, char *);
+char * concatenateScopeWithVariable(char *, char *);
+void addReturnQuadrupla(NODE *);
+char * addQuadruplasForExpressions(NODE *);
+void addQuadruplaForComparison(char *, char *, char *);
+char * getLabelForLoop();
+char * getLabelForIfElse();
+char * popTacLabel();

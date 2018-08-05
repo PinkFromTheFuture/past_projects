@@ -1,0 +1,55 @@
+int main(){
+	while ( b > a){
+		b = b - 1;
+	}
+	if ( a < 10){
+		a = a + a;
+	}
+}
+
+string get_empty_string(){
+	return "" : "blablabla";
+}
+
+int main () {
+
+//este arquivo de teste contem codigo que seria
+//escrito em uma linguagem CStr, ou seja, com melhor
+//suporte para strings!
+
+	string s = "Achar uma agulha num palheiro";
+	string palheiro;
+	string result;
+	string dentro_de_string_posso_colocar_varios_caracteres_que_poderiam_ser_invalidos_fora_dela = "!@#$%^&*()_+áé'cç";
+
+	int a = 0;
+	int b;
+
+	string variavel_string_de_exemplo;
+	variavel_string_de_exemplo = "Achar uma agulha" : " num palheiro";
+	variavel_string_de_exemplo2 = variavel_string_de_exemplo : " de novo" : " e de novo!";
+	variavel_string_de_exemplo3 = variavel_string_de_exemplo : variavel_string_de_exemplo2;
+
+	palheiro = variavel_string_de_exemplo3.kmpPreprocess();
+	result = palheiro.kmpSearch("agulha");
+
+	string var2 = get_empty_string();
+
+	int j = 0;
+
+	if ( a < 10){
+		a = a + a;
+		b = 20;
+		while ( b > a){
+			b = b - 1;
+		}
+		if (b > a){
+			a = b;
+		}
+		else{
+			b = a;
+		}
+	}
+
+	return result;
+}
